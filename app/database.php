@@ -5,11 +5,11 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 $capsule = new Capsule;
 
 $capsule->addConnection([
-    'driver'    => 'mysql',
-    'host'      => '127.0.0.1',
-    'database'  => 'pretinktDB',
-    'username'  => 'root',
-    'password'  => 'root',
+    'driver'    => 'mysqli',
+    'host'      => '81.169.238.114',
+    'database'  => 'pretinkt',
+    'username'  => 'admin_pretinkt',
+    'password'  => 'M1ej!8f1',
     'charset'   => 'utf8',
     'collation' => 'utf8_unicode_ci',
     'prefix'    => ''
