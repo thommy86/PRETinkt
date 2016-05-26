@@ -2,9 +2,9 @@
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
-class Klant extends Eloquent
+class Zoekterm extends Eloquent
 {
-    protected $table = 'klant';
+    protected $table = 'zoekterm';
 
     protected $primaryKey = 'id';
     

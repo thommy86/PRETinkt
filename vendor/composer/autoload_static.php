@@ -80,7 +80,15 @@ class ComposerStaticInit496254e285f284e83dd97b864ee56e40
     );
 
     public static $classMap = array (
+        'Beoordeling' => __DIR__ . '/../..' . '/app/models/Beoordeling.php',
+        'Bestelling' => __DIR__ . '/../..' . '/app/models/Bestelling.php',
+        'BestellingProduct' => __DIR__ . '/../..' . '/app/models/BestellingProduct.php',
+        'Configuratie' => __DIR__ . '/../..' . '/app/models/Configuratie.php',
+        'Klant' => __DIR__ . '/../..' . '/app/models/Klant.php',
+        'Merk' => __DIR__ . '/../..' . '/app/models/Merk.php',
         'Product' => __DIR__ . '/../..' . '/app/models/Product.php',
+        'VraagAntwoord' => __DIR__ . '/../..' . '/app/models/VraagAntwoord.php',
+        'Zoekterm' => __DIR__ . '/../..' . '/app/models/Zoekterm.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
