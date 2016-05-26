@@ -1,1 +1,1 @@
-Hallloo <?php echo $data['user']->username; echo $data['user']->email; ?>
+Hallloo <?php echo $data['product']->naam; echo $data['product']->omschrijving; ?>

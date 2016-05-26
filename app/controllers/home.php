@@ -4,16 +4,16 @@ class Home extends Controller
 {
 	public function index()
 	{
-		$user = User::find(1);
+		$product = Product::find(1);
 		
-		$this->view('home/index', ['user' => $user]);
+		$this->view('home/index', ['product' => $product]);
 	}
 	
 	public function test()
 	{
-		$user = User::find(2);
+		$product = Product::find(2);
 		
-		$this->view('home/index', ['user' => $user]);
+		$this->view('home/index', ['product' => $product]);
 	}
 
 	public function create($username = '', $email = ''){
