@@ -5,7 +5,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 $capsule = new Capsule;
 
 $capsule->addConnection([
-    'driver'    => 'mysqli',
+    'driver'    => 'mysql',
     'host'      => '81.169.238.114',
     'database'  => 'pretinkt',
     'username'  => 'admin_pretinkt',

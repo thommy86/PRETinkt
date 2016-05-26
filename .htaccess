@@ -1,0 +1,18 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#REWRITE RULES
+#---------------------
+
+#RULE RULE 1V
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* /public/index.php [L]
+
+#RULE RULE 2V
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* /public/index.php/$0 [L]
+
+</IfModule>

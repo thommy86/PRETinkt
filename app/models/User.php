@@ -4,8 +4,9 @@ use Illuminate\Database\Eloquent\Model as Eloquent;
 
 class User extends Eloquent
 {
-	public $name;
-	
-	public $timestamp = [];
-	protected $fillable = ['username', 'email'];
+    protected $table = 'users';
+
+    protected $primaryKey = 'id';
+    
+	public $timestamps = false;
 }
