@@ -1,17 +1,26 @@
 <?php
 
-class Home extends Controller
+class Home extends ControllerBase
 {
-
-		public function index($name = '')
-		{
-			$this->view('home/index', ['name' => $user->name]);
-		}
+	public function index()
+	{
+		$product = Product::find(1);
+		
+		$this->view('home/index', ['product' => $product, 'config' => $this->config]);
+	}
 	
-		public function create($username = '', $email = ''){
-				User::create([
-					'username' => $username,
-					'email' => $email
-				]);
-		}
+	public function test()
+	{
+		$product = Product::find(2);
+		
+		$this->view('home/index', ['product' => $product]);
+	}
+
+	public function create($username = '', $email = ''){
+		$user = new User();
+		$user->username = 'newtest';
+		$user->email = 'newtestemail';
+		
+		$user->save();
+	}
 }
