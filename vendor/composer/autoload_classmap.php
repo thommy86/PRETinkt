@@ -6,15 +6,18 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'App' => $baseDir . '/app/core/App.php',
     'Beoordeling' => $baseDir . '/app/models/Beoordeling.php',
     'Bestelling' => $baseDir . '/app/models/Bestelling.php',
     'BestellingProduct' => $baseDir . '/app/models/BestellingProduct.php',
     'Configuratie' => $baseDir . '/app/models/Configuratie.php',
+    'Controller' => $baseDir . '/app/core/Controller.php',
     'ControllerBase' => $baseDir . '/app/controllers/ControllerBase.php',
-    'Home' => $baseDir . '/app/controllers/Home.php',
+    'Home' => $baseDir . '/app/controllers/home.php',
     'Klant' => $baseDir . '/app/models/Klant.php',
     'Merk' => $baseDir . '/app/models/Merk.php',
     'Product' => $baseDir . '/app/models/Product.php',
+    'View' => $baseDir . '/app/core/View.php',
     'VraagAntwoord' => $baseDir . '/app/models/VraagAntwoord.php',
     'Zoekterm' => $baseDir . '/app/models/Zoekterm.php',
 );
