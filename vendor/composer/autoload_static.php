@@ -84,6 +84,8 @@ class ComposerStaticInit496254e285f284e83dd97b864ee56e40
         'Bestelling' => __DIR__ . '/../..' . '/app/models/Bestelling.php',
         'BestellingProduct' => __DIR__ . '/../..' . '/app/models/BestellingProduct.php',
         'Configuratie' => __DIR__ . '/../..' . '/app/models/Configuratie.php',
+        'ControllerBase' => __DIR__ . '/../..' . '/app/controllers/ControllerBase.php',
+        'Home' => __DIR__ . '/../..' . '/app/controllers/Home.php',
         'Klant' => __DIR__ . '/../..' . '/app/models/Klant.php',
         'Merk' => __DIR__ . '/../..' . '/app/models/Merk.php',
         'Product' => __DIR__ . '/../..' . '/app/models/Product.php',

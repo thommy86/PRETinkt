@@ -10,6 +10,8 @@ return array(
     'Bestelling' => $baseDir . '/app/models/Bestelling.php',
     'BestellingProduct' => $baseDir . '/app/models/BestellingProduct.php',
     'Configuratie' => $baseDir . '/app/models/Configuratie.php',
+    'ControllerBase' => $baseDir . '/app/controllers/ControllerBase.php',
+    'Home' => $baseDir . '/app/controllers/Home.php',
     'Klant' => $baseDir . '/app/models/Klant.php',
     'Merk' => $baseDir . '/app/models/Merk.php',
     'Product' => $baseDir . '/app/models/Product.php',

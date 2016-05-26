@@ -1,12 +1,12 @@
 <?php
 
-class Home extends Controller
+class Home extends ControllerBase
 {
 	public function index()
 	{
 		$product = Product::find(1);
 		
-		$this->view('home/index', ['product' => $product]);
+		$this->view('home/index', ['product' => $product, 'config' => $this->config]);
 	}
 	
 	public function test()
