@@ -1,1 +1,0 @@
-{{ trans('quoatation.emailconfirmcontent' )}}
