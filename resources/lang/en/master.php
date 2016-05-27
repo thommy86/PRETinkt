@@ -13,6 +13,25 @@ return [
     |
     */
 
-    'hello' => 'hello',
+    'english' => 'English',
+    'dutch' => 'Dutch',
+    'home' => 'Home',
+    'products' => 'Products',
+    'quoatation' => 'Quoatation',
+    'contact' => 'Contact',
+    'wishlist' => 'Wishlist',
+    'cart' => 'Cart',
+    'login' => 'Login',
+    'username' => 'Username',
+    'password' => 'Password',
+    'information' => 'Info',
+    'faq' => 'FAQ',
+    'privacypolicy' => 'Privacy policy',
+    'shipping' => 'Shipping',
+    'contactinfo' => 'Contact info',
+    'address' => 'Address',
+    'phone' => 'Phone',
+    'email' => 'Email',
+    'checkout' => 'Checkout',
 
 ];

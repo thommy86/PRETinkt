@@ -13,6 +13,9 @@ return [
     |
     */
 
-    'hello' => 'hello',
+    'welcometitle' => 'Hello',
+    'welcometext' => 'Glad to have you here',
+    'lastproducts' => 'Last products',
+    'view' => 'View',
 
 ];

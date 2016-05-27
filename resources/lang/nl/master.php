@@ -15,7 +15,6 @@ return [
 
     'english' => 'Engels',
     'dutch' => 'Nederlands',
-    'dutch' => 'Nederlands',
     'home' => 'Home',
     'products' => 'Producten',
     'quoatation' => 'Offerte',

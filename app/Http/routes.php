@@ -15,7 +15,7 @@ Route::get('/', 'HomeController@index');
 
 Route::get('products', 'ProductController@index');
 
-Route::get('product/{id}', 'ProductController@product');
+Route::get('product/{id}', 'ProductController@product')->where(['id' => '[0-9]+']);
 
 Route::get('cart', 'CartController@index');
 
@@ -40,3 +40,5 @@ Route::get('manage/faq', 'FaqManageController@index');
 Route::get('manage/products', 'ProductManageController@index');
 
 Route::get('manage/search', 'SearchManageController@index');
+
+Route::get('language/{lang}', 'LanguageController@index')->where('lang', '[A-Za-z_-]+');

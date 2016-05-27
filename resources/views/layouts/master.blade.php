@@ -33,12 +33,12 @@
                 <div class="header-top">
                     <ul class="pull-left">
                         <li>
-                            <a href="#">
+                            <a href="language/en">
                                 <?php echo trans("master.english"); ?>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="language/nl">
                                 <?php echo trans("master.dutch"); ?>
                             </a>
                         </li>
