@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Exceptions;
+namespace Webshop\Exceptions;
 
 use Exception;
 use Illuminate\Validation\ValidationException;

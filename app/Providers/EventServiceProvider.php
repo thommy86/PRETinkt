@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Providers;
+namespace Webshop\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -13,8 +13,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'PRETinkt\Events\SomeEvent' => [
-            'PRETinkt\Listeners\EventListener',
+        'Webshop\Events\SomeEvent' => [
+            'Webshop\Listeners\EventListener',
         ],
     ];
 

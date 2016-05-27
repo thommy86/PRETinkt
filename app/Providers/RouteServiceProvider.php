@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Providers;
+namespace Webshop\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    protected $namespace = 'PRETinkt\Http\Controllers';
+    protected $namespace = 'Webshop\Http\Controllers';
 
     /**
      * Define your route model bindings, pattern filters, etc.

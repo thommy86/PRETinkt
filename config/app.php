@@ -151,10 +151,17 @@ return [
         /*
          * Application Service Providers...
          */
+<<<<<<< HEAD
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+=======
+        Webshop\Providers\AppServiceProvider::class,
+        Webshop\Providers\AuthServiceProvider::class,
+        Webshop\Providers\EventServiceProvider::class,
+        Webshop\Providers\RouteServiceProvider::class,
+>>>>>>> 53c61a3... Added template within laravel
 
     ],
 

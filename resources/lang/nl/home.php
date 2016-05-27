@@ -13,6 +13,6 @@ return [
     |
     */
 
-    'hello' => 'hallo',
+    'some' => 'some',
 
 ];

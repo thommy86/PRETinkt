@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Console\Commands;
+namespace Webshop\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

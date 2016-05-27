@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Providers;
+namespace Webshop\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Http\Requests;
+namespace Webshop\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

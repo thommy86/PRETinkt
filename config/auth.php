@@ -67,7 +67,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => PRETinkt\User::class,
+            'model' => Webshop\User::class,
         ],
 
         // 'users' => [

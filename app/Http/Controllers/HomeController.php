@@ -1,9 +1,9 @@
 <?php
 
-namespace PRETinkt\Http\Controllers;
+namespace Webshop\Http\Controllers;
 
-use PRETinkt\Product;
-use PRETinkt\Http\Controllers\Controller;
+use Webshop\Product;
+use Webshop\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
@@ -16,6 +16,6 @@ class HomeController extends Controller
     public function index()
     {
 	    $product = Product::find(1);
-        return view('home.index', ['product' => $product]);
+        return view('home.index', ['title' => 'title', 'product' => $product]);
     }
 }

@@ -11,7 +11,7 @@
 |
 */
 
-$factory->define(PRETinkt\User::class, function (Faker\Generator $faker) {
+$factory->define(Webshop\User::class, function (Faker\Generator $faker) {
     return [
         'name' => $faker->name,
         'email' => $faker->safeEmail,

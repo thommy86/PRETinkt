@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Providers;
+namespace Webshop\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'PRETinkt\Model' => 'PRETinkt\Policies\ModelPolicy',
+        'Webshop\Model' => 'Webshop\Policies\ModelPolicy',
     ];
 
     /**

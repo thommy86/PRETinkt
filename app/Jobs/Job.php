@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Jobs;
+namespace Webshop\Jobs;
 
 use Illuminate\Bus\Queueable;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Http\Middleware;
+namespace Webshop\Http\Middleware;
 
 use Illuminate\Cookie\Middleware\EncryptCookies as BaseEncrypter;
 

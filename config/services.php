@@ -30,7 +30,7 @@ return [
     ],
 
     'stripe' => [
-        'model' => PRETinkt\User::class,
+        'model' => Webshop\User::class,
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],

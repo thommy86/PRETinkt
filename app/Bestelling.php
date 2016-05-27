@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt;
+namespace Webshop;
 
 use Illuminate\Database\Eloquent\Model;
 

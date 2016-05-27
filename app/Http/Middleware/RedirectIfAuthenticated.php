@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Http\Middleware;
+namespace Webshop\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;

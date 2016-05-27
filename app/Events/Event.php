@@ -1,6 +1,6 @@
 <?php
 
-namespace PRETinkt\Events;
+namespace Webshop\Events;
 
 abstract class Event
 {
