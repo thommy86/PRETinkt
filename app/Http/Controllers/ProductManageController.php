@@ -4,16 +4,15 @@ namespace Webshop\Http\Controllers;
 
 use Webshop\Product;
 use Webshop\Merk;
-use Webshop\Beoordeling;
 use Webshop\Http\Controllers\Controller;
 
-class ProductController extends Controller
+class ProductManageController extends Controller
 {
     public function index()
     {
 	    $products = Product::all();
-        return view('product.index', [
-			'title' => trans('product.indextitle') . ' - ' . config('app.Webshopename'), 
+        return view('productmanage.index', [
+			'title' => trans('productmanage.indextitle') . ' - ' . config('app.Webshopename'), 
 			'products' => $products]
 		);
     }
@@ -21,8 +20,8 @@ class ProductController extends Controller
 	public function product($id)
     {
 	    $product = Product::find($id);
-        return view('product.product', [
-			'title' => trans('product.producttitle') . ' - ' . config('app.Webshopename'), 
+        return view('productmanage.product', [
+			'title' => trans('productmanage.producttitle') . ' - ' . config('app.Webshopename'), 
 			'product' => $product]
 		);
     }

@@ -3,6 +3,7 @@
 namespace Webshop\Http\Controllers;
 
 use Webshop\Product;
+use Webshop\Merk;
 use Webshop\Http\Controllers\Controller;
 
 class CartController extends Controller

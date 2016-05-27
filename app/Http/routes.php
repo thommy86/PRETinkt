@@ -13,8 +13,6 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('home', 'HomeController@index');
-
 Route::get('products', 'ProductController@index');
 
 Route::get('product/{id}', 'ProductController@product');
@@ -26,3 +24,19 @@ Route::get('quoatation', 'QuoatationController@index');
 Route::get('contact', 'ContactController@index');
 
 Route::get('wishlist', 'WishlistController@index');
+
+Route::get('checkout', 'CheckoutController@index');
+
+Route::get('faq', 'FaqController@index');
+
+Route::get('privacypolicy', 'PrivacyPolicyController@index');
+
+Route::get('shipping', 'ShippingController@index');
+
+Route::get('search', 'SearchController@index');
+
+Route::get('manage/faq', 'FaqManageController@index');
+
+Route::get('manage/products', 'ProductManageController@index');
+
+Route::get('manage/search', 'SearchManageController@index');

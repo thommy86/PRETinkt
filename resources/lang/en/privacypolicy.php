@@ -13,6 +13,6 @@ return [
     |
     */
 
-    'indextitle' => 'Wishlist',
+    'indextitle' => 'Privacy policy',
 
 ];

@@ -13,6 +13,7 @@ return [
     |
     */
 
-    'indextitle' => 'Wishlist',
+    'previous' => '&laquo; Vorige',
+    'next'     => 'Volgende &raquo;',
 
 ];

@@ -35,13 +35,11 @@
                         <li>
                             <a href="#">
                                 <?php echo trans("master.english"); ?>
-                                <span class="fa fa-angle-down tz-down"></span>
                             </a>
                         </li>
                         <li>
                             <a href="#">
                                 <?php echo trans("master.dutch"); ?>
-                                <span class="fa fa-angle-down tz-down"></span>
                             </a>
                         </li>
                     </ul>
@@ -274,7 +272,7 @@
                                             <a href="/faq"><?php echo trans("master.faq"); ?></a>
                                         </li>
                                         <li>
-                                            <a href="/privacy"><?php echo trans("master.privacypolicy"); ?></a>
+                                            <a href="/privacypolicy"><?php echo trans("master.privacypolicy"); ?></a>
                                         </li>
                                         <li>
                                             <a href="/shipping"><?php echo trans("master.shipping"); ?></a>
