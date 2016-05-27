@@ -212,15 +212,15 @@ return [
     ],
 	
 	//PRETinkt configs
-	'Webwinkelnaam' => 'PRETinkt',
-	'Bedrijfsnaam' => 'PRETinkt',
-	'Straat' => 'PRETinktlaan',
-	'Huisnummer' => '1',
-	'Plaats' => 'Breda',
-	'Land' => 'Nederland',
-	'Telefoon' => '012345678',
-	'Emailadres' => 'info@pretinkt.nl',
-	'Gebruikersnaam' => 'admin',
-	'Wachtwoord' => 'admin',
+	'Webshopename' => 'PRETinkt',
+	'Companyname' => 'PRETinkt',
+	'Street' => 'PRETinktlaan',
+	'Number' => '1',
+	'City' => 'Breda',
+	'Country' => 'Nederland',
+	'Phone' => '012345678',
+	'Emailaddress' => 'info@pretinkt.nl',
+	'Username' => 'admin',
+	'Password' => 'admin',
 
 ];

@@ -7,15 +7,12 @@ use Webshop\Http\Controllers\Controller;
 
 class HomeController extends Controller
 {
-    /**
-     * Show the profile for the given user.
-     *
-     * @param  int  $id
-     * @return Response
-     */
     public function index()
     {
-	    $product = Product::find(1);
-        return view('home.index', ['title' => 'title', 'product' => $product]);
+	    $products = Product::orderBy('id', 'desc')->take(3)->get();
+        return view('home.index', [
+			'title' => config('app.Webshopename'), 
+			'products' => $products]
+		);
     }
 }

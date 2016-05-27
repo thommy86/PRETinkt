@@ -7,7 +7,7 @@
 			<ul>
 				<li data-transition="fade" data-slotamount="7" data-masterspeed="700"  data-saveperformance="off" >
 					<!-- MAIN IMAGE -->
-					<img src="public/images/slider/slider.jpg"  alt="slider"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+					<img src="/public/images/slider/slider.jpg"  alt="slider"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 					<!-- LAYERS -->
 
 					<!-- LAYER NR. 1 -->
@@ -20,7 +20,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><img src="public/images/slider/letters/P.png" alt="">
+						 data-endeasing="Power4.easeOut"><img src="/public/images/slider/letters/P.png" alt="">
 					</div>
 
 					<!-- LAYER NR. 2 -->
@@ -33,7 +33,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><img src="public/images/slider/letters/R.png" alt="">
+						 data-endeasing="Power4.easeOut"><img src="/public/images/slider/letters/R.png" alt="">
 					</div>
 
 					<!-- LAYER NR. 3 -->
@@ -46,7 +46,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><img src="public/images/slider/letters/E.png" alt="">
+						 data-endeasing="Power4.easeOut"><img src="/public/images/slider/letters/E.png" alt="">
 					</div>
 
 					<!-- LAYER NR. 4 -->
@@ -59,7 +59,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><img src="public/images/slider/letters/T.png" alt="">
+						 data-endeasing="Power4.easeOut"><img src="/public/images/slider/letters/T.png" alt="">
 					</div>
 
 					<!-- LAYER NR. 5 -->
@@ -72,7 +72,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><img src="public/images/slider/letters/I.png" alt="">
+						 data-endeasing="Power4.easeOut"><img src="/public/images/slider/letters/I.png" alt="">
 					</div>
 
 					<!-- LAYER NR. 6 -->
@@ -85,7 +85,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><img src="public/images/slider/letters/N.png" alt="">
+						 data-endeasing="Power4.easeOut"><img src="/public/images/slider/letters/N.png" alt="">
 					</div>
 
 					<!-- LAYER NR. 7 -->
@@ -98,7 +98,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><img src="public/images/slider/letters/K.png" alt="">
+						 data-endeasing="Power4.easeOut"><img src="/public/images/slider/letters/K.png" alt="">
 					</div>
 
 					<!-- LAYER NR. 8 -->
@@ -111,7 +111,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><img src="public/images/slider/letters/T.png" alt="">
+						 data-endeasing="Power4.easeOut"><img src="/public/images/slider/letters/T.png" alt="">
 					</div>
 
 
@@ -151,7 +151,7 @@
 				</li>
 				<li data-transition="fade" data-slotamount="7" data-masterspeed="700"  data-saveperformance="off" >
 					<!-- MAIN IMAGE -->
-					<img src="public/images/slider/slider3.jpg"  alt="slider3"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+					<img src="/public/images/slider/slider3.jpg"  alt="slider3"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 					<!-- LAYERS -->
 
 					<!-- LAYER NR. 1 -->
@@ -184,7 +184,7 @@
 				</li>
 				<li data-transition="fade" data-slotamount="7" data-masterspeed="700"  data-saveperformance="off" >
 					<!-- MAIN IMAGE -->
-					<img src="public/images/slider/slider2.jpg"  alt="slider2"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+					<img src="/public/images/slider/slider2.jpg"  alt="slider2"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
 					<!-- LAYERS -->
 
 					 <!-- LAYER NR. 1 -->
@@ -225,9 +225,8 @@
 
 			<!--Get In Touch-->
 			<div class="get-in-touch">
-				<h3>GET IN TOUCH</h3>
-				<p>Have an idea or a project, lets collaborate and build some awesome stuff</p>
-				<a class="buynow" href="#">Buy now</a>
+				<h3><?php echo trans('home.welcometitle'); ?></h3>
+				<p><?php echo trans('home.welcometext'); ?></p>
 			</div>
 			<!--End Get In Touch-->
 
@@ -243,13 +242,7 @@
 
 				<!--Tabs Header-->
 				<div class="tz-tabs-header">
-					<h2 class="tz-tabs-title pull-left">Featured Products</h2>
-					<ul class="nav nav-tabs pull-right tz-nav-tabs">
-						<li role="presentation" class="active"><a href="index.html#one_read" data-toggle="tab">On-Road <i class="fa fa-circle"></i></a></li>
-						<li role="presentation"><a href="index.html#x_road" data-toggle="tab">X-Road <i class="fa fa-circle"></i></a></li>
-						<li role="presentation"><a href="index.html#off_road" data-toggle="tab">Off-Road <i class="fa fa-circle"></i></a></li>
-						<li role="presentation"><a href="index.html#bmx" data-toggle="tab">BMX</a></li>
-					</ul>
+					<h2 class="tz-tabs-title pull-left"><?php echo trans('home.lastproducts'); ?></h2>
 				</div>
 				<!--End tab header-->
 
@@ -257,365 +250,30 @@
 				<div class="tab-content">
 
 					<!--Tab item-->
-					<div class="tab-pane active" id="one_read">
+					<div class="tab-pane active">
 						<div class="row">
-							<div class="col-md-4 col-sm-6">
+						
+							@foreach ($products as $product)
+								<div class="col-md-4 col-sm-6">
 
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product1.jpg" alt="product 1" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
+									<!--Start product item-->
+									<div class="product-item">
+										<div class="product-thubnail">
+											<img src="/public/images/product/product1.jpg" alt="product 1" />
+											<div class="product-meta">
+												<a class="add-to-cart" href="/product/{{ $product->id }}"><?php echo trans('home.view'); ?></a>
+											</div>
+										</div>
+										<div class="product-infomation">
+											<h4><a href="#">{{ $product->naam }}</a></h4>
+											<span class="product-price">{{ $product->prijs }}</span>
 										</div>
 									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">Propel Advanced SL 0</a></h4>
-										<span class="product-price">$900.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
+									<!--End product item-->
+
 								</div>
-								<!--End product item-->
-
-							</div>
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product2.jpg" alt="product 2" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">Defy Advanced SL</a></h4>
-										<span class="product-price">$1,770.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product3.jpg" alt="product 3" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">FastRoad CoMax</a></h4>
-										<span class="product-price">$900.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-						</div>
-					</div>
-					<!--End tab item-->
-
-					<!--Tab item-->
-					<div class="tab-pane" id="x_road">
-						<div class="row">
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product2.jpg" alt="product 1" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">Propel Advanced SL 0</a></h4>
-										<span class="product-price">$900.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product1.jpg" alt="product 2" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">Defy Advanced SL</a></h4>
-										<span class="product-price">$1,770.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product3.jpg" alt="product 3" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">FastRoad CoMax</a></h4>
-										<span class="product-price">$900.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-						</div>
-					</div>
-					<!--End tab item-->
-
-					<!--Tab item-->
-					<div class="tab-pane" id="off_road">
-						<div class="row">
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product1.jpg" alt="product 1" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">Propel Advanced SL 0</a></h4>
-										<span class="product-price">$900.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product2.jpg" alt="product 2" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">Defy Advanced SL</a></h4>
-										<span class="product-price">$1,770.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product3.jpg" alt="product 3" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">FastRoad CoMax</a></h4>
-										<span class="product-price">$900.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-						</div>
-					</div>
-					<!--End tab item-->
-
-					<!--Tab item-->
-					<div class="tab-pane" id="bmx">
-						<div class="row">
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product1.jpg" alt="product 1" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">Propel Advanced SL 0</a></h4>
-										<span class="product-price">$900.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product2.jpg" alt="product 2" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">Defy Advanced SL</a></h4>
-										<span class="product-price">$1,770.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
-							<div class="col-md-4 col-sm-6">
-
-								<!--Start product item-->
-								<div class="product-item">
-									<div class="product-thubnail">
-										<img src="public/images/product/product3.jpg" alt="product 3" />
-										<div class="product-meta">
-											<a class="add-to-cart" href="shop-cart.html">Add to cart</a>
-											<span class="quick-view">
-												<a href="index.html#">Quick view</a>
-											</span>
-										</div>
-									</div>
-									<div class="product-infomation">
-										<h4><a href="single-product.html">FastRoad CoMax</a></h4>
-										<span class="product-price">$900.00</span>
-										<span class="product-attr">
-											<i class="fa fa-circle light-blue"></i>
-											<i class="fa fa-circle orange"></i>
-											<i class="fa fa-circle blueviolet"></i>
-											<i class="fa fa-circle orange-dark"></i>
-											<i class="fa fa-circle steelblue"></i>
-										</span>
-									</div>
-								</div>
-								<!--End product item-->
-
-							</div>
+							@endforeach
+							
 						</div>
 					</div>
 					<!--End tab item-->

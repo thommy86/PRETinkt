@@ -6,19 +6,19 @@
 
     <title>{{ $title }}</title>
 
-    <link href="public/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
-    <link href='public/fonts/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
+    <link href='/public/fonts/font-awesome/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='public/fonts/lovelo/stylesheet.css' rel='stylesheet' type='text/css'>
+    <link href='/public/fonts/lovelo/stylesheet.css' rel='stylesheet' type='text/css'>
 
-    <link href='public/css/owl.carousel.css' rel='stylesheet' type='text/css'>
-    <link href='public/css/owl.theme.css' rel='stylesheet' type='text/css'>
-    <link href="public/rs-plugin/css/settings.css" rel="stylesheet" type='text/css'>
-    <link href="public/css/custom.css" rel="stylesheet" type='text/css'>
+    <link href='/public/css/owl.carousel.css' rel='stylesheet' type='text/css'>
+    <link href='/public/css/owl.theme.css' rel='stylesheet' type='text/css'>
+    <link href="/public/rs-plugin/css/settings.css" rel="stylesheet" type='text/css'>
+    <link href="/public/css/custom.css" rel="stylesheet" type='text/css'>
 
     <!--[if lt IE 9]>
-    <script src="public/js/html5shiv.min.js"></script>
-    <script src="public/js/respond.min.js"></script>
+    <script src="/public/js/html5shiv.min.js"></script>
+    <script src="/public/js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -47,21 +47,21 @@
                     </ul>
                     <ul class="pull-right">
                         <li>
-                            <a href="#">Wishlist</a>
+                            <a href="/wishlist"><?php echo trans("master.wishlist"); ?></a>
                         </li>
                         <li>
-                            <a href="shop-cart.html">My Cart</a>
+                            <a href="/cart"><?php echo trans("master.cart"); ?></a>
                         </li>
                         <li class="tz-header-login">
-                            <a href="#">Login</a>
+                            <a href="#"><?php echo trans("master.login"); ?></a>
                             <div class="tz-login-form">
                                 <form>
                                     <p class="form-content">
-                                        <label for="username">Username / Email</label>
+                                        <label for="username"><?php echo trans("master.username"); ?></label>
                                         <input type="text" name="username" id="username" value="">
                                     </p>
                                     <p class="form-content">
-                                        <label for="password">Password</label>
+                                        <label for="password"><?php echo trans("master.password"); ?></label>
                                         <input type="password" name="username" id="password" value="">
                                     </p>
                                 </form>
@@ -73,7 +73,7 @@
 
                 <!--Start header content-->
                 <div class="header-content">
-                    <h3 class="tz-logo pull-left"><a href="index.html"><img src="public/images/logo.png" alt="home" /></a></h3>
+                    <h3 class="tz-logo pull-left"><a href="index.html"><img src="/public/images/logo.png" alt="home" /></a></h3>
                     <div class="tz-search pull-right">
 
                         <!--Start form search-->
@@ -87,7 +87,7 @@
                         <div class="live-search">
                             <ul>
                                 <li>
-                                    <div class="live-img"><img src="public/images/product/product-search1.jpg" alt="product search one"></div>
+                                    <div class="live-img"><img src="/public/images/product/product-search1.jpg" alt="product search one"></div>
                                     <div class="live-search-content">
                                         <h6><a href="single-product.html">Defy Advanced</a></h6>
                                         <span class="live-meta">
@@ -118,10 +118,10 @@
                             <a href="/"><?php echo trans("master.home"); ?></a>
                         </li>
                         <li>
-                            <a href="/producten"><?php echo trans("master.products"); ?></a>
+                            <a href="/products"><?php echo trans("master.products"); ?></a>
                         </li>
                         <li>
-                            <a href="/offerte"><?php echo trans("master.quote"); ?></a>
+                            <a href="/quoatation"><?php echo trans("master.quoatation"); ?></a>
                         </li>
                         <li>
                             <a href="/contact"><?php echo trans("master.contact"); ?></a>
@@ -140,7 +140,7 @@
                             <!--Mini cart-->
                             <ul class="cart-inner">
                                 <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="public/images/product/product-cart1.png" alt="product search one"></div>
+                                    <div class="mini-cart-img"><img src="/public/images/product/product-cart1.png" alt="product search one"></div>
                                     <div class="mini-cart-ds">
                                         <h6><a href="single-product.html">Liv Race Day Short</a></h6>
                                         <span class="mini-cart-meta">
@@ -151,10 +151,10 @@
                                             </span>
                                         </span>
                                     </div>
-                                    <span class="mini-cart-delete"><img src="public/images/delete.png" alt="delete"></span>
+                                    <span class="mini-cart-delete"><img src="/public/images/delete.png" alt="delete"></span>
                                 </li>
                                 <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="public/images/product/product-cart2.png" alt="product search one"></div>
+                                    <div class="mini-cart-img"><img src="/public/images/product/product-cart2.png" alt="product search one"></div>
                                     <div class="mini-cart-ds">
                                         <h6><a href="single-product.html">City Pedals Sport</a></h6>
                                         <span class="mini-cart-meta">
@@ -165,10 +165,10 @@
                                             </span>
                                         </span>
                                     </div>
-                                    <span class="mini-cart-delete"><img src="public/images/delete.png" alt="delete"></span>
+                                    <span class="mini-cart-delete"><img src="/public/images/delete.png" alt="delete"></span>
                                 </li>
                                 <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="public/images/product/product-cart3.png" alt="product search one"></div>
+                                    <div class="mini-cart-img"><img src="/public/images/product/product-cart3.png" alt="product search one"></div>
                                     <div class="mini-cart-ds">
                                         <h6><a href="single-product.html">Gloss</a></h6>
                                         <span class="mini-cart-meta">
@@ -179,7 +179,7 @@
                                             </span>
                                         </span>
                                     </div>
-                                    <span class="mini-cart-delete"><img src="public/images/delete.png" alt="delete"></span>
+                                    <span class="mini-cart-delete"><img src="/public/images/delete.png" alt="delete"></span>
                                 </li>
                                 <li class="mini-subtotal">
                                     <span class="subtotal-content">
@@ -188,8 +188,8 @@
                                     </span>
                                 </li>
                                 <li class="mini-footer">
-                                    <a href="shop-cart.html" class="view-cart">View Cart</a>
-                                    <a href="shop-checkout.html" class="check-out">Checkout</a>
+                                    <a href="/cart" class="view-cart"><?php echo trans("master.cart"); ?></a>
+                                    <a href="/checkout" class="check-out"><?php echo trans("master.checkout"); ?></a>
                                 </li>
                             </ul>
                             <!--End mini cart-->
@@ -220,26 +220,25 @@
                     <!--Start footer left-->
                     <div class="footer-left">
                         <div class="contact-info widget">
-                            <h3 class="widget-title">Contact info</h3>
-                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
+                            <h3 class="widget-title"><?php echo trans("master.contactinfo"); ?></h3>
                             <ul>
                                 <li>
-                                    <span>Address :</span>
+                                    <span><?php echo trans("master.address"); ?> :</span>
                                     <address>
-                                        123 Sky Tower address name, Los Algeles, ,<br> USA, Country, 01234
+                                        <?php echo config('app.Street'); ?> <?php echo config('app.Number'); ?>, <?php echo config('app.City'); ?>,<br> <?php echo config('app.Country'); ?>
                                     </address>
                                 </li>
                                 <li>
-                                    <span>Phone :</span>
-                                    (012) 345 6789
+                                    <span><?php echo trans("master.phone"); ?> :</span>
+                                    <?php echo config('app.Phone'); ?>
                                 </li>
                                 <li>
-                                    <span>Email :</span>
-                                    info@templaza.com
+                                    <span><?php echo trans("master.email"); ?> :</span>
+                                    <?php echo config('app.Emailaddress'); ?>
                                 </li>
                             </ul>
                         </div>
-                        <div class="widget">
+                        <!--<div class="widget">
                             <ul class="tz-social">
                                 <li>
                                     <a class="fa fa-facebook" href="#"></a>
@@ -260,7 +259,7 @@
                                     <a class="fa fa-pinterest" href="#"></a>
                                 </li>
                             </ul>
-                        </div>
+                        </div>-->
                     </div>
                     <!--End footer left-->
 
@@ -269,66 +268,16 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-6">
                                 <div class="widget widget_nav_menu">
-                                    <h3 class="widget-title">HOW TO BUY</h3>
+                                    <h3 class="widget-title"><?php echo trans("master.information"); ?></h3>
                                     <ul>
                                         <li>
-                                            <a href="#">Contact Us</a>
+                                            <a href="/faq"><?php echo trans("master.faq"); ?></a>
                                         </li>
                                         <li>
-                                            <a href="#">Returns</a>
+                                            <a href="/privacy"><?php echo trans("master.privacypolicy"); ?></a>
                                         </li>
                                         <li>
-                                            <a href="#">Site Map</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Brands</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Gift Vouchers</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="widget widget_nav_menu">
-                                    <h3 class="widget-title">MY ACCOUNT</h3>
-                                    <ul>
-                                        <li>
-                                            <a href="#">My Account</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Order History</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Wish List</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Newsletter</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Specials</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="widget widget_nav_menu">
-                                    <h3 class="widget-title">Infomation</h3>
-                                    <ul>
-                                        <li>
-                                            <a href="#">About Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Returns</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Contact Us</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Term & Conditions</a>
-                                        </li>
-                                        <li>
-                                            <a href="#">Privacy Policy</a>
+                                            <a href="/shipping"><?php echo trans("master.shipping"); ?></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -343,7 +292,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
-                            <p>Copyright &copy; 2016 bij <?php echo Config::get('app.Webwinkelnaam'); ?>. All rights reserved.</p>
+                            <p>Copyright &copy; 2016 <?php echo config('app.Webshopename'); ?>. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
@@ -354,18 +303,18 @@
     </div>
     <!--End class site-->
 
-    <script type='text/javascript' src="public/js/jquery.min.js"></script>
-    <script type='text/javascript' src="public/js/bootstrap.min.js"></script>
-    <script type='text/javascript' src="public/js/off-canvas.js"></script>
+    <script type='text/javascript' src="/public/js/jquery.min.js"></script>
+    <script type='text/javascript' src="/public/js/bootstrap.min.js"></script>
+    <script type='text/javascript' src="/public/js/off-canvas.js"></script>
     <!--jQuery Countdow-->
-    <script type='text/javascript' src="public/js/jquery.plugin.min.js"></script>
-    <script type='text/javascript' src="public/js/jquery.countdown.min.js"></script>
+    <script type='text/javascript' src="/public/js/jquery.plugin.min.js"></script>
+    <script type='text/javascript' src="/public/js/jquery.countdown.min.js"></script>
     <!--End Countdow-->
-    <script type='text/javascript' src="public/js/jquery.parallax-1.1.3.js"></script>
-    <script type='text/javascript' src="public/js/owl.carousel.js"></script>
-    <script type='text/javascript' src="public/js/custom.js"></script>
-    <script type='text/javascript' src='public/rs-plugin/js/jquery.themepunch.tools.min.js'></script>
-    <script type='text/javascript' src='public/rs-plugin/js/jquery.themepunch.revolution.min.js'></script>
-    <script type='text/javascript' src='public/rs-plugin/js/custom-rs.js'></script>
+    <script type='text/javascript' src="/public/js/jquery.parallax-1.1.3.js"></script>
+    <script type='text/javascript' src="/public/js/owl.carousel.js"></script>
+    <script type='text/javascript' src="/public/js/custom.js"></script>
+    <script type='text/javascript' src='/public/rs-plugin/js/jquery.themepunch.tools.min.js'></script>
+    <script type='text/javascript' src='/public/rs-plugin/js/jquery.themepunch.revolution.min.js'></script>
+    <script type='text/javascript' src='/public/rs-plugin/js/custom-rs.js'></script>
 </body>
 </html>

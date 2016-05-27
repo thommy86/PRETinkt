@@ -13,9 +13,6 @@ return [
     |
     */
 
-    'welcometitle' => 'Hallo',
-    'welcometext' => 'Leuk dat je er bent',
-    'lastproducts' => 'Laatste producten',
-    'view' => 'Bekijk',
+    'indextitle' => 'Winkelwagen',
 
 ];
