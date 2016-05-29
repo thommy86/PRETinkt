@@ -13,7 +13,7 @@ class ProductController extends Controller
     {
 	    $products = Product::all();
         return view('product.index', [
-			'title' => trans('product.indextitle') . ' - ' . config('app.Webshopename'), 
+			'title' => trans('product.indextitle') . ' - ' . config('app.Webshopname'), 
 			'products' => $products]
 		);
     }
@@ -22,7 +22,7 @@ class ProductController extends Controller
     {
 	    $product = Product::find($id);
         return view('product.product', [
-			'title' => trans('product.producttitle') . ' - ' . config('app.Webshopename'), 
+			'title' => trans('product.producttitle') . ' - ' . config('app.Webshopname'), 
 			'product' => $product]
 		);
     }

@@ -212,7 +212,7 @@ return [
     ],
 	
 	//PRETinkt configs
-	'Webshopename' => 'PRETinkt',
+	'Webshopname' => 'PRETinkt',
 	'Companyname' => 'PRETinkt',
 	'Street' => 'PRETinktlaan',
 	'Number' => '1',

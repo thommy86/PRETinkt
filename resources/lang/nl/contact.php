@@ -14,5 +14,19 @@ return [
     */
 
     'indextitle' => 'Contact',
+    'contactinfo' => 'Contact informatie',
+    'description' => '',
+    'home' => 'Home',
+    'contact' => 'Contact',
+    'address' => 'Adres',
+    'phone' => 'Telefoon',
+    'contactus' => 'Benader ons',
+    'leaveusamessage' => 'Laat een bericht achter',
+    'name' => 'Naam',
+    'email' => 'E-mail',
+    'subject' => 'Onderwerp',
+    'message' => 'Bericht',
+    'submit' => 'Verzend',
+    'emailcontent' => 'Bedankt voor uw contact verzoek. U ontvangt zo spoedig mogelijk een reactie.',
 
 ];

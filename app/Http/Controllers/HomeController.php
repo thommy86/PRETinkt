@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
 	    $products = Product::orderBy('id', 'desc')->take(3)->get();
         return view('home.index', [
-			'title' => config('app.Webshopename'), 
+			'title' => config('app.Webshopname'), 
 			'products' => $products]
 		);
     }

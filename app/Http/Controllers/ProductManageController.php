@@ -12,7 +12,7 @@ class ProductManageController extends Controller
     {
 	    $products = Product::all();
         return view('productmanage.index', [
-			'title' => trans('productmanage.indextitle') . ' - ' . config('app.Webshopename'), 
+			'title' => trans('productmanage.indextitle') . ' - ' . config('app.Webshopname'), 
 			'products' => $products]
 		);
     }
@@ -21,7 +21,7 @@ class ProductManageController extends Controller
     {
 	    $product = Product::find($id);
         return view('productmanage.product', [
-			'title' => trans('productmanage.producttitle') . ' - ' . config('app.Webshopename'), 
+			'title' => trans('productmanage.producttitle') . ' - ' . config('app.Webshopname'), 
 			'product' => $product]
 		);
     }

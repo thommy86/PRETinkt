@@ -53,16 +53,16 @@
                         <li class="tz-header-login">
                             <a href="#"><?php echo trans("master.login"); ?></a>
                             <div class="tz-login-form">
-                                <form>
+	                            <form action="login" method="post">
                                     <p class="form-content">
                                         <label for="username"><?php echo trans("master.username"); ?></label>
-                                        <input type="text" name="username" id="username" value="">
+                                        <input type="text" name="username" id="username" value="{{ old('gebruikersnaam') }}">
                                     </p>
                                     <p class="form-content">
                                         <label for="password"><?php echo trans("master.password"); ?></label>
-                                        <input type="password" name="username" id="password" value="">
+                                        <input type="password" name="username" id="password">
                                     </p>
-                                </form>
+	                            </form>
                             </div>
                         </li>
                     </ul>
@@ -75,10 +75,10 @@
                     <div class="tz-search pull-right">
 
                         <!--Start form search-->
-                        <form>
-                            <input type="text" class="tz-query" id="tz-query" value="" placeholder="Search for product">
+                        <form accept="search" method="post">
+                            <input type="text" class="tz-query" id="tz-query" value="{{ old('zoekterm') }}" placeholder="{{ trans('master.searchforproduct') }}">
                             <button type="submit"></button>
-                        </form>
+						</form>
                         <!--End Form search-->
 
                         <!--live search-->
@@ -290,7 +290,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
-                            <p>Copyright &copy; 2016 <?php echo config('app.Webshopename'); ?>. All rights reserved.</p>
+                            <p>Copyright &copy; 2016 <?php echo config('app.Webshopname'); ?>. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

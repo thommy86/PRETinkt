@@ -14,5 +14,16 @@ return [
     */
 
     'indextitle' => 'Offerte',
+    'contactinfo' => 'Contact informatie',
+    'description' => '',
+    'home' => 'Home',
+    'contact' => 'Contact',
+    'address' => 'Adres',
+    'phone' => 'Telefoon',
+    'name' => 'Naam',
+    'email' => 'E-mail',
+    'message' => 'Bericht',
+    'submit' => 'Verzend',
+    'emailcontent' => 'Bedankt voor uw offerte aanvraag. U ontvangt zo spoedig mogelijk een reactie.',
 
 ];

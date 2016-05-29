@@ -14,7 +14,7 @@ class CheckoutController extends Controller
     public function index()
     {
         return view('checkout.index', [
-			'title' => trans('checkout.indextitle') . ' - ' . config('app.Webshopename')]
+			'title' => trans('checkout.indextitle') . ' - ' . config('app.Webshopname')]
 		);
     }
 }

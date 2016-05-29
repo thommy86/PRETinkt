@@ -33,5 +33,6 @@ return [
     'phone' => 'Telefoon',
     'email' => 'E-mail',
     'checkout' => 'Afrekenen',
+    'searchforproduct' => 'Zoek een product',
 
 ];

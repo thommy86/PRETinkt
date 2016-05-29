@@ -12,7 +12,7 @@ class CartController extends Controller
     {
 	    $products = Product::all();
         return view('cart.index', [
-			'title' => trans('cart.indextitle') . ' - ' . config('app.Webshopename'), 
+			'title' => trans('cart.indextitle') . ' - ' . config('app.Webshopname'), 
 			'products' => $products]
 		);
     }

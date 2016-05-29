@@ -225,8 +225,8 @@
 
 			<!--Get In Touch-->
 			<div class="get-in-touch">
-				<h3><?php echo trans('home.welcometitle'); ?></h3>
-				<p><?php echo trans('home.welcometext'); ?></p>
+				<h3>{{ trans('home.welcometitle') }}</h3>
+				<p>{{ trans('home.welcometext') }}</p>
 			</div>
 			<!--End Get In Touch-->
 
@@ -242,7 +242,7 @@
 
 				<!--Tabs Header-->
 				<div class="tz-tabs-header">
-					<h2 class="tz-tabs-title pull-left"><?php echo trans('home.lastproducts'); ?></h2>
+					<h2 class="tz-tabs-title pull-left">{{ trans('home.lastproducts') }}</h2>
 				</div>
 				<!--End tab header-->
 
@@ -261,7 +261,7 @@
 										<div class="product-thubnail">
 											<img src="/public/images/product/product1.jpg" alt="product 1" />
 											<div class="product-meta">
-												<a class="add-to-cart" href="/product/{{ $product->id }}"><?php echo trans('home.view'); ?></a>
+												<a class="add-to-cart" href="/product/{{ $product->id }}">{{ trans('home.view') }}</a>
 											</div>
 										</div>
 										<div class="product-infomation">

@@ -10,7 +10,7 @@ class FaqController extends Controller
     public function index()
     {
         return view('faq.index', [
-			'title' => trans('faq.indextitle') . ' - ' . config('app.Webshopename')]
+			'title' => trans('faq.indextitle') . ' - ' . config('app.Webshopname')]
 		);
     }
 }
