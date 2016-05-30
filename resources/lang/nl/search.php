@@ -14,5 +14,9 @@ return [
     */
 
     'indextitle' => 'Zoek',
+    'home' => 'Home',
+    'search' => 'Zoek',
+    'addtocart' => 'Voeg toe aan winkelwagen',
+    'addtowishlist' => 'Voeg toe aan boodschapenlijst',
 
 ];

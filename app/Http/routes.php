@@ -41,8 +41,6 @@ Route::get('privacypolicy', 'PrivacyPolicyController@index');
 
 Route::get('shipping', 'ShippingController@index');
 
-Route::get('search', 'SearchController@index');
-
 Route::get('manage/faq', 'FaqManageController@index');
 
 Route::get('manage/products', 'ProductManageController@index');
@@ -54,3 +52,5 @@ Route::get('language/{lang}', 'LanguageController@index')->where('lang', '[A-Za-
 Route::post('contact', 'ContactController@post');
 
 Route::post('quoatation', 'QuoatationController@post');
+
+Route::post('search', 'SearchController@index');

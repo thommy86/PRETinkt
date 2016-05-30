@@ -22,7 +22,7 @@ class ProductController extends Controller
     {
 	    $product = Product::find($id);
         return view('product.product', [
-			'title' => trans('product.producttitle') . ' - ' . config('app.Webshopname'), 
+			'title' => $product->naam . ' - ' . config('app.Webshopname'), 
 			'product' => $product]
 		);
     }

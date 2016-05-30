@@ -2,38 +2,32 @@
 
 namespace Webshop\Http\Controllers;
 
+use Validator;
 use Webshop\Product;
 use Webshop\Zoekterm;
+use Illuminate\Http\Request;
 use Webshop\Http\Controllers\Controller;
 
 class SearchController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('search.index', [
-			'title' => trans('search.indextitle') . ' - ' . config('app.Webshopname')]
-		);
-    }
-    
-    public function result()
-    {
-	    $rules = array(
+	    $rules = [
 			'zoekterm' => 'Required'
-		);
+		];
 
 		$validator = Validator::make($request->all(), $rules);
 
 		if ($validator->passes()) {
-	    	$producten = Product::where('productnaam', $request->input('zoekterm'));
+	    	$products = Product::where('naam', 'LIKE', '%' . $request->input('zoekterm') . '%')->get();
 	    
-	        return view('search.result', [
-				'title' => trans('search.resulttitle') . ' - ' . config('app.Webshopname'),
-				'producten' => $producten]
+	        return view('search.index', [
+				'title' => trans('search.indextitle') . ' - ' . config('app.Webshopname'),
+				'products' => $products]
 			);
 		}
 		else {
-			$request->flash();
-			return Redirect::to('search.index')->withErrors($validator);
+			return redirect('products')->withErrors($validator)->withInput();
 		}
     }
 }

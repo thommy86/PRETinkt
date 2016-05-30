@@ -81,7 +81,7 @@
                         <!--Start form search-->
                         <form action="search" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <input type="text" class="tz-query" id="tz-query" value="{{ old('zoekterm') }}" placeholder="{{ trans('master.searchforproduct') }}">
+                            <input type="text" class="tz-query" id="tz-query" name="zoekterm" value="{{ old('zoekterm') }}" placeholder="{{ trans('master.searchforproduct') }}">
                             <button type="submit"></button>
 						</form>
                         <!--End Form search-->
