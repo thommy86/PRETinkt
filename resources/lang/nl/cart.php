@@ -28,5 +28,6 @@ return [
     'productdel' => 'Product verwijdert van winkelwagen',
     'checkout' => 'Afrekenen',
     'pay' => 'Betalen',
+    'updated' => 'Cart bijgewerkt',
 
 ];

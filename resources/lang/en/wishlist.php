@@ -14,5 +14,13 @@ return [
     */
 
     'indextitle' => 'Wishlist',
+    'productset' => 'Product added to wishlist',
+    'productdel' => 'Product deleted from wishlist',
+    'home' => 'Home',
+    'wishlist' => 'Wishlist',
+    'product' => 'Product',
+    'quantity' => 'Quantity',
+    'price' => 'Price',
+    'backtoshop' => 'Back to shop',
 
 ];

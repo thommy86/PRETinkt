@@ -14,5 +14,8 @@ return [
     */
 
     'indextitle' => 'Privacy policy',
+    'home' => 'Home',
+    'privacypolicy' => 'Privacy policy',
+    'text' => 'This is the privacy policy text',
 
 ];

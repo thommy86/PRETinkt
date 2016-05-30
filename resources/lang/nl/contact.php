@@ -29,7 +29,7 @@ return [
     'message' => 'Bericht',
     'submit' => 'Verzend',
     'emailsend' => 'E-mail verzonden.',
-    'emailcontent' => 'Contact verzoek.',
-    'emailconfirmcontent' => 'Bedankt voor uw contact verzoek. U ontvangt zo spoedig mogelijk een reactie.',
+    'emailcontent' => 'Contactverzoek.',
+    'emailconfirmcontent' => 'Bedankt voor uw contactverzoek. U ontvangt zo spoedig mogelijk een reactie.',
 
 ];

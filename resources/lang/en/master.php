@@ -34,5 +34,6 @@ return [
     'phone' => 'Phone',
     'email' => 'Email',
     'checkout' => 'Checkout',
+    'searchforproduct' => 'Search a product',
 
 ];

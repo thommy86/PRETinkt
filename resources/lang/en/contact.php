@@ -14,5 +14,22 @@ return [
     */
 
     'indextitle' => 'Contact',
+    'contactinfo' => 'Contact info',
+    'description' => '',
+    'home' => 'Home',
+    'contact' => 'Contact',
+    'contactconfirm' => 'Contact confirmation',
+    'address' => 'Address',
+    'phone' => 'Phone',
+    'contactus' => 'Contact us',
+    'leaveusamessage' => 'Leave us a message',
+    'name' => 'Name',
+    'email' => 'Email',
+    'subject' => 'Subject',
+    'message' => 'Message',
+    'submit' => 'Send',
+    'emailsend' => 'Email sent.',
+    'emailcontent' => 'Contact request.',
+    'emailconfirmcontent' => 'Thank you for your contact request.',
 
 ];

@@ -22,7 +22,8 @@
             <h1 class="page-title">{{ trans('cart.cart') }}</h1>
 
             <!--Start form table-->
-            <form action="cart" method="post">
+            <form action="cart/update" method="post">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <table class="shop_table cart">
                     <!--Table header-->
                     <thead>
@@ -44,6 +45,7 @@
 						?>
 						@foreach ($products as $product)
 							<?php $subtotal += ($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity; ?>
+							<input type="hidden" name="ids[]" value="{{ $product->id }}">
 							<tr class="cart_item">
 								<td class="product-remove">
 									<a href="cart/del/{{ $product->id }}" class="remove"></a>
@@ -60,7 +62,7 @@
 								</td>
 
 								<td class="product-quantity">
-									<div class="quantity"><input type="number" step="1" min="0" name="cart" value="{{ $product->quantity }}" title="Qty" class="input-text qty text" size="4"></div>
+									<div class="quantity"><input type="number" step="1" min="0" name="quantities[]" value="{{ $product->quantity }}" title="Qty" class="input-text qty text" size="4"></div>
 								</td>
 
 								<td class="product-subtotal">

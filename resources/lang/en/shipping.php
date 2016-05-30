@@ -14,5 +14,8 @@ return [
     */
 
     'indextitle' => 'Shipping',
+    'home' => 'Home',
+    'shipping' => 'Shipping',
+    'text' => 'This is the shipping text',
 
 ];

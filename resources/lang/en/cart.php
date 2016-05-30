@@ -14,5 +14,20 @@ return [
     */
 
     'indextitle' => 'Cart',
+    'home' => 'Home',
+    'cart' => 'Cart',
+    'product' => 'Product',
+    'quantity' => 'Quantity',
+    'price' => 'Price',
+    'subtotal' => 'Subtotal',
+    'shipping' => 'Shipping',
+    'total' => 'Total',
+    'backtoshop' => 'Back to shop',
+    'updatecart' => 'Edit cart',
+    'productset' => 'Product added to cart',
+    'productdel' => 'Product deleted from cart',
+    'checkout' => 'Checkout',
+    'pay' => 'Pay',
+    'updated' => 'Cart updated',
 
 ];

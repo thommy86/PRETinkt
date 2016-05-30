@@ -14,5 +14,9 @@ return [
     */
 
     'indextitle' => 'Search',
+    'home' => 'Home',
+    'search' => 'Search',
+    'addtocart' => 'Add to cart',
+    'addtowishlist' => 'Add to wishlist',
 
 ];

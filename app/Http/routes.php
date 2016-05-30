@@ -58,3 +58,5 @@ Route::post('quoatation', 'QuoatationController@post');
 Route::post('search', 'SearchController@index');
 
 Route::post('login', 'LoginController@index');
+
+Route::post('cart/update', 'CartController@update');
