@@ -14,6 +14,11 @@
             </ul>
             <!--End Breadcrumbs-->
 			
+			{{ Session::get('message') }}
+			@foreach ($errors->all() as $error)
+				{{ $error }} <br>
+			@endforeach
+			
             <h1 class="page-title">{{ trans('wishlist.wishlist') }}</h1>
 
             <!--Start form table-->

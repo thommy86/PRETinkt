@@ -51,23 +51,27 @@
                             <a href="/cart">{{ trans("master.cart") }}</a>
                         </li>
                         <li class="tz-header-login">
-                            <a href="#">{{ trans("master.login") }}</a>
-                            <div class="tz-login-form">
-	                            <form action="login" method="post">
-									<input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                    <p class="form-content">
-                                        <label for="username">{{ trans("master.username") }}</label>
-                                        <input type="text" name="username" id="username" value="{{ old('gebruikersnaam') }}">
-                                    </p>
-                                    <p class="form-content">
-                                        <label for="password">{{ trans("master.password") }}</label>
-                                        <input type="password" name="username" id="password">
-                                    </p>
-									<p class="form-footer">
-                                        <button type="submit" class="pull-right button_class">{{ trans("master.login") }}</button>
-                                    </p>
-	                            </form>
-                            </div>
+							@if (Session::get('isAuthenticated') == true)
+								<a href="/login/off">{{ trans("master.logoff") }}</a>
+							@else
+								<a href="#">{{ trans("master.login") }}</a>
+								<div class="tz-login-form">
+									<form action="login" method="post">
+										<input type="hidden" name="_token" value="{{ csrf_token() }}">
+										<p class="form-content">
+											<label for="username">{{ trans("master.username") }}</label>
+											<input type="text" name="username" id="username" value="{{ old('gebruikersnaam') }}">
+										</p>
+										<p class="form-content">
+											<label for="password">{{ trans("master.password") }}</label>
+											<input type="password" name="password" id="password">
+										</p>
+										<p class="form-footer">
+											<button type="submit" class="pull-right button_class">{{ trans("master.login") }}</button>
+										</p>
+									</form>
+								</div>
+							@endif
                         </li>
                     </ul>
                 </div>

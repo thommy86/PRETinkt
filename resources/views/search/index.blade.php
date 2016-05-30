@@ -18,8 +18,11 @@
                                 {{ trans('search.search') }}
                             </li>
                         </ul>
-						
+			
 						{{ Session::get('message') }}
+						@foreach ($errors->all() as $error)
+							{{ $error }} <br>
+						@endforeach
 
                         <div class="tz-product row list-view">
 

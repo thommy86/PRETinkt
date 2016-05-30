@@ -15,6 +15,12 @@
                 </li>
             </ul>
             <!--End Breadcrumbs-->
+			
+			{{ Session::get('message') }}
+			@foreach ($errors->all() as $error)
+				{{ $error }} <br>
+			@endforeach
+			
 			<div class="row">
 				<div class="col-md-6 col-sm-6">
 
