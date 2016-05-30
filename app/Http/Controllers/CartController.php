@@ -14,10 +14,14 @@ class CartController extends Controller
 		$products = array();
 		
 		if ($request->session()->has('cartproducts')) {
-			$productIds = $request->session()->get('cartproducts');
+			$productIds = array_keys($request->session()->get('cartproducts'));
 			
 			if(count($productIds) > 0){
 				$products = Product::findMany($productIds);
+			}
+			
+			foreach($products as $product){
+				$product->quantity = $request->session()->get('cartproducts')[$product->id];
 			}
 		}
         return view('cart.index', [
@@ -31,11 +35,16 @@ class CartController extends Controller
 		if ($request->session()->has('cartproducts')) {
 			$productIds = $request->session()->get('cartproducts');
 			
-			if (in_array($id, $productIds) == false) {
-				array_push($productIds, $id);
+			if (array_key_exists($id, $productIds)) {
+				$quantity = $productIds[$id];
+				$quantity = $quantity + 1;
+				$productIds[$id] = $quantity;
+			} else {
+				$productIds[$id] = 1;
 			}
 		} else {
-			$productIds = array($id);
+			$productIds = array();
+			$productIds[$id] = 1;
 		}
 		
 		$request->session()->put('cartproducts', $productIds);
@@ -49,7 +58,7 @@ class CartController extends Controller
 			$productIds = $request->session()->get('cartproducts');
 						
 			if (in_array($id, $productIds)) {
-				unset($productIds[array_search($id,$productIds)]);
+				unset($productIds[$id]);
 			}
 			
 			$request->session()->put('cartproducts', $productIds);

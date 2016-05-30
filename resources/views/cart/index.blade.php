@@ -58,7 +58,7 @@
 								</td>
 
 								<td class="product-quantity">
-									<div class="quantity"><input type="number" step="1" min="0" name="cart" value="1" title="Qty" class="input-text qty text" size="4"></div>
+									<div class="quantity"><input type="number" step="1" min="0" name="cart" value="{{ $product->quantity }}" title="Qty" class="input-text qty text" size="4"></div>
 								</td>
 
 								<td class="product-subtotal">
