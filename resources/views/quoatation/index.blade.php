@@ -9,7 +9,7 @@
                     <a href="/">{{ trans('quoatation.home') }}</a>
                 </li>
                 <li class="current">
-                    {{ trans('quoatation.contact') }}
+                    {{ trans('quoatation.quoatation') }}
                 </li>
             </ul>
             <div class="blog-container">
@@ -23,14 +23,14 @@
                             <p>{{ trans('quoatation.description') }}</p>
                             <ul>
                                 <li>
-                                    <span>{{ trans('quoatation.address') }}</span>
-                                    <address><?php echo config('app.Street'); ?> <?php echo config('app.Number'); ?>, <?php echo config('app.City'); ?>,<br> <?php echo config('app.Country'); ?></address>
+                                    <span>{{ trans('quoatation.address') }}:</span>
+                                    <address>{{ config('app.Street') }} {{ config('app.Number') }}, {{ config('app.City') }},<br> {{ config('app.Country') }}</address>
                                 </li>
                                 <li>
-                                    <span>{{ trans('quoatation.phone') }}</span> <?php echo config('app.Phone'); ?>
+                                    <span>{{ trans('quoatation.phone') }}:</span> {{ config('app.Phone') }}
                                 </li>
                                 <li>
-                                    <span>{{ trans('quoatation.email') }}:</span> <?php echo config('app.Emailaddress'); ?>
+                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('app.Emailaddress') }}
                                 </li>
                             </ul>
                         </aside>
@@ -39,26 +39,26 @@
                 </div>
                 <div class="col-md-8 tz-blog-content">
                     <div id="contact-form" class="contact-respond">
-	                    <?php
-							foreach ($errors->all() as $error) {
-								echo $error;
-							}	
-						?>
+						{{ Session::get('message') }}
+                        @foreach ($errors->all() as $error)
+							{{ $error }} <br>
+						@endforeach
 						<form action="quoatation" method="post" id="commentform" class="contact-form-7">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <p class="comment-for-author">
-                                <input type="text" class="author" placeholder="{{ trans('quoatation.name') }}">
+                                <input type="text" class="author" name="name" placeholder="{{ trans('contact.name') }}" value={{ old('name') }}>
                                 <i class="fa fa-user"></i>
                             </p>
                             <p class="comment-for-email">
-                                <input type="email" class="email" placeholder="{{ trans('quoatation.email') }}">
+                                <input type="email" class="email" name="email" placeholder="{{ trans('contact.email') }}" value={{ old('email') }}>
                                 <i class="fa fa-envelope"></i>
                             </p>
                             <p class="comment-for-url">
-                                <input type="tel" class="url" placeholder="{{ trans('quoatation.phone') }}">
-                                <i class="fa fa-link"></i>
+                                <input type="tel" class="url" name="phone" placeholder="{{ trans('quoatation.phone') }}" value={{ old('phone') }}>
+                                <i class="fa fa-phone"></i>
                             </p>
                             <p class="comment-for-content">
-                                <textarea class="comment" name="comment" placeholder="{{ trans('quoatation.message') }}"></textarea>
+                                <textarea class="comment" name="message" placeholder="{{ trans('contact.message') }}">{{ old('message') }}</textarea>
                                 <i class="fa fa-comment"></i>
                             </p>
                             <p class="comment-for-submit">

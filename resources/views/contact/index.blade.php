@@ -23,14 +23,14 @@
                             <p>{{ trans('contact.description') }}</p>
                             <ul>
                                 <li>
-                                    <span>{{ trans('contact.address') }}</span>
-                                    <address><?php echo config('app.Street'); ?> <?php echo config('app.Number'); ?>, <?php echo config('app.City'); ?>,<br> <?php echo config('app.Country'); ?></address>
+                                    <span>{{ trans('contact.address') }}:</span>
+                                    <address>{{ config('app.Street') }} {{ config('app.Number') }}, {{ config('app.City') }},<br> {{ config('app.Country') }}</address>
                                 </li>
                                 <li>
-                                    <span>{{ trans('contact.phone') }}</span> <?php echo config('app.Phone'); ?>
+                                    <span>{{ trans('contact.phone') }}:</span> {{ config('app.Phone') }}
                                 </li>
                                 <li>
-                                    <span>{{ trans('contact.email') }}:</span> <?php echo config('app.Emailaddress'); ?>
+                                    <span>{{ trans('contact.email') }}:</span> {{ config('app.Emailaddress') }}
                                 </li>
                             </ul>
                         </aside>
@@ -41,12 +41,12 @@
                     <h1 class="large-ttle">{{ trans('contact.contactus') }}</h1>
                     <div id="contact-form" class="contact-respond">
                         <h3 class="tz-title">{{ trans('contact.leaveusamessage') }}</h3>
-                        <?php
-							foreach ($errors->all() as $error) {
-								echo $error;
-							}	
-						?>
+						{{ Session::get('message') }}
+                        @foreach ($errors->all() as $error)
+							{{ $error }} <br>
+						@endforeach
 						<form action="contact" method="post" id="commentform" class="contact-form-7">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <p class="comment-for-author">
                                 <input type="text" class="author" name="name" placeholder="{{ trans('contact.name') }}" value={{ old('name') }}>
                                 <i class="fa fa-user"></i>

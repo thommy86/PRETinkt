@@ -2,6 +2,8 @@
 
 namespace Webshop\Http\Controllers;
 
+use Mail;
+use Validator;
 use Illuminate\Http\Request;
 use Webshop\Http\Controllers\Controller;
 
@@ -16,12 +18,12 @@ class ContactController extends Controller
     
     public function post(Request $request)
     {
-	    $rules = array(
-			'name' => 'Required',
-			'email' => 'Required',
-			'subject' => 'Required',
-			'message' => 'Required',
-		);
+	    $rules = [
+			'name' => 'required',
+			'email' => 'required|email',
+			'subject' => 'required',
+			'message' => 'required',
+		];
 
 		$validator = Validator::make($request->all(), $rules);
 
@@ -29,21 +31,24 @@ class ContactController extends Controller
 			$data = ['name' => $request->input('name'),
 	    	'email' => $request->input('email'),
 	    	'subject' => $request->input('subject'),
-	    	'message' => $request->input('message')];
+	    	'comment' => $request->input('message')];
 			
 	    	Mail::send('emails.contact', $data, function ($message) use ($data) {
-	            $m->from(config('app.email'), config('app.Webshopname'));
+	            $message->from(config('app.Email'), config('app.Webshopname'));
 	
-	            $m->to($data['email'], $data['name'])->subject(trans('contact.contact'));
+	            $message->to(config('app.Email'), config('app.Webshopname'))->subject(trans('contact.contact'));
+	        });
+			
+			Mail::send('emails.contactconfirm', $data, function ($message) use ($data) {
+	            $message->from(config('app.Email'), config('app.Webshopname'));
+	
+	            $message->to($data['email'], $data['name'])->subject(trans('contact.contactconfirm'));
 	        });
 	    
-	        return view('contact.index', [
-				'title' => trans('contact.indextitle') . ' - ' . config('app.Webshopname')]
-			)->with('message', array('success', 'Succes', trans('contact.emailsend')));
+	        return redirect('contact')->with('message', trans('contact.emailsend'));
 		}
 		else {
-			$request->flash();
-			return Redirect::to('contact.index')->withErrors($validator);
+			return redirect('contact')->withErrors($validator)->withInput();
 		}
     }
 }

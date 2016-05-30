@@ -17,13 +17,16 @@ return [
     'contactinfo' => 'Contact informatie',
     'description' => '',
     'home' => 'Home',
-    'contact' => 'Contact',
+    'quoatation' => 'Offerte',
+    'quoatationconfirm' => 'Offerte bevestiging',
     'address' => 'Adres',
     'phone' => 'Telefoon',
     'name' => 'Naam',
     'email' => 'E-mail',
     'message' => 'Bericht',
     'submit' => 'Verzend',
-    'emailcontent' => 'Bedankt voor uw offerte aanvraag. U ontvangt zo spoedig mogelijk een reactie.',
+    'emailsend' => 'E-mail verzonden.',
+    'emailcontent' => 'Offerte aanvraag.',
+    'emailconfirmcontent' => 'Bedankt voor uw offerte aanvraag. U ontvangt zo spoedig mogelijk een reactie.',
 
 ];

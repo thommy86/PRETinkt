@@ -42,3 +42,7 @@ Route::get('manage/products', 'ProductManageController@index');
 Route::get('manage/search', 'SearchManageController@index');
 
 Route::get('language/{lang}', 'LanguageController@index')->where('lang', '[A-Za-z_-]+');
+
+Route::post('contact', 'ContactController@post');
+
+Route::post('quoatation', 'QuoatationController@post');

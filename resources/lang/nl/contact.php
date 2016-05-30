@@ -18,6 +18,7 @@ return [
     'description' => '',
     'home' => 'Home',
     'contact' => 'Contact',
+    'contactconfirm' => 'Contact bevestiging',
     'address' => 'Adres',
     'phone' => 'Telefoon',
     'contactus' => 'Benader ons',
@@ -27,6 +28,8 @@ return [
     'subject' => 'Onderwerp',
     'message' => 'Bericht',
     'submit' => 'Verzend',
-    'emailcontent' => 'Bedankt voor uw contact verzoek. U ontvangt zo spoedig mogelijk een reactie.',
+    'emailsend' => 'E-mail verzonden.',
+    'emailcontent' => 'Contact verzoek.',
+    'emailconfirmcontent' => 'Bedankt voor uw contact verzoek. U ontvangt zo spoedig mogelijk een reactie.',
 
 ];

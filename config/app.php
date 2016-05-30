@@ -219,7 +219,7 @@ return [
 	'City' => 'Breda',
 	'Country' => 'Nederland',
 	'Phone' => '012345678',
-	'Emailaddress' => 'info@pretinkt.nl',
+	'Email' => 'pretinkt@h2499828.stratoserver.net',
 	'Username' => 'admin',
 	'Password' => 'admin',
 

@@ -34,32 +34,33 @@
                     <ul class="pull-left">
                         <li>
                             <a href="language/en">
-                                <?php echo trans("master.english"); ?>
+                                {{ trans("master.english") }}
                             </a>
                         </li>
                         <li>
                             <a href="language/nl">
-                                <?php echo trans("master.dutch"); ?>
+                                {{ trans("master.dutch") }}
                             </a>
                         </li>
                     </ul>
                     <ul class="pull-right">
                         <li>
-                            <a href="/wishlist"><?php echo trans("master.wishlist"); ?></a>
+                            <a href="/wishlist">{{ trans("master.wishlist") }}</a>
                         </li>
                         <li>
-                            <a href="/cart"><?php echo trans("master.cart"); ?></a>
+                            <a href="/cart">{{ trans("master.cart") }}</a>
                         </li>
                         <li class="tz-header-login">
-                            <a href="#"><?php echo trans("master.login"); ?></a>
+                            <a href="#">{{ trans("master.login") }}</a>
                             <div class="tz-login-form">
 	                            <form action="login" method="post">
+									<input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <p class="form-content">
-                                        <label for="username"><?php echo trans("master.username"); ?></label>
+                                        <label for="username">{{ trans("master.username") }}</label>
                                         <input type="text" name="username" id="username" value="{{ old('gebruikersnaam') }}">
                                     </p>
                                     <p class="form-content">
-                                        <label for="password"><?php echo trans("master.password"); ?></label>
+                                        <label for="password">{{ trans("master.password") }}</label>
                                         <input type="password" name="username" id="password">
                                     </p>
 	                            </form>
@@ -76,6 +77,7 @@
 
                         <!--Start form search-->
                         <form accept="search" method="post">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="text" class="tz-query" id="tz-query" value="{{ old('zoekterm') }}" placeholder="{{ trans('master.searchforproduct') }}">
                             <button type="submit"></button>
 						</form>
@@ -113,16 +115,16 @@
                     <!--Main Menu-->
                     <ul class="tz-main-menu pull-left nav-collapse">
                         <li>
-                            <a href="/"><?php echo trans("master.home"); ?></a>
+                            <a href="/">{{ trans("master.home") }}</a>
                         </li>
                         <li>
-                            <a href="/products"><?php echo trans("master.products"); ?></a>
+                            <a href="/products">{{ trans("master.products") }}</a>
                         </li>
                         <li>
-                            <a href="/quoatation"><?php echo trans("master.quoatation"); ?></a>
+                            <a href="/quoatation">{{ trans("master.quoatation") }}</a>
                         </li>
                         <li>
-                            <a href="/contact"><?php echo trans("master.contact"); ?></a>
+                            <a href="/contact">{{ trans("master.contact") }}</a>
                         </li>
                     </ul>
                     <!--End Main menu-->
@@ -186,8 +188,8 @@
                                     </span>
                                 </li>
                                 <li class="mini-footer">
-                                    <a href="/cart" class="view-cart"><?php echo trans("master.cart"); ?></a>
-                                    <a href="/checkout" class="check-out"><?php echo trans("master.checkout"); ?></a>
+                                    <a href="/cart" class="view-cart">{{ trans("master.cart") }}</a>
+                                    <a href="/checkout" class="check-out">{{ trans("master.checkout") }}</a>
                                 </li>
                             </ul>
                             <!--End mini cart-->
@@ -218,23 +220,18 @@
                     <!--Start footer left-->
                     <div class="footer-left">
                         <div class="contact-info widget">
-                            <h3 class="widget-title"><?php echo trans("master.contactinfo"); ?></h3>
+                            <h3 class="widget-title">{{ trans("master.contactinfo") }}</h3>
                             <ul>
                                 <li>
-                                    <span><?php echo trans("master.address"); ?> :</span>
-                                    <address>
-                                        <?php echo config('app.Street'); ?> <?php echo config('app.Number'); ?>, <?php echo config('app.City'); ?>,<br> <?php echo config('app.Country'); ?>
-                                    </address>
+                                    <span>{{ trans('quoatation.address') }}:</span>
+                                    <address>{{ config('app.Street') }} {{ config('app.Number') }}, {{ config('app.City') }},<br> {{ config('app.Country') }}</address>
                                 </li>
                                 <li>
-                                    <span><?php echo trans("master.phone"); ?> :</span>
-                                    <?php echo config('app.Phone'); ?>
+                                    <span>{{ trans('quoatation.phone') }}:</span> {{ config('app.Phone') }}
                                 </li>
                                 <li>
-                                    <span><?php echo trans("master.email"); ?> :</span>
-                                    <?php echo config('app.Emailaddress'); ?>
+                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('app.Emailaddress') }}
                                 </li>
-                            </ul>
                         </div>
                         <!--<div class="widget">
                             <ul class="tz-social">
@@ -266,16 +263,16 @@
                         <div class="row">
                             <div class="col-md-4 col-sm-6">
                                 <div class="widget widget_nav_menu">
-                                    <h3 class="widget-title"><?php echo trans("master.information"); ?></h3>
+                                    <h3 class="widget-title">{{ trans("master.information") }}</h3>
                                     <ul>
                                         <li>
-                                            <a href="/faq"><?php echo trans("master.faq"); ?></a>
+                                            <a href="/faq">{{ trans("master.faq") }}</a>
                                         </li>
                                         <li>
-                                            <a href="/privacypolicy"><?php echo trans("master.privacypolicy"); ?></a>
+                                            <a href="/privacypolicy">{{ trans("master.privacypolicy") }}</a>
                                         </li>
                                         <li>
-                                            <a href="/shipping"><?php echo trans("master.shipping"); ?></a>
+                                            <a href="/shipping">{{ trans("master.shipping") }}</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -290,7 +287,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
-                            <p>Copyright &copy; 2016 <?php echo config('app.Webshopname'); ?>. All rights reserved.</p>
+                            <p>Copyright &copy; 2016 {{ config('app.Webshopname') }}. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
