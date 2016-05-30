@@ -13,6 +13,8 @@ class CartController extends Controller
     {
 		$products = array();
 		
+		$shipping = 7.95;
+		
 		if ($request->session()->has('cartproducts')) {
 			$productIds = array_keys($request->session()->get('cartproducts'));
 			
@@ -24,9 +26,21 @@ class CartController extends Controller
 				$product->quantity = $request->session()->get('cartproducts')[$product->id];
 			}
 		}
+		if ($request->session()->has('region')) {
+			$region = $request->session()->get('region');
+			switch($region){
+				case 1:
+					$shipping = config('app.Shipping1');
+				break;
+				case 2:
+					$shipping = config('app.Shipping2');
+				break;
+			}
+		}
         return view('cart.index', [
 			'title' => trans('cart.indextitle') . ' - ' . config('app.Webshopname'), 
-			'products' => $products]
+			'products' => $products,
+			'shipping' => $shipping]
 		);
     }
 	
@@ -48,6 +62,8 @@ class CartController extends Controller
 		}
 		
 		$request->session()->put('cartproducts', $productIds);
+		
+		$request->session()->put('region', 1);
 		
 		return redirect()->back()->with('message', trans('cart.productset'));
     }

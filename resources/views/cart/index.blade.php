@@ -22,7 +22,7 @@
             <h1 class="page-title">{{ trans('cart.cart') }}</h1>
 
             <!--Start form table-->
-            <form>
+            <form action="cart" method="post">
                 <table class="shop_table cart">
                     <!--Table header-->
                     <thead>
@@ -39,22 +39,24 @@
 
                     <!--Table body-->
                     <tbody>
-
+						<?php
+							$subtotal = 0;
+						?>
 						@foreach ($products as $product)
+							<?php $subtotal += ($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity; ?>
 							<tr class="cart_item">
 								<td class="product-remove">
-									<a href="cart/del/{{ $product->id }}" class="remove" title="Remove this item"></a>
+									<a href="cart/del/{{ $product->id }}" class="remove"></a>
 								</td>
 								<td class="product-thumbnail">
-									<!--<a href="#"><img src="/public/images/product/{{ $product->afbeelding }}" /></a>-->
-									<a href="#"><img src="/public/images/product/widget1.jpg" /></a>
+									<a href="#"><img src="/public/images/product/{{ $product->afbeelding }}" /></a>
 								</td>
 
 								<td class="product-name">
-									<a href="#">{{ $product->naam }} </a>
+									<a href="/product/{{ $product->id }}">{{ $product->naam }} </a>
 								</td>
 								<td class="product-price">
-									<span class="amount">{{ $product->prijs }}</span>
+									<span class="amount">&euro;{{ round($product->prijs + ($product->prijs * $product->BTW), 2) }}</span>
 								</td>
 
 								<td class="product-quantity">
@@ -62,7 +64,7 @@
 								</td>
 
 								<td class="product-subtotal">
-									<span class="amount">$229.00</span>
+									<span class="amount">&euro;{{ round(($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity, 2) }}</span>
 								</td>
 							</tr>
 						@endforeach
@@ -93,16 +95,21 @@
                                 <tbody>
                                     <tr class="cart-subtotal">
                                         <th>{{ trans('cart.subtotal') }}</th>
-                                        <td><span class="amount">$293.00</span></td>
+                                        <td><span class="amount">&euro;{{ round($subtotal, 2) }}</span></td>
                                     </tr>
                                     <tr class="cart-subtotal">
                                         <th>{{ trans('cart.shipping') }}</th>
-                                        <td><span class="amount">$7.00</span></td>
+                                        <td><span class="amount">&euro;{{ $shipping }}</span></td>
                                     </tr>
                                     <tr class="order-total">
                                         <th>{{ trans('cart.total') }}</th>
-                                        <td><span class="amount">$300.00</span></td>
+                                        <td><span class="amount">&euro;{{ round($subtotal + $shipping, 2) }}</span></td>
                                     </tr>
+									<tr>
+										<td class="actions" colspan="6">
+											<a href="cart/checkout" class="update-cart">{{ trans('cart.checkout') }}</a>
+										</td>
+									</tr>
                                 </tbody>
                             </table>
                         </div>

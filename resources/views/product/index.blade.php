@@ -32,8 +32,7 @@
 									<div class="item">
 										<div class="product-item-inner">
 											<div class="product-thumb">
-												<!--<img src="/public/images/product/{{ $product->afbeelding }}">-->
-												<img src="/public/images/product/shop1.jpg">
+												<img src="/public/images/product/{{ $product->afbeelding }}">
 											</div>
 											<div class="product-info">
 												<h4><a href="product/{{ $product->id }}">{{ $product->naam }}</a></h4>

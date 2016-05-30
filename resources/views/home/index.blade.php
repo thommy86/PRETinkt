@@ -259,7 +259,7 @@
 									<!--Start product item-->
 									<div class="product-item">
 										<div class="product-thubnail">
-											<img src="/public/images/product/product1.jpg" alt="product 1" />
+											<img src="/public/images/product/{{ $product->afbeelding }}">
 											<div class="product-meta">
 												<a class="add-to-cart" href="/product/{{ $product->id }}">{{ trans('home.view') }}</a>
 											</div>

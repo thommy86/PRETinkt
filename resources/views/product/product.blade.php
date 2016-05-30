@@ -28,7 +28,7 @@
 					<div class="shop-images">
 						<ul class="single-gallery">
 							<li>
-								<img src="/public/images/product/single-p.jpg" alt="Propel Advanced Pro">
+								<img src="/public/images/product/{{ $product->afbeelding }}">
 							</li>
 						</ul>
 					</div>

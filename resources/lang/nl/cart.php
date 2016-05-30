@@ -26,5 +26,7 @@ return [
     'updatecart' => 'Bewerk winkelwagen',
     'productset' => 'Product toegevoegt aan winkelwagen',
     'productdel' => 'Product verwijdert van winkelwagen',
+    'checkout' => 'Afrekenen',
+    'pay' => 'Betalen',
 
 ];

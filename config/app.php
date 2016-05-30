@@ -222,5 +222,7 @@ return [
 	'Email' => 'pretinkt@h2499828.stratoserver.net',
 	'Username' => 'admin',
 	'Password' => 'admin',
+	'Shipping1' => 7.95,
+	'Shipping2' => 12.95,
 
 ];

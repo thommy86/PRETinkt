@@ -33,7 +33,7 @@ Route::get('wishlist/set/{id}', 'WishlistController@set');
 
 Route::get('wishlist/del/{id}', 'WishlistController@del');
 
-Route::get('checkout', 'CheckoutController@index');
+Route::get('cart/checkout', 'CheckoutController@index');
 
 Route::get('faq', 'FaqController@index');
 
