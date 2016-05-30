@@ -14,5 +14,8 @@ return [
     */
 
     'indextitle' => 'Verzending',
+    'home' => 'Home',
+    'shipping' => 'Verzending',
+    'text' => 'Dit is de verzending tekst',
 
 ];
