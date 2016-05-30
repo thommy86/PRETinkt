@@ -25,6 +25,10 @@ Route::get('contact', 'ContactController@index');
 
 Route::get('wishlist', 'WishlistController@index');
 
+Route::get('wishlist/set/{id}', 'WishlistController@set');
+
+Route::get('wishlist/del/{id}', 'WishlistController@del');
+
 Route::get('checkout', 'CheckoutController@index');
 
 Route::get('faq', 'FaqController@index');
