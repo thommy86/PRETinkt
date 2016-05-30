@@ -14,5 +14,16 @@ return [
     */
 
     'indextitle' => 'Winkelwagen',
+    'home' => 'Home',
+    'cart' => 'Winkelwagen',
+    'product' => 'Product',
+    'quantity' => 'Aantal',
+    'price' => 'Prijs',
+    'subtotal' => 'Subtotaal',
+    'shipping' => 'Verzending',
+    'total' => 'Totaal',
+    'backtoshop' => 'Terug naar winkel',
+    'updatecart' => 'Bewerk winkelwagen',
+    'productset' => 'Product toegevoegd aan winkelwagen',
 
 ];

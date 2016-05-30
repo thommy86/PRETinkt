@@ -38,6 +38,7 @@
                     <!--End Blog Sidebar-->
                 </div>
                 <div class="col-md-8 tz-blog-content">
+                    <h1 class="large-ttle">{{ trans('quoatation.quoatation') }}</h1>
                     <div id="contact-form" class="contact-respond">
 						{{ Session::get('message') }}
                         @foreach ($errors->all() as $error)

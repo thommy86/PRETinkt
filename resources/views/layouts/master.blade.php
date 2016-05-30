@@ -63,6 +63,9 @@
                                         <label for="password">{{ trans("master.password") }}</label>
                                         <input type="password" name="username" id="password">
                                     </p>
+									<p class="form-footer">
+                                        <button type="submit" class="pull-right button_class">{{ trans("master.login") }}</button>
+                                    </p>
 	                            </form>
                             </div>
                         </li>
@@ -72,37 +75,16 @@
 
                 <!--Start header content-->
                 <div class="header-content">
-                    <h3 class="tz-logo pull-left"><a href="index.html"><img src="/public/images/logo.png" alt="home" /></a></h3>
+                    <h3 class="tz-logo pull-left"><a href="#"><img src="/public/images/logo.png" alt="home" /></a></h3>
                     <div class="tz-search pull-right">
 
                         <!--Start form search-->
-                        <form accept="search" method="post">
+                        <form action="search" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="text" class="tz-query" id="tz-query" value="{{ old('zoekterm') }}" placeholder="{{ trans('master.searchforproduct') }}">
                             <button type="submit"></button>
 						</form>
                         <!--End Form search-->
-
-                        <!--live search-->
-                        <div class="live-search">
-                            <ul>
-                                <li>
-                                    <div class="live-img"><img src="/public/images/product/product-search1.jpg" alt="product search one"></div>
-                                    <div class="live-search-content">
-                                        <h6><a href="single-product.html">Defy Advanced</a></h6>
-                                        <span class="live-meta">
-                                            <a href="single-product.html">$2650.00</a>
-                                            <span class="product-color">
-                                                <i class="light-blue"></i>
-                                                <i class="orange"></i>
-                                                <i class="orange-dark"></i>
-                                            </span>
-                                        </span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--End live search-->
                     </div>
                 </div>
                 <!--End class header content-->
@@ -128,75 +110,6 @@
                         </li>
                     </ul>
                     <!--End Main menu-->
-
-                    <!--Shop meta-->
-                    <ul class="tz-ecommerce-meta pull-right">
-                        <li class="tz-menu-wishlist">
-                            <a href="#"><strong>0</strong></a>
-                        </li>
-                        <li class="tz-mini-cart">
-                            <a href="shop-cart.html"><strong>2</strong>Cart : $199.00</a>
-
-                            <!--Mini cart-->
-                            <ul class="cart-inner">
-                                <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="/public/images/product/product-cart1.png" alt="product search one"></div>
-                                    <div class="mini-cart-ds">
-                                        <h6><a href="single-product.html">Liv Race Day Short</a></h6>
-                                        <span class="mini-cart-meta">
-                                            <a href="single-product.html">$2650.00</a>
-                                            <span class="mini-meta">
-                                               <span class="mini-color">Color: <i class="orange"></i></span>
-                                               <span class="mini-qty">Qty: 5</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <span class="mini-cart-delete"><img src="/public/images/delete.png" alt="delete"></span>
-                                </li>
-                                <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="/public/images/product/product-cart2.png" alt="product search one"></div>
-                                    <div class="mini-cart-ds">
-                                        <h6><a href="single-product.html">City Pedals Sport</a></h6>
-                                        <span class="mini-cart-meta">
-                                            <a href="single-product.html">$2650.00</a>
-                                            <span class="mini-meta">
-                                               <span class="mini-color">Color: <i class="orange"></i></span>
-                                               <span class="mini-qty">Qty: 5</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <span class="mini-cart-delete"><img src="/public/images/delete.png" alt="delete"></span>
-                                </li>
-                                <li class="mini-cart-content">
-                                    <div class="mini-cart-img"><img src="/public/images/product/product-cart3.png" alt="product search one"></div>
-                                    <div class="mini-cart-ds">
-                                        <h6><a href="single-product.html">Gloss</a></h6>
-                                        <span class="mini-cart-meta">
-                                            <a href="single-product.html">$2650.00</a>
-                                            <span class="mini-meta">
-                                               <span class="mini-color">Color: <i class="orange"></i></span>
-                                               <span class="mini-qty">Qty: 5</span>
-                                            </span>
-                                        </span>
-                                    </div>
-                                    <span class="mini-cart-delete"><img src="/public/images/delete.png" alt="delete"></span>
-                                </li>
-                                <li class="mini-subtotal">
-                                    <span class="subtotal-content">
-                                        Subtotal:
-                                        <strong class="pull-right">$1,100.00</strong>
-                                    </span>
-                                </li>
-                                <li class="mini-footer">
-                                    <a href="/cart" class="view-cart">{{ trans("master.cart") }}</a>
-                                    <a href="/checkout" class="check-out">{{ trans("master.checkout") }}</a>
-                                </li>
-                            </ul>
-                            <!--End mini cart-->
-
-                        </li>
-                    </ul>
-                    <!--End Shop meta-->
 
                     <!--navigation mobi-->
                     <button data-target=".nav-collapse" class="btn-navbar tz_icon_menu" type="button">
@@ -230,7 +143,7 @@
                                     <span>{{ trans('quoatation.phone') }}:</span> {{ config('app.Phone') }}
                                 </li>
                                 <li>
-                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('app.Emailaddress') }}
+                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('app.Email') }}
                                 </li>
                         </div>
                         <!--<div class="widget">

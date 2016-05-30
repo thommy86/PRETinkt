@@ -19,6 +19,10 @@ Route::get('product/{id}', 'ProductController@product')->where(['id' => '[0-9]+'
 
 Route::get('cart', 'CartController@index');
 
+Route::get('cart/set/{id}', 'CartController@set');
+
+Route::get('cart/del/{id}', 'CartController@del');
+
 Route::get('quoatation', 'QuoatationController@index');
 
 Route::get('contact', 'ContactController@index');

@@ -14,5 +14,12 @@ return [
     */
 
     'indextitle' => 'Boodschappenlijst',
+    'productset' => 'Product toegevoegd aan boodschappenlijst',
+    'home' => 'Home',
+    'wishlist' => 'Boodschappenlijst',
+    'product' => 'Product',
+    'quantity' => 'Aantal',
+    'price' => 'Prijs',
+    'backtoshop' => 'Terug naar winkel',
 
 ];

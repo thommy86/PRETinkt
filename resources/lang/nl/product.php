@@ -13,6 +13,14 @@ return [
     |
     */
 
-    'indextitle' => 'Product',
+    'indextitle' => 'Producten',
+    'producttitle' => 'Product',
+    'home' => 'Home',
+    'products' => 'Producten',
+    'product' => 'Product',
+    'addtocart' => 'Voeg toe aan winkelwagen',
+    'addtowishlist' => 'Voeg toe aan boodschapenlijst',
+    'quantity' => 'Aantal',
+    'stock' => 'Voorraad',
 
 ];
