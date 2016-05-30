@@ -11,12 +11,14 @@ class CartController extends Controller
 {
     public function index(Request $request)
     {
-		$productIds = $request->session()->get('cartproducts');
-		if($productIds === null)
-		{
-			$products = array();
-		} else {
-			$products = Product::findMany($productIds);
+		$products = array();
+		
+		if ($request->session()->has('cartproducts')) {
+			$productIds = $request->session()->get('cartproducts');
+			
+			if(count($productIds) > 0){
+				$products = Product::findMany($productIds);
+			}
 		}
         return view('cart.index', [
 			'title' => trans('cart.indextitle') . ' - ' . config('app.Webshopname'), 
@@ -26,35 +28,32 @@ class CartController extends Controller
 	
     public function set(Request $request, $id)
     {
-		$productIds = $request->session()->get('cartproducts');
-		
-		if($productIds === null)
-		{
-			$productIds = array($id);
+		if ($request->session()->has('cartproducts')) {
+			$productIds = $request->session()->get('cartproducts');
+			
+			if (in_array($id, $productIds) == false) {
+				array_push($productIds, $id);
+			}
 		} else {
-			array_push($productIds, $id);
+			$productIds = array($id);
 		}
 		
-		$request->session()->push('cartproducts', $productIds);
+		$request->session()->put('cartproducts', $productIds);
 		
 		return redirect()->back()->with('message', trans('cart.productset'));
     }
 	
     public function del(Request $request, $id)
     {
-		$productIds = $request->session()->get('cartproducts');
-		
-		if($productIds === null)
-		{
-			$productIds = array();
-		} else {
-			if (in_array($id, $productIds)) 
-			{
+		if ($request->session()->has('cartproducts')) {
+			$productIds = $request->session()->get('cartproducts');
+						
+			if (in_array($id, $productIds)) {
 				unset($productIds[array_search($id,$productIds)]);
 			}
+			
+			$request->session()->put('cartproducts', $productIds);
 		}
-		
-		$request->session()->push('cartproducts', $productIds);
 		
 		return redirect()->back()->with('message', trans('cart.productdel'));
     }
