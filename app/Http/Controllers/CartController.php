@@ -2,6 +2,7 @@
 
 namespace Webshop\Http\Controllers;
 
+use Validator;
 use Webshop\Product;
 use Webshop\Merk;
 use Illuminate\Http\Request;
@@ -82,4 +83,33 @@ class CartController extends Controller
 		
 		return redirect()->back()->with('message', trans('cart.productdel'));
     }
+	
+	public function update(Request $request)
+	{
+		$rules = [
+			'ids' => 'required',
+			'quantities' => 'required',
+		];
+
+		$validator = Validator::make($request->all(), $rules);
+
+		if ($validator->passes()) {
+			if ($request->session()->has('cartproducts')) {
+				$productIds = $request->session()->get('cartproducts');
+				
+				for ($i = 0; $i < count($request->input('ids')); $i++) {
+					if (array_key_exists($request->input('ids')[$i], $productIds)) {
+						$quantity = $request->input('quantities')[$i];
+						$productIds[$request->input('ids')[$i]] = $quantity;
+					}
+				}
+				
+				$request->session()->put('cartproducts', $productIds);
+			}
+						
+			return redirect('cart')->with('message', trans('cart.updated'));
+		} else {
+			return redirect('cart')->withErrors($validator)->withInput();
+		}
+	}
 }
