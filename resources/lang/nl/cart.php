@@ -24,6 +24,7 @@ return [
     'total' => 'Totaal',
     'backtoshop' => 'Terug naar winkel',
     'updatecart' => 'Bewerk winkelwagen',
-    'productset' => 'Product toegevoegd aan winkelwagen',
+    'productset' => 'Product toegevoegt aan winkelwagen',
+    'productdel' => 'Product verwijdert van winkelwagen',
 
 ];

@@ -32,7 +32,9 @@ class WishlistController extends Controller
 		{
 			$productIds = array($id);
 		} else {
-			array_push($productIds, $id);
+			if (in_array($id, $productIds) == false) {
+				array_push($productIds, $id);
+			}
 		}
 		
 		return redirect()->back()->withCookie(cookie()->forever('wishlistproducts', $productIds))->with('message', trans('wishlist.productset'));
