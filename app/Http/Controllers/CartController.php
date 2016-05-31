@@ -73,7 +73,7 @@ class CartController extends Controller
 		if ($request->session()->has('cartproducts')) {
 			$productIds = $request->session()->get('cartproducts');
 						
-			if (in_array($id, $productIds)) {
+			if (array_key_exists($id, $productIds)) {
 				unset($productIds[$id]);
 			}
 			
