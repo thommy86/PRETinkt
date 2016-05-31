@@ -14,5 +14,9 @@ return [
     */
 
     'indextitle' => 'Faq',
+    'home' => 'Home',
+    'faq' => 'FAQ',
+    'question' => 'Question',
+    'answer' => 'Answer',
 
 ];
