@@ -26,17 +26,33 @@
 
                         <div class="tz-product row list-view">
 
+							@if (count($products) == 0)
+								<!--Product item-->
+								<div class="product-item col-md-4 col-sm-6">
+									<div class="item">
+										<div class="product-item-inner">
+											<div class="product-info">
+												<h4><a href="#}">{{ trans('search.noresult') }}</a></h4>
+												<p>
+													<a href="/quoatation">{{ trans('search.quoatation') }}</a>
+												</p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!--End product item-->
+							@endif
+						
 							@foreach ($products as $product)
 								<!--Product item-->
 								<div class="product-item col-md-4 col-sm-6">
 									<div class="item">
 										<div class="product-item-inner">
 											<div class="product-thumb">
-												<!--<img src="/public/images/product/{{ $product->afbeelding }}">-->
-												<img src="/public/images/product/shop1.jpg">
+												<img src="/public/images/product/{{ $product->afbeelding }}">
 											</div>
 											<div class="product-info">
-												<h4><a href="product/{{ $product->id }}">{{ $product->naam }}</a></h4>
+												<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
 												<span class="p-meta">
 													<span class="p-price">{{ $product->prijs }}</span>
 													<span class="p-vote">

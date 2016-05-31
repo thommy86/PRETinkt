@@ -35,7 +35,7 @@
 												<img src="/public/images/product/{{ $product->afbeelding }}">
 											</div>
 											<div class="product-info">
-												<h4><a href="product/{{ $product->id }}">{{ $product->naam }}</a></h4>
+												<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
 												<span class="p-meta">
 													<span class="p-price">{{ $product->prijs }}</span>
 													<span class="p-vote">

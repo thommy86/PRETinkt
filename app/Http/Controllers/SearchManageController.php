@@ -9,8 +9,19 @@ class SearchManageController extends Controller
 {
     public function index()
     {
+		$searches = Zoekterm::all();
         return view('searchmanage.index', [
-			'title' => trans('searchmanage.indextitle') . ' - ' . config('app.Webshopname')]
+			'title' => trans('searchmanage.indextitle') . ' - ' . config('app.Webshopname'),
+			'searches' => $searches]
 		);
     }
+	
+	public function del($id)
+	{
+		$search = Zoekterm::find($id);
+		
+		$search->delete();
+		
+		return redirect('admin/search')->with('message', trans('searchmanage.searchdel'));
+	}
 }

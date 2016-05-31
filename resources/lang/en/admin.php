@@ -16,5 +16,8 @@ return [
     'indextitle' => 'Admin',
     'home' => 'Home',
     'admin' => 'Admin',
+    'search' => 'Search',
+    'faq' => 'FAQ',
+    'products' => 'Products',
 
 ];

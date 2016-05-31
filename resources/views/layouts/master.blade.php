@@ -33,12 +33,12 @@
                 <div class="header-top">
                     <ul class="pull-left">
                         <li>
-                            <a href="language/en">
+                            <a href="/language/en">
                                 {{ trans("master.english") }}
                             </a>
                         </li>
                         <li>
-                            <a href="language/nl">
+                            <a href="/language/nl">
                                 {{ trans("master.dutch") }}
                             </a>
                         </li>

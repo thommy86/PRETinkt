@@ -2,7 +2,7 @@
 
 namespace Webshop\Http\Controllers;
 
-use Webshop\VraagAntwoord
+use Webshop\VraagAntwoord;
 use Webshop\Http\Controllers\Controller;
 
 class FaqManageController extends Controller

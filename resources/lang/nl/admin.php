@@ -16,5 +16,8 @@ return [
     'indextitle' => 'Admin',
     'home' => 'Home',
     'admin' => 'Admin',
+    'search' => 'Zoek',
+    'faq' => 'FAQ',
+    'products' => 'Producten',
 
 ];

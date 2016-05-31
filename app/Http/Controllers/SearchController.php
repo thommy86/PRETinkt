@@ -21,6 +21,12 @@ class SearchController extends Controller
 		if ($validator->passes()) {
 	    	$products = Product::where('naam', 'LIKE', '%' . $request->input('zoekterm') . '%')->get();
 	    
+			if(count($products) == 0){
+				$zoekterm = new Zoekterm();
+				$zoekterm->zoekterm = $request->input('zoekterm');
+				$zoekterm->save();
+			}
+		
 	        return view('search.index', [
 				'title' => trans('search.indextitle') . ' - ' . config('app.Webshopname'),
 				'products' => $products]

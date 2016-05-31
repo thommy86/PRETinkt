@@ -32,7 +32,7 @@
 								<!--Content-->
 								<article class="single-blog">
 
-									<h1><a href="#">{{ trans('privacypolicy.privacypolicy') }}</a></h1>
+									<h1>{{ trans('privacypolicy.privacypolicy') }}</h1>
 									<div class="single-content">
 										<p>
 											{{ trans('privacypolicy.text') }}

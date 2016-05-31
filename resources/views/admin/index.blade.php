@@ -7,9 +7,6 @@
 
 			<!--Start breadcrumbs-->
 			<ul class="tz-breadcrumbs">
-				<li>
-					<a href="/">{{ trans('admin.home') }}</a>
-				</li>
 				<li class="current">
 					{{ trans('admin.admin') }}
 				</li>
@@ -22,6 +19,10 @@
 			@endforeach
 			
 			<h1>Admin<h1>
+			
+			<a href="/admin/search">{{ trans('admin.search') }}</a><br>
+			<a href="/admin/faq">{{ trans('admin.faq') }}</a><br>
+			<a href="/admin/products">{{ trans('admin.products') }}</a><br>
 			
 		</div>
 	</div>

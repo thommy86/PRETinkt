@@ -265,7 +265,7 @@
 											</div>
 										</div>
 										<div class="product-infomation">
-											<h4><a href="#">{{ $product->naam }}</a></h4>
+											<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
 											<span class="product-price">{{ $product->prijs }}</span>
 										</div>
 									</div>

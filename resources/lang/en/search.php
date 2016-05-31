@@ -18,5 +18,7 @@ return [
     'search' => 'Search',
     'addtocart' => 'Add to cart',
     'addtowishlist' => 'Add to wishlist',
+    'noresult' => 'No results found',
+    'quoatation' => 'Request a quoatation',
 
 ];

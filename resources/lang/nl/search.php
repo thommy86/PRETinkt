@@ -18,5 +18,7 @@ return [
     'search' => 'Zoek',
     'addtocart' => 'Voeg toe aan winkelwagen',
     'addtowishlist' => 'Voeg toe aan boodschapenlijst',
+    'noresult' => 'Geen resultaten gevonden',
+    'quoatation' => 'Vraag een offerte aan',
 
 ];

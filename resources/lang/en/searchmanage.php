@@ -14,5 +14,10 @@ return [
     */
 
     'indextitle' => 'Search manage',
+    'searchdel' => 'Word deleted',
+    'admin' => 'Admin',
+    'search' => 'Search',
+    'word' => 'Word',
+    'backtoadmin' => 'Back to admin',
 
 ];

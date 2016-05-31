@@ -32,7 +32,7 @@
 								<!--Content-->
 								<article class="single-blog">
 
-									<h1><a href="#">{{ trans('shipping.shipping') }}</a></h1>
+									<h1>{{ trans('shipping.shipping') }}</h1>
 									<div class="single-content">
 										<p>
 											{{ trans('shipping.text') }}

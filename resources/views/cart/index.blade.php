@@ -55,10 +55,10 @@
 							<input type="hidden" name="ids[]" value="{{ $product->id }}">
 							<tr class="cart_item">
 								<td class="product-remove">
-									<a href="cart/del/{{ $product->id }}" class="remove"></a>
+									<a href="/cart/del/{{ $product->id }}" class="remove"></a>
 								</td>
 								<td class="product-thumbnail">
-									<a href="#"><img src="/public/images/product/{{ $product->afbeelding }}" /></a>
+									<a href="/product/{{ $product->id }}"><img src="/public/images/product/{{ $product->afbeelding }}" /></a>
 								</td>
 
 								<td class="product-name">
@@ -119,7 +119,7 @@
 									@if (count($products) > 0)
 										<tr>
 											<td class="actions" colspan="6">
-												<a href="cart/checkout" class="update-cart">{{ trans('cart.checkout') }}</a>
+												<a href="/cart/checkout" class="update-cart">{{ trans('cart.checkout') }}</a>
 											</td>
 										</tr>
 									@endif

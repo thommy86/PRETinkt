@@ -41,11 +41,13 @@ Route::get('privacypolicy', 'PrivacyPolicyController@index');
 
 Route::get('shipping', 'ShippingController@index');
 
-Route::get('manage/faq', 'FaqManageController@index');
+Route::get('admin/faq', 'FaqManageController@index');
 
-Route::get('manage/products', 'ProductManageController@index');
+Route::get('admin/products', 'ProductManageController@index');
 
-Route::get('manage/search', 'SearchManageController@index');
+Route::get('admin/search', 'SearchManageController@index');
+
+Route::get('admin/search/del/{id}', 'SearchManageController@del');
 
 Route::get('language/{lang}', 'LanguageController@index')->where('lang', '[A-Za-z_-]+');
 

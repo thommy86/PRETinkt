@@ -14,5 +14,10 @@ return [
     */
 
     'indextitle' => 'Zoek beheer',
+    'searchdel' => 'Woord verwijdert',
+    'admin' => 'Admin',
+    'search' => 'Zoek',
+    'word' => 'Woord',
+    'backtoadmin' => 'Terug naar admin',
 
 ];
