@@ -20,12 +20,12 @@ class LoginController extends Controller
 		if ($validator->passes()) {
 			if(config('app.Username') == $request->input('username') && config('app.Password') == $request->input('password')){
 				$request->session()->push('isAuthenticated', true);
-				return redirect()->back()->with('message', trans('login.success'));
+				return redirect('admin')->with('message', trans('login.success'));
 			} else {
 				return redirect()->back()->with('message', trans('login.failed'));
 			}
 		} else {
-			return redirect('contact')->withErrors($validator)->withInput();
+			return redirect()->back()->withErrors($validator)->withInput();
 		}
     }
 	

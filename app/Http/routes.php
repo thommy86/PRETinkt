@@ -51,6 +51,8 @@ Route::get('language/{lang}', 'LanguageController@index')->where('lang', '[A-Za-
 
 Route::get('login/off', 'LoginController@off');
 
+Route::get('admin', 'AdminController@index');
+
 Route::post('contact', 'ContactController@post');
 
 Route::post('quoatation', 'QuoatationController@post');
