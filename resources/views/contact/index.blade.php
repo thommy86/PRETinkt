@@ -30,7 +30,7 @@
                                     <span>{{ trans('contact.phone') }}:</span> {{ config('app.Phone') }}
                                 </li>
                                 <li>
-                                    <span>{{ trans('contact.email') }}:</span> {{ config('app.Emailaddress') }}
+                                    <span>{{ trans('contact.email') }}:</span> {{ config('app.Email') }}
                                 </li>
                             </ul>
                         </aside>
