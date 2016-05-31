@@ -4,7 +4,6 @@ namespace Webshop\Http\Controllers;
 
 use Validator;
 use Webshop\Product;
-use Webshop\Merk;
 use Illuminate\Http\Request;
 use Webshop\Http\Controllers\Controller;
 

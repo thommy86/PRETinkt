@@ -3,7 +3,6 @@
 namespace Webshop\Http\Controllers;
 
 use Webshop\Product;
-use Webshop\Merk;
 use Webshop\Klant;
 use Webshop\Bestelling;
 use Webshop\BestellingProduct;
