@@ -17,5 +17,9 @@ return [
     'welcometext' => 'Leuk dat je er bent',
     'lastproducts' => 'Laatste producten',
     'view' => 'Bekijk',
+    'shopnow' => 'Bekijk producten',
+    'subtitle1' => 'Bestel uw producten met hoge korting',
+    'subtitle2' => 'Bespaar op uw print kosten!',
+    'subtitle3' => 'Gemakkelijk printer inkt cartridges & toners bestellen!',
 
 ];

@@ -79,7 +79,7 @@
 
                 <!--Start header content-->
                 <div class="header-content">
-                    <h3 class="tz-logo pull-left"><a href="#"><img src="/public/images/logo.png" alt="home" /></a></h3>
+                    <h3 class="tz-logo pull-left">{{ config('app.Webshopname') }}</h3>
                     <div class="tz-search pull-right">
 
                         <!--Start form search-->

@@ -129,7 +129,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut">Bestel uw Inkt met hoge korting
+						 data-endeasing="Power4.easeOut">{{ trans('home.subtitle1') }}
 					</div>
 
 					<!-- LAYER NR. 12 -->
@@ -146,7 +146,7 @@
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
 						 data-endspeed="1000"
-						 data-endeasing="Power4.easeOut"><a href='#' class='buttom_bike'>Shop Now</a>
+						 data-endeasing="Power4.easeOut"><a href='/products' class='buttom_bike'>{{ trans('home.shopnow') }}</a>
 					</div>
 				</li>
 				<li data-transition="fade" data-slotamount="7" data-masterspeed="700"  data-saveperformance="off" >
@@ -165,7 +165,7 @@
 						 data-splitout="none"
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
-						 data-endspeed="300">Bespaar op uw print kosten!
+						 data-endspeed="300">{{ trans('home.subtitle2') }}
 					</div>
 
 					<!-- LAYER NR. 2 -->
@@ -179,7 +179,7 @@
 						 data-splitout="none"
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
-						 data-endspeed="300"><a href='#' class='buttom_bike'>Shop Now</a>
+						 data-endspeed="300"><a href='/products' class='buttom_bike'>{{ trans('home.shopnow') }}</a>
 					</div>
 				</li>
 				<li data-transition="fade" data-slotamount="7" data-masterspeed="700"  data-saveperformance="off" >
@@ -198,7 +198,7 @@
 						 data-splitout="none"
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
-						 data-endspeed="300">Gemakkelijk Printer Inkt Cartridges & Toner bestellen!
+						 data-endspeed="300">{{ trans('home.subtitle3') }}
 					</div>
 
 					<!-- LAYER NR. 2 -->
@@ -212,7 +212,7 @@
 						 data-splitout="none"
 						 data-elementdelay="0.1"
 						 data-endelementdelay="0.1"
-						 data-endspeed="300"><a href='#' class='buttom_bike'>Shop Now</a>
+						 data-endspeed="300"><a href='/products' class='buttom_bike'>{{ trans('home.shopnow') }}</a>
 					</div>
 				</li>
 			</ul>

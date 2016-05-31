@@ -23,11 +23,12 @@ return [
     'shipping' => 'Shipping',
     'total' => 'Total',
     'backtoshop' => 'Back to shop',
-    'updatecart' => 'Edit cart',
+    'updatecart' => 'Update cart',
     'productset' => 'Product added to cart',
     'productdel' => 'Product deleted from cart',
     'checkout' => 'Checkout',
     'pay' => 'Pay',
     'updated' => 'Cart updated',
+    'noproductitems' => 'Your cart does not contain any product',
 
 ];

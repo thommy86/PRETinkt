@@ -29,5 +29,6 @@ return [
     'checkout' => 'Afrekenen',
     'pay' => 'Betalen',
     'updated' => 'Cart bijgewerkt',
+    'noproductitems' => 'Uw winkelwagen bevat geen producten',
 
 ];

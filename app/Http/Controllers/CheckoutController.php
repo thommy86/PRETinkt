@@ -15,10 +15,14 @@ class CheckoutController extends Controller
     {
 		$products = array();
 		
-		$shipping = 7.95;
+		$shipping = config('app.Shipping1');
 		
 		if ($request->session()->has('cartproducts')) {
 			$productIds = array_keys($request->session()->get('cartproducts'));
+			
+			if(count($productIds) == 0) {
+				return redirect('/');
+			}
 			
 			if(count($productIds) > 0){
 				$products = Product::findMany($productIds);
@@ -27,7 +31,10 @@ class CheckoutController extends Controller
 			foreach($products as $product){
 				$product->quantity = $request->session()->get('cartproducts')[$product->id];
 			}
+		} else {
+			return redirect('/');
 		}
+		
 		if ($request->session()->has('region')) {
 			$region = $request->session()->get('region');
 			switch($region){

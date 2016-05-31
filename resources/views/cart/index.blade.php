@@ -43,6 +43,13 @@
 						<?php
 							$subtotal = 0;
 						?>
+						@if (count($products) == 0)
+							<tr>
+								<td colspan="6">
+									{{ trans('cart.noproductitems') }}
+								</td>
+							</tr>
+						@endif
 						@foreach ($products as $product)
 							<?php $subtotal += ($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity; ?>
 							<input type="hidden" name="ids[]" value="{{ $product->id }}">
@@ -70,10 +77,12 @@
 								</td>
 							</tr>
 						@endforeach
-                        <tr>
+						<tr>
                             <td class="actions" colspan="6">
                                 <a class="back-shop" href="/products"><i class="fa fa-angle-left"></i> {{ trans('cart.backtoshop') }}</a>
-                                <button class="update-cart" type="submit">{{ trans('cart.updatecart') }}</button>
+								@if (count($products) > 0)
+									<button class="update-cart" type="submit">{{ trans('cart.updatecart') }}</button>
+								@endif
                             </td>
                         </tr>
 
@@ -107,11 +116,13 @@
                                         <th>{{ trans('cart.total') }}</th>
                                         <td><span class="amount">&euro;{{ round($subtotal + $shipping, 2) }}</span></td>
                                     </tr>
-									<tr>
-										<td class="actions" colspan="6">
-											<a href="cart/checkout" class="update-cart">{{ trans('cart.checkout') }}</a>
-										</td>
-									</tr>
+									@if (count($products) > 0)
+										<tr>
+											<td class="actions" colspan="6">
+												<a href="cart/checkout" class="update-cart">{{ trans('cart.checkout') }}</a>
+											</td>
+										</tr>
+									@endif
                                 </tbody>
                             </table>
                         </div>
