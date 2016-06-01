@@ -15,9 +15,12 @@ class CheckoutController extends Controller
     {
 		$products = array();
 		
+		//Default shipping
 		$shipping = config('webshop.Shipping1');
 		
+		//Check if cart session exist
 		if ($request->session()->has('cartproducts')) {
+			//Get product ids from cart session
 			$productIds = array_keys($request->session()->get('cartproducts'));
 			
 			if(count($productIds) == 0) {
@@ -25,17 +28,21 @@ class CheckoutController extends Controller
 			}
 			
 			if(count($productIds) > 0){
+				//Get products from database by product ids from the cart
 				$products = Product::findMany($productIds);
 			}
 			
 			foreach($products as $product){
+				//Get quantity of products from cart
 				$product->quantity = $request->session()->get('cartproducts')[$product->id];
 			}
 		} else {
 			return redirect('/');
 		}
 		
+		//Check if region session exist
 		if ($request->session()->has('region')) {
+			//Get region from cart session
 			$region = $request->session()->get('region');
 			switch($region){
 				case 1:
@@ -46,6 +53,7 @@ class CheckoutController extends Controller
 				break;
 			}
 		}
+		
         return view('checkout.index', [
 			'title' => trans('checkout.indextitle') . ' - ' . config('webshop.Webshopname'), 
 			'products' => $products,

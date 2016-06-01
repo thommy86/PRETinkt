@@ -16,7 +16,9 @@ class LanguageController extends Controller
 	 */
 	public function index($lang)
 	{		
+		//Edit locale session with given lang
 		Session::set('locale', $lang);
+		
 		return redirect()->back();
 	}
 }
