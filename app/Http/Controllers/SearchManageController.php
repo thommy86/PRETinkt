@@ -11,7 +11,7 @@ class SearchManageController extends Controller
     {
 		$searches = Zoekterm::all();
         return view('searchmanage.index', [
-			'title' => trans('searchmanage.indextitle') . ' - ' . config('app.Webshopname'),
+			'title' => trans('searchmanage.indextitle') . ' - ' . config('webshop.Webshopname'),
 			'searches' => $searches]
 		);
     }

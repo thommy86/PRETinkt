@@ -24,13 +24,13 @@
                             <ul>
                                 <li>
                                     <span>{{ trans('contact.address') }}:</span>
-                                    <address>{{ config('app.Street') }} {{ config('app.Number') }}, {{ config('app.City') }},<br> {{ config('app.Country') }}</address>
+                                    <address>{{ config('webshop.Street') }} {{ config('webshop.Number') }}, {{ config('webshop.City') }},<br> {{ config('webshop.Country') }}</address>
                                 </li>
                                 <li>
-                                    <span>{{ trans('contact.phone') }}:</span> {{ config('app.Phone') }}
+                                    <span>{{ trans('contact.phone') }}:</span> {{ config('webshop.Phone') }}
                                 </li>
                                 <li>
-                                    <span>{{ trans('contact.email') }}:</span> {{ config('app.Email') }}
+                                    <span>{{ trans('contact.email') }}:</span> {{ config('webshop.Email') }}
                                 </li>
                             </ul>
                         </aside>

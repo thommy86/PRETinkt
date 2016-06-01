@@ -24,13 +24,13 @@
                             <ul>
                                 <li>
                                     <span>{{ trans('quoatation.address') }}:</span>
-                                    <address>{{ config('app.Street') }} {{ config('app.Number') }}, {{ config('app.City') }},<br> {{ config('app.Country') }}</address>
+                                    <address>{{ config('webshop.Street') }} {{ config('webshop.Number') }}, {{ config('webshop.City') }},<br> {{ config('webshop.Country') }}</address>
                                 </li>
                                 <li>
-                                    <span>{{ trans('quoatation.phone') }}:</span> {{ config('app.Phone') }}
+                                    <span>{{ trans('quoatation.phone') }}:</span> {{ config('webshop.Phone') }}
                                 </li>
                                 <li>
-                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('app.Emailaddress') }}
+                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('webshop.Emailaddress') }}
                                 </li>
                             </ul>
                         </aside>

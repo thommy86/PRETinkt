@@ -15,7 +15,7 @@ class CheckoutController extends Controller
     {
 		$products = array();
 		
-		$shipping = config('app.Shipping1');
+		$shipping = config('webshop.Shipping1');
 		
 		if ($request->session()->has('cartproducts')) {
 			$productIds = array_keys($request->session()->get('cartproducts'));
@@ -39,15 +39,15 @@ class CheckoutController extends Controller
 			$region = $request->session()->get('region');
 			switch($region){
 				case 1:
-					$shipping = config('app.Shipping1');
+					$shipping = config('webshop.Shipping1');
 				break;
 				case 2:
-					$shipping = config('app.Shipping2');
+					$shipping = config('webshop.Shipping2');
 				break;
 			}
 		}
         return view('checkout.index', [
-			'title' => trans('checkout.indextitle') . ' - ' . config('app.Webshopname'), 
+			'title' => trans('checkout.indextitle') . ' - ' . config('webshop.Webshopname'), 
 			'products' => $products,
 			'shipping' => $shipping]
 		);

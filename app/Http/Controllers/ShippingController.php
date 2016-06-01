@@ -9,7 +9,7 @@ class ShippingController extends Controller
     public function index()
     {
         return view('shipping.index', [
-			'title' => trans('shipping.indextitle') . ' - ' . config('app.Webshopname')]
+			'title' => trans('shipping.indextitle') . ' - ' . config('webshop.Webshopname')]
 		);
     }
 }

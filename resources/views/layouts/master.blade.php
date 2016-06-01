@@ -79,7 +79,7 @@
 
                 <!--Start header content-->
                 <div class="header-content">
-                    <h3 class="tz-logo pull-left">{{ config('app.Webshopname') }}</h3>
+                    <h3 class="tz-logo pull-left">{{ config('webshop.Webshopname') }}</h3>
                     <div class="tz-search pull-right">
 
                         <!--Start form search-->
@@ -141,13 +141,13 @@
                             <ul>
                                 <li>
                                     <span>{{ trans('quoatation.address') }}:</span>
-                                    <address>{{ config('app.Street') }} {{ config('app.Number') }}, {{ config('app.City') }},<br> {{ config('app.Country') }}</address>
+                                    <address>{{ config('webshop.Street') }} {{ config('webshop.Number') }}, {{ config('webshop.City') }},<br> {{ config('webshop.Country') }}</address>
                                 </li>
                                 <li>
-                                    <span>{{ trans('quoatation.phone') }}:</span> {{ config('app.Phone') }}
+                                    <span>{{ trans('quoatation.phone') }}:</span> {{ config('webshop.Phone') }}
                                 </li>
                                 <li>
-                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('app.Email') }}
+                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('webshop.Email') }}
                                 </li>
                         </div>
                         <!--<div class="widget">
@@ -204,7 +204,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-6">
-                            <p>Copyright &copy; 2016 {{ config('app.Webshopname') }}. All rights reserved.</p>
+                            <p>Copyright &copy; 2016 {{ config('webshop.Webshopname') }}. All rights reserved.</p>
                         </div>
                     </div>
                 </div>

@@ -19,7 +19,7 @@ class WishlistController extends Controller
 			$products = Product::findMany($productIds);
 		}
 		return view('wishlist.index', [
-			'title' => trans('wishlist.indextitle') . ' - ' . config('app.Webshopname'),
+			'title' => trans('wishlist.indextitle') . ' - ' . config('webshop.Webshopname'),
 			'products' => $products]
 		);
     }

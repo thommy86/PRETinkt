@@ -30,15 +30,15 @@ class CartController extends Controller
 			$region = $request->session()->get('region');
 			switch($region){
 				case 1:
-					$shipping = config('app.Shipping1');
+					$shipping = config('webshop.Shipping1');
 				break;
 				case 2:
-					$shipping = config('app.Shipping2');
+					$shipping = config('webshop.Shipping2');
 				break;
 			}
 		}
         return view('cart.index', [
-			'title' => trans('cart.indextitle') . ' - ' . config('app.Webshopname'), 
+			'title' => trans('cart.indextitle') . ' - ' . config('webshop.Webshopname'), 
 			'products' => $products,
 			'shipping' => $shipping]
 		);

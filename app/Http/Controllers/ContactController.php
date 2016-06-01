@@ -12,7 +12,7 @@ class ContactController extends Controller
     public function index()
     {
         return view('contact.index', [
-			'title' => trans('contact.indextitle') . ' - ' . config('app.Webshopname')]
+			'title' => trans('contact.indextitle') . ' - ' . config('webshop.Webshopname')]
 		);
     }
     
@@ -34,13 +34,13 @@ class ContactController extends Controller
 	    	'comment' => $request->input('message')];
 			
 	    	Mail::send('emails.contact', $data, function ($message) use ($data) {
-	            $message->from(config('app.Email'), config('app.Webshopname'));
+	            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
 	
-	            $message->to(config('app.Email'), config('app.Webshopname'))->subject(trans('contact.contact'));
+	            $message->to(config('webshop.Email'), config('webshop.Webshopname'))->subject(trans('contact.contact'));
 	        });
 			
 			Mail::send('emails.contactconfirm', $data, function ($message) use ($data) {
-	            $message->from(config('app.Email'), config('app.Webshopname'));
+	            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
 	
 	            $message->to($data['email'], $data['name'])->subject(trans('contact.contactconfirm'));
 	        });

@@ -12,7 +12,7 @@ class QuoatationController extends Controller
     public function index()
     {
         return view('quoatation.index', [
-			'title' => trans('quoatation.indextitle') . ' - ' . config('app.Webshopname')]
+			'title' => trans('quoatation.indextitle') . ' - ' . config('webshop.Webshopname')]
 		);
     }
     
@@ -34,13 +34,13 @@ class QuoatationController extends Controller
 	    	'comment' => $request->input('message')];
 			
 	    	Mail::send('emails.quoatation', $data, function ($message) use ($data) {
-	            $message->from(config('app.Email'), config('app.Webshopname'));
+	            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
 	
-	            $message->to(config('app.Email'), config('app.Webshopname'))->subject(trans('quoatation.quoatation'));
+	            $message->to(config('webshop.Email'), config('webshop.Webshopname'))->subject(trans('quoatation.quoatation'));
 	        });
 			
 			Mail::send('emails.quoatationconfirm', $data, function ($message) use ($data) {
-	            $message->from(config('app.Email'), config('app.Webshopname'));
+	            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
 	
 	            $message->to($data['email'], $data['name'])->subject(trans('quoatation.quoatationconfirm'));
 	        });

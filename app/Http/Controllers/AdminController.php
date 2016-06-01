@@ -19,7 +19,7 @@ class AdminController extends Controller
 		}
 		
 		return view('admin.index', [
-			'title' => trans('cart.indextitle') . ' - ' . config('app.Webshopname')]
+			'title' => trans('cart.indextitle') . ' - ' . config('webshop.Webshopname')]
 		);
     }
 }

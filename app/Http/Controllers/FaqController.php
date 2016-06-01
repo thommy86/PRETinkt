@@ -11,7 +11,7 @@ class FaqController extends Controller
     {
 	    $faqs = VraagAntwoord::all();
         return view('faq.index', [
-			'title' => trans('faq.indextitle') . ' - ' . config('app.Webshopname'),
+			'title' => trans('faq.indextitle') . ' - ' . config('webshop.Webshopname'),
 			'faqs' => $faqs]
 		);
     }

@@ -28,7 +28,7 @@ class SearchController extends Controller
 			}
 		
 	        return view('search.index', [
-				'title' => trans('search.indextitle') . ' - ' . config('app.Webshopname'),
+				'title' => trans('search.indextitle') . ' - ' . config('webshop.Webshopname'),
 				'products' => $products]
 			);
 		}

@@ -18,7 +18,7 @@ class LoginController extends Controller
 		$validator = Validator::make($request->all(), $rules);
 
 		if ($validator->passes()) {
-			if(config('app.Username') == $request->input('username') && config('app.Password') == $request->input('password')){
+			if(config('webshop.Username') == $request->input('username') && config('webshop.Password') == $request->input('password')){
 				$request->session()->push('isAuthenticated', true);
 				return redirect('admin')->with('message', trans('login.success'));
 			} else {
