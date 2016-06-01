@@ -23,15 +23,25 @@ class SearchController extends Controller
 
 		//Check if form is valid
 		if ($validator->passes()) {
-			//Get products by search string
-	    	$products = Product::where('naam', 'LIKE', '%' . $request->input('zoekterm') . '%')->get();
+			$products = array();
+			
+			try {
+				//Get products by search string
+	    		$products = Product::where('naam', 'LIKE', '%' . $request->input('zoekterm') . '%')->get();
+	    	} catch (\Exception $exception) {
+				Log::error('Cannot receive products from database. Exception:'.$exception);
+			}
 			
 			//If there no products found set record in database
 			if(count($products) == 0){
-				$zoekterm = new Zoekterm();
-				$zoekterm->zoekterm = $request->input('zoekterm');
-				$zoekterm->save();
-				Log::info('Added search record to database id:' . $zoekterm->id);
+				try {
+					$zoekterm = new Zoekterm();
+					$zoekterm->zoekterm = $request->input('zoekterm');
+					$zoekterm->save();
+					Log::info('Added search record to database id:' . $zoekterm->id);
+				} catch (\Exception $exception) {
+					Log::error('Cannot add search into database. Exception:'.$exception);
+				}
 			}
 		
 	        return view('search.index', [

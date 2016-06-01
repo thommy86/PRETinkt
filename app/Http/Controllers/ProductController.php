@@ -2,6 +2,7 @@
 
 namespace Webshop\Http\Controllers;
 
+use Log;
 use Webshop\Product;
 use Webshop\Beoordeling;
 use Webshop\Http\Controllers\Controller;
@@ -10,8 +11,14 @@ class ProductController extends Controller
 {
     public function index()
     {
-	    //Get all products
-	    $products = Product::all();
+	    $products = array();
+	    
+	    try {
+	    	//Get all products
+	    	$products = Product::all();
+	    } catch (\Exception $exception) {
+			Log::error('Cannot receive products from database. Exception:'.$exception);
+		}
 	    
         return view('product.index', [
 			'title' => trans('product.indextitle') . ' - ' . config('webshop.Webshopname'), 
@@ -21,8 +28,14 @@ class ProductController extends Controller
 	
 	public function product($id)
     {
-	    //Get specific product
-	    $product = Product::find($id);
+	    $product = new Product();
+	    
+	    try {
+	    	$product = Product::find($id);
+	    } catch (\Exception $exception) {
+	    	//Get specific product
+			Log::error('Cannot receive product from database. Exception:'.$exception);
+		}
 	    
         return view('product.product', [
 			'title' => $product->naam . ' - ' . config('webshop.Webshopname'), 

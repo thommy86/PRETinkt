@@ -39,24 +39,32 @@ class QuoatationController extends Controller
 	    	'comment' => $request->input('message')];
 			
 			//Mail message to webshop owner
-	    	Mail::send('emails.quoatation', $data, function ($message) use ($data) {
-		    	//Set from data
-	            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
-	
-				//Set to data
-	            $message->to(config('webshop.Email'), config('webshop.Webshopname'))->subject(trans('quoatation.quoatation'));
-	            Log::info('Sent quoatation mail to webshop owner');
-	        });
+			try {
+		    	Mail::send('emails.quoatation', $data, function ($message) use ($data) {
+			    	//Set from data
+		            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
+		
+					//Set to data
+		            $message->to(config('webshop.Email'), config('webshop.Webshopname'))->subject(trans('quoatation.quoatation'));
+		            Log::info('Sent quoatation mail to webshop owner');
+		        });
+	        } catch (\Exception $exception) {
+				Log::error('Cannot sent mail. Exception:'.$exception);
+			}
 			
 			//Mail message to customer
-			Mail::send('emails.quoatationconfirm', $data, function ($message) use ($data) {
-				//Set from data
-	            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
-	
-				//Set to data
-	            $message->to($data['email'], $data['name'])->subject(trans('quoatation.quoatationconfirm'));
-	            Log::info('Sent quoatation mail to customer email:' . $data['email']);
-	        });
+			try {
+				Mail::send('emails.quoatationconfirm', $data, function ($message) use ($data) {
+					//Set from data
+		            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
+		
+					//Set to data
+		            $message->to($data['email'], $data['name'])->subject(trans('quoatation.quoatationconfirm'));
+		            Log::info('Sent quoatation mail to customer email:' . $data['email']);
+		        });
+	        } catch (\Exception $exception) {
+				Log::error('Cannot sent mail. Exception:'.$exception);
+			}
 	    
 	        return redirect('quoatation')->with('message', trans('quoatation.emailsend'));
 		} else {

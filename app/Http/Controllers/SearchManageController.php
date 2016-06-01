@@ -10,8 +10,14 @@ class SearchManageController extends Controller
 {
     public function index()
     {
-	    //Get searches
-		$searches = Zoekterm::all();
+	    $search = array();
+	    
+	    try{
+		    //Get searches
+			$searches = Zoekterm::all(); 
+		} catch (\Exception $exception) {
+			Log::error('Cannot receive searches from database. Exception:'.$exception);
+		}
 		
         return view('searchmanage.index', [
 			'title' => trans('searchmanage.indextitle') . ' - ' . config('webshop.Webshopname'),
@@ -21,12 +27,22 @@ class SearchManageController extends Controller
 	
 	public function del($id)
 	{
-		//Find search by id
-		$search = Zoekterm::find($id);
+		$search = new Zoekterm();
 		
-		//Delete search
-		$search->delete();
-		Log::info('Delete search id:' . $id);
+		try{
+			//Find search by id
+			$search = Zoekterm::find($id);
+		} catch (\Exception $exception) {
+			Log::error('Cannot receive search from database. Exception:'.$exception);
+		}
+		
+		try {
+			//Delete search
+			$search->delete();
+			Log::info('Delete search id:' . $id);
+		} catch (\Exception $exception) {
+			Log::error('Cannot delete search from database. Exception:'.$exception);
+		}
 		
 		return redirect('admin/search')->with('message', trans('searchmanage.searchdel'));
 	}

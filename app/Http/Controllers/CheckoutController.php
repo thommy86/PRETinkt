@@ -2,6 +2,7 @@
 
 namespace Webshop\Http\Controllers;
 
+use Log;
 use Webshop\Product;
 use Webshop\Klant;
 use Webshop\Bestelling;
@@ -29,7 +30,11 @@ class CheckoutController extends Controller
 			
 			if(count($productIds) > 0){
 				//Get products from database by product ids from the cart
-				$products = Product::findMany($productIds);
+				try {
+					$products = Product::findMany($productIds);
+				} catch (\Exception $exception) {
+					Log::error('Cannot receive products from database. Exception:'.$exception);
+				}
 			}
 			
 			foreach($products as $product){

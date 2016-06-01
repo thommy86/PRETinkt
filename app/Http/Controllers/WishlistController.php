@@ -21,8 +21,12 @@ class WishlistController extends Controller
 			//If cookie not exist make create array
 			$products = array();
 		} else {
-			//Get products from database by cookie ids
-			$products = Product::findMany($productIds);
+			try {
+				//Get products from database by cookie ids
+				$products = Product::findMany($productIds);
+			} catch (\Exception $exception) {
+				Log::error('Cannot receive products from database. Exception:'.$exception);
+			}
 		}
 		
 		return view('wishlist.index', [

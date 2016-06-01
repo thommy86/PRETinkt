@@ -39,24 +39,32 @@ class ContactController extends Controller
 	    	'comment' => $request->input('message')];
 			
 			//Mail message to webshop owner
-	    	Mail::send('emails.contact', $data, function ($message) use ($data) {
-		    	//Set from data
-	            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
-	
-				//Set to data
-	            $message->to(config('webshop.Email'), config('webshop.Webshopname'))->subject(trans('contact.contact'));
-	            Log::info('Sent contact mail to webshop owner');
-	        });
+			try {
+		    	Mail::send('emails.contact', $data, function ($message) use ($data) {
+			    	//Set from data
+		            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
+		
+					//Set to data
+		            $message->to(config('webshop.Email'), config('webshop.Webshopname'))->subject(trans('contact.contact'));
+		            Log::info('Sent contact mail to webshop owner');
+		        });
+			} catch (\Exception $exception) {
+				Log::error('Cannot sent mail. Exception:'.$exception);
+			}
 			
 			//Mail message to customer
-			Mail::send('emails.contactconfirm', $data, function ($message) use ($data) {
-				//Set from data
-	            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
-	
-				//Set to data
-	            $message->to($data['email'], $data['name'])->subject(trans('contact.contactconfirm'));
-	            Log::info('Sent contact mail to customer email:' . $data['email']);
-	        });
+			try {
+				Mail::send('emails.contactconfirm', $data, function ($message) use ($data) {
+					//Set from data
+		            $message->from(config('webshop.Email'), config('webshop.Webshopname'));
+		
+					//Set to data
+		            $message->to($data['email'], $data['name'])->subject(trans('contact.contactconfirm'));
+		            Log::info('Sent contact mail to customer email:' . $data['email']);
+		        });
+	        } catch (\Exception $exception) {
+				Log::error('Cannot sent mail. Exception:'.$exception);
+			}
 	    
 	        return redirect('contact')->with('message', trans('contact.emailsend'));
 		} else {
