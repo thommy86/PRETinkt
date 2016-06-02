@@ -44,7 +44,7 @@
                         @foreach ($errors->all() as $error)
 							{{ $error }} <br>
 						@endforeach
-						<form action="quoatation" method="post" id="commentform" class="contact-form-7">
+						<form action="/quoatation" method="post" id="commentform" class="contact-form-7">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <p class="comment-for-author">
                                 <input type="text" class="author" name="name" placeholder="{{ trans('contact.name') }}" value={{ old('name') }}>

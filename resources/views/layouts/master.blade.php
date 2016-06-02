@@ -61,7 +61,7 @@
 							@else
 								<a href="#">{{ trans("master.login") }}</a>
 								<div class="tz-login-form">
-									<form action="login" method="post">
+									<form action="/login" method="post">
 										<input type="hidden" name="_token" value="{{ csrf_token() }}">
 										<p class="form-content">
 											<label for="username">{{ trans("master.username") }}</label>
@@ -88,7 +88,7 @@
                     <div class="tz-search pull-right">
 
                         <!--Start form search-->
-                        <form action="search" method="post">
+                        <form action="/search" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="text" class="tz-query" id="tz-query" name="zoekterm" value="{{ old('zoekterm') }}" placeholder="{{ trans('master.searchforproduct') }}">
                             <button type="submit"></button>

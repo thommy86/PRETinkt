@@ -22,7 +22,7 @@
             <h1 class="page-title">{{ trans('cart.cart') }}</h1>
 
             <!--Start form table-->
-            <form action="cart/update" method="post">
+            <form action="/cart/update" method="post">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <table class="shop_table cart">
                     <!--Table header-->

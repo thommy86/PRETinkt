@@ -22,7 +22,7 @@
                     <h1 class="page-title">{{ trans('checkout.checkout') }}</h1>
 					
                     <!--Start form checkout-->
-                    <form action="checkout" method="post">
+                    <form action="/checkout" method="post">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <div class="shop-billing-fields">
                             <h3>{{ trans('checkout.billingdetails') }}</h3>
