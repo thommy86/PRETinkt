@@ -32,11 +32,7 @@ class SearchManageController extends Controller
 		try{
 			//Find search by id
 			$search = Zoekterm::find($id);
-		} catch (\Exception $exception) {
-			Log::error('Cannot receive search from database. Exception:'.$exception);
-		}
-		
-		try {
+			
 			//Delete search
 			$search->delete();
 			Log::info('Delete search id:' . $id);
