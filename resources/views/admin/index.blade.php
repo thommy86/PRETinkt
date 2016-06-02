@@ -13,12 +13,9 @@
 			</ul>
 			<!--End breadcrumbs-->
 			
-			{{ Session::get('message') }}
-			@foreach ($errors->all() as $error)
-				{{ $error }} <br>
-			@endforeach
+			@include('layouts.message')
 			
-			<h1>Admin<h1>
+			<h1>{{ trans('admin.admin') }}<h1>
 			
 			<a href="/admin/search">{{ trans('admin.search') }}</a><br>
 			<a href="/admin/faq">{{ trans('admin.faq') }}</a><br>

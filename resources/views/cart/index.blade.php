@@ -14,10 +14,7 @@
             </ul>
             <!--End Breadcrumbs-->
 			
-			{{ Session::get('message') }}
-			@foreach ($errors->all() as $error)
-				{{ $error }} <br>
-			@endforeach
+			@include('layouts.message')
 			
             <h1 class="page-title">{{ trans('cart.cart') }}</h1>
 

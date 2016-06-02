@@ -91,7 +91,7 @@ class CartController extends Controller
 		//TODO: Has to be choosen by user
 		$request->session()->put('region', 1);
 		
-		return redirect()->back()->with('message', trans('cart.productset'));
+		return redirect()->back()->with('successmessage', trans('cart.productset'));
     }
 	
     public function del(Request $request, $id)

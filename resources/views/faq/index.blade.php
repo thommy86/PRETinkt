@@ -16,10 +16,7 @@
 			</ul>
 			<!--End breadcrumbs-->
 			
-			{{ Session::get('message') }}
-			@foreach ($errors->all() as $error)
-				{{ $error }} <br>
-			@endforeach
+			@include('layouts.message')
 			
 			<div class="blog-container">
 				<div class="row">

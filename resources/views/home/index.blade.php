@@ -1,6 +1,8 @@
 @extends('layouts.master')
 
 @section('content')
+	@include('layouts.message')
+
 	<!--SATRT REVOLUTION SLIDER-->
 	<div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container">
 		<div id="rev_slider_1_1" class="rev_slider fullwidthabanner">

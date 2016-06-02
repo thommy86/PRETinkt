@@ -16,6 +16,8 @@
                 </li>
             </ul>
             <!--End Breadcrumbs-->
+            
+            @include('layouts.message')
 
             <div class="row">
                 <div class="col-md-6">

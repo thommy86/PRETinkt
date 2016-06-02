@@ -41,10 +41,7 @@
                     <h1 class="large-ttle">{{ trans('contact.contactus') }}</h1>
                     <div id="contact-form" class="contact-respond">
                         <h3 class="tz-title">{{ trans('contact.leaveusamessage') }}</h3>
-						{{ Session::get('message') }}
-                        @foreach ($errors->all() as $error)
-							{{ $error }} <br>
-						@endforeach
+						@include('layouts.message')
 						<form action="/contact" method="post" id="commentform" class="contact-form-7">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <p class="comment-for-author">

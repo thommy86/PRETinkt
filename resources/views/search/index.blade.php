@@ -19,10 +19,7 @@
                             </li>
                         </ul>
 			
-						{{ Session::get('message') }}
-						@foreach ($errors->all() as $error)
-							{{ $error }} <br>
-						@endforeach
+						@include('layouts.message')
 
                         <div class="tz-product row list-view">
 

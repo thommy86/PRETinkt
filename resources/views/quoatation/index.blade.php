@@ -40,10 +40,7 @@
                 <div class="col-md-8 tz-blog-content">
                     <h1 class="large-ttle">{{ trans('quoatation.quoatation') }}</h1>
                     <div id="contact-form" class="contact-respond">
-						{{ Session::get('message') }}
-                        @foreach ($errors->all() as $error)
-							{{ $error }} <br>
-						@endforeach
+						@include('layouts.message')
 						<form action="/quoatation" method="post" id="commentform" class="contact-form-7">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <p class="comment-for-author">
