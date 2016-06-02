@@ -59,8 +59,8 @@
 								</span>
 							</p>
 							<p>
-								<button type="submit" class="single_add_to_cart_button">{{ trans('product.addtocart') }}</button>
-								<button type="submit" class="single_add_to_wishlist">{{ trans('product.addtowishlist') }}</button>
+								<a href="/cart/set/{{ $product->id }}" class="single_add_to_cart_button">{{ trans('product.addtocart') }}</a>
+								<a href="/wishlist/set/{{ $product->id }}" class="single_add_to_wishlist">{{ trans('product.addtowishlist') }}</a>
 							</p>
 						</form>
 					</div>
