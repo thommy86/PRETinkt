@@ -14,5 +14,10 @@ return [
     */
 
     'indextitle' => 'Faq beheer',
-
+		'faqmanage' => 'Faq beheer',
+		'vraag' => 'Vraag',
+		'backtoadmin' => 'Terug naar admin',
+		'add' => 'Nieuw',
+		'addtitle' => 'Nieuwe vraag',
+		'faqdel' => 'Vraag verwijderd',
 ];

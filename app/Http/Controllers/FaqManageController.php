@@ -22,4 +22,32 @@ class FaqManageController extends Controller
 			'faqs' => $faqs]
 		);
     }
+	
+		public function add()
+		{
+			return view('faqmanage.add', [
+			'title' => trans('faqmanage.addtitle') . ' - ' . config('webshop.Webshopname')]);
+		}
+	
+		public function submit()
+		{
+			
+		}
+	
+	public function del($id)
+	{
+		
+		try{
+			//Find search by id
+			$faq = VraagAntwoord::find($id);
+			
+			//Delete search
+			$faq->delete();
+			Log::info('Delete faq id:' . $id);
+		} catch (\Exception $exception) {
+			Log::error('Cannot delete faq from database. Exception:'.$exception);
+		}
+		
+		return redirect('admin/faq')->with('successmessage', trans('faqmanage.faqdel'));
+	}
 }

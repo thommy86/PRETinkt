@@ -14,5 +14,11 @@ return [
     */
 
     'indextitle' => 'Faq manage',
+    'faqmanage' => 'Faq manage',
+    'vraag' => 'Question',
+    'backtoadmin' => 'Back to admin',
+    'add' => 'Add',
+    'addtitle' => 'Add new question',
+    'faqdel' => 'Removed question',
 
 ];

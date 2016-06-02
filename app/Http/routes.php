@@ -19,9 +19,9 @@ Route::get('product/{id}', 'ProductController@product')->where(['id' => '[0-9]+'
 
 Route::get('cart', 'CartController@index');
 
-Route::get('cart/set/{id}', 'CartController@set');
+Route::get('cart/set/{id}', 'CartController@set')->where(['id' => '[0-9]+']);
 
-Route::get('cart/del/{id}', 'CartController@del');
+Route::get('cart/del/{id}', 'CartController@del')->where(['id' => '[0-9]+']);
 
 Route::get('quoatation', 'QuoatationController@index');
 
@@ -29,9 +29,9 @@ Route::get('contact', 'ContactController@index');
 
 Route::get('wishlist', 'WishlistController@index');
 
-Route::get('wishlist/set/{id}', 'WishlistController@set');
+Route::get('wishlist/set/{id}', 'WishlistController@set')->where(['id' => '[0-9]+']);
 
-Route::get('wishlist/del/{id}', 'WishlistController@del');
+Route::get('wishlist/del/{id}', 'WishlistController@del')->where(['id' => '[0-9]+']);
 
 Route::get('cart/checkout', 'CheckoutController@index');
 
@@ -43,11 +43,13 @@ Route::get('shipping', 'ShippingController@index');
 
 Route::get('admin/faq', 'FaqManageController@index');
 
+Route::get('admin/faq/del/{id}', 'FaqManageController@del')->where(['id' => '[0-9]+']);
+
 Route::get('admin/products', 'ProductManageController@index');
 
 Route::get('admin/search', 'SearchManageController@index');
 
-Route::get('admin/search/del/{id}', 'SearchManageController@del');
+Route::get('admin/search/del/{id}', 'SearchManageController@del')->where(['id' => '[0-9]+']);
 
 Route::get('language/{lang}', 'LanguageController@index')->where('lang', '[A-Za-z_-]+');
 
