@@ -71,10 +71,9 @@ Route::post('login', 'LoginController@index');
 
 Route::post('cart/update', 'CartController@update');
 
-<<<<<<< Updated upstream
 Route::post('cart/selectregion/{id}', 'CartController@selectRegionPost')->where(['id' => '[0-9]+']);
 
 Route::post('cart/checkout', 'CheckoutController@post');
-=======
+
 Route::post('admin/faq/add', 'FaqManageController@submit');
->>>>>>> Stashed changes
+
