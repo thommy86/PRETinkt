@@ -10,6 +10,8 @@ class FaqController extends Controller
 {
     public function index()
     {
+	    $faqs = array();
+	    
 	    //Get all faqs
 	    try {
 	    	$faqs = VraagAntwoord::all();
