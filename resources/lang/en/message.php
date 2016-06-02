@@ -16,6 +16,6 @@ return [
     'successtitle' => 'Success',
     'infotitle' => 'Info',
     'warningtitle' => 'Warning',
-    'dangertitle' => 'Danger',
+    'dangertitle' => 'Error',
 
 ];

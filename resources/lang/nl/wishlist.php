@@ -14,8 +14,8 @@ return [
     */
 
     'indextitle' => 'Boodschappenlijst',
-    'productset' => 'Product toegevoegt aan boodschappenlijst',
-    'productdel' => 'Product verwijdert van boodschappenlijst',
+    'productset' => 'Product toegevoegd aan boodschappenlijst',
+    'productdel' => 'Product verwijderd van boodschappenlijst',
     'home' => 'Home',
     'wishlist' => 'Boodschappenlijst',
     'product' => 'Product',

@@ -70,3 +70,5 @@ Route::post('login', 'LoginController@index');
 Route::post('cart/update', 'CartController@update');
 
 Route::post('cart/selectregion/{id}', 'CartController@selectRegionPost')->where(['id' => '[0-9]+']);
+
+Route::post('cart/checkout', 'CheckoutController@post');

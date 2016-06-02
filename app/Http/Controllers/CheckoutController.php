@@ -3,6 +3,7 @@
 namespace Webshop\Http\Controllers;
 
 use Log;
+use Validator;
 use Webshop\Product;
 use Webshop\Klant;
 use Webshop\Bestelling;
@@ -64,5 +65,40 @@ class CheckoutController extends Controller
 			'products' => $products,
 			'shipping' => $shipping]
 		);
+    }
+    
+    public function post(Request $request)
+    {
+	    //Validate rules for form
+	    $rules = [
+			'firstname' => 'required',
+			'prefix' => 'required',
+			'lastname' => 'required',
+			'street' => 'required',
+			'number' => 'required',
+			'city' => 'required',
+			'zip' => 'required',
+			'country' => 'required',
+			'email' => 'required|email',
+			'phone' => 'required',
+		];
+
+		//Validator
+		$validator = Validator::make($request->all(), $rules);
+
+		//Check if form is valid
+		if ($validator->passes()) {
+			//TODO
+			try {
+				
+	        } catch (\Exception $exception) {
+				Log::error('Cannot sent mail. Exception:'.$exception);
+			}
+	    
+	        return redirect('/cart/checkout/pay')->with('successmessage', trans('checkout.success'));
+		} else {
+			//Validation failed and set client back to form with validation errors and input
+			return redirect('cart/checkout')->withErrors($validator)->withInput();
+		}
     }
 }

@@ -19,18 +19,17 @@
             
             @include('layouts.message')
 
-            <div class="row">
-                <div class="col-md-6">
-                    <h1 class="page-title">{{ trans('checkout.checkout') }}</h1>
-					
-                    <!--Start form checkout-->
-                    <form action="/checkout" method="post">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <form action="/cart/checkout" method="post">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+	            <div class="row">
+	                <div class="col-md-6">
+	                    <h1 class="page-title">{{ trans('checkout.checkout') }}</h1>
+						<!--Start form checkout-->
                         <div class="shop-billing-fields">
                             <h3>{{ trans('checkout.billingdetails') }}</h3>
                             <p class="form-row form-row-first">
                                 <label for="first_name">{{ trans('checkout.firstname') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="first_name" id="first_name" placeholder="{{ trans('checkout.firstname') }}" value="{{ old('country') }}">
+                                <input type="text" class="input-text " name="firstname" id="firstname" placeholder="{{ trans('checkout.firstname') }}" value="{{ old('country') }}">
                             </p>
                             <p class="form-row form-row-last">
                                 <label for="prefix">{{ trans('checkout.prefix') }} <span class="required">*</span></label>
@@ -39,7 +38,7 @@
                             <div class="clear"></div>
                             <p class="form-row form-row-first">
                                 <label for="last_name">{{ trans('checkout.lastname') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="last_name" id="last_name" placeholder="{{ trans('checkout.lastname') }}" value="{{ old('country') }}">
+                                <input type="text" class="input-text " name="lastname" id="lastname" placeholder="{{ trans('checkout.lastname') }}" value="{{ old('country') }}">
                             </p>
                             <div class="clear"></div>
                             <p class="form-row">
@@ -79,94 +78,94 @@
                                 <input type="tel" class="input-text " name="phone" id="phone" placeholder="{{ trans('checkout.phone') }}" value="{{ old('phone') }}">
                             </p>
                         </div>
-                    </form>
-                    <!--End form checkout-->
-
-                </div>
-                <div class="col-md-6">
-
-                    <!--Order review-->
-                    <div id="order_review">
-                        <h3>{{ trans('checkout.yourorder') }}</h3>
-
-                        <!--Shop table-->
-                        <table class="shop_table">
-                            <thead>
-                                <tr>
-                                    <th class="product-name">{{ trans('checkout.product') }}</th>
-                                    <th class="product-total">{{ trans('checkout.total') }}</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-								<?php
-									$subtotal = 0;
-								?>
-								@foreach ($products as $product)
-									<?php $subtotal += ($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity; ?>
-									<tr class="cart_item">
-										<td class="product-name">
-											{{ $product->naam }}
-											<strong class="product-quantity">× {{ $product->quantity }}</strong>
-										</td>
-										<td class="product-total">
-											<span class="amount">&euro;{{ round(($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity, 2) }}</span>
-										</td>
-									</tr>
-								@endforeach
-                            </tbody>
-                            <tfoot>
-                            <tr class="cart-subtotal">
-                                <th>{{ trans('checkout.subtotal') }}</th>
-                                <td><span class="amount">&euro;{{ round($subtotal, 2) }}</span></td>
-                            </tr>
-
-                            <tr class="cart-subtotal">
-                                <th>{{ trans('checkout.shipping') }}</th>
-                                <td><span class="amount">&euro;{{ $shipping }}</span></td>
-                            </tr>
-
-                            <tr class="order-total">
-                                <th>{{ trans('checkout.total') }}</th>
-                                <td><strong><span class="amount">&euro;{{ round($subtotal + $shipping, 2) }}</span></strong> </td>
-                            </tr>
-                            </tfoot>
-                        </table>
-                        <!--End shop table-->
-
-                        <!--Start payment-->
-                        <div id="payment" class="checkout-payment">
-                            <ul class="payment_methods methods">
-                                <li class="payment_method_bacs">
-                                    <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="ideal" checked="checked">
-                                    <label for="payment_method_bacs">
-                                        {{ trans('checkout.ideal') }}
-                                    </label>
-                                </li>
-                                <li class="payment_method_paypal">
-                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal">
-                                    <label for="payment_method_paypal">
-                                        {{ trans('checkout.paypal') }}
-                                    </label>
-                                </li>
-                            </ul>
-
-                            <div class="clear"></div>
-                        </div>
-                        <!--End payment-->
-						
-						<table class="shop_table">
-							<tr>
-								<td class="actions" colspan="6">
-									<a href="/checkout/pay" class="update-cart">{{ trans('cart.pay') }}</a>
-								</td>
-							</tr>
-						</table>
-						
-                    </div>
-                    <!--End order review-->
-
-                </div>
-            </div>
+	                    <!--End form checkout-->
+	
+	                </div>
+	                <div class="col-md-6">
+	
+	                    <!--Order review-->
+	                    <div id="order_review">
+	                        <h3>{{ trans('checkout.yourorder') }}</h3>
+	
+	                        <!--Shop table-->
+	                        <table class="shop_table">
+	                            <thead>
+	                                <tr>
+	                                    <th class="product-name">{{ trans('checkout.product') }}</th>
+	                                    <th class="product-total">{{ trans('checkout.total') }}</th>
+	                                </tr>
+	                            </thead>
+	                            <tbody>
+									<?php
+										$subtotal = 0;
+									?>
+									@foreach ($products as $product)
+										<?php $subtotal += ($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity; ?>
+										<tr class="cart_item">
+											<td class="product-name">
+												{{ $product->naam }}
+												<strong class="product-quantity">× {{ $product->quantity }}</strong>
+											</td>
+											<td class="product-total">
+												<span class="amount">&euro;{{ round(($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity, 2) }}</span>
+											</td>
+										</tr>
+									@endforeach
+	                            </tbody>
+	                            <tfoot>
+	                            <tr class="cart-subtotal">
+	                                <th>{{ trans('checkout.subtotal') }}</th>
+	                                <td><span class="amount">&euro;{{ round($subtotal, 2) }}</span></td>
+	                            </tr>
+	
+	                            <tr class="cart-subtotal">
+	                                <th>{{ trans('checkout.shipping') }}</th>
+	                                <td><span class="amount">&euro;{{ $shipping }}</span></td>
+	                            </tr>
+	
+	                            <tr class="order-total">
+	                                <th>{{ trans('checkout.total') }}</th>
+	                                <td><strong><span class="amount">&euro;{{ round($subtotal + $shipping, 2) }}</span></strong> </td>
+	                            </tr>
+	                            </tfoot>
+	                        </table>
+	                        <!--End shop table-->
+	
+	                        <!--Start payment-->
+	                        <div id="payment" class="checkout-payment">
+	                            <ul class="payment_methods methods">
+	                                <li class="payment_method_bacs">
+	                                    <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="ideal" checked="checked">
+	                                    <label for="payment_method_bacs">
+	                                        {{ trans('checkout.ideal') }}
+	                                    </label>
+	                                </li>
+	                                <li class="payment_method_paypal">
+	                                    <input id="payment_method_paypal" type="radio" class="input-radio" name="payment_method" value="paypal">
+	                                    <label for="payment_method_paypal">
+	                                        {{ trans('checkout.paypal') }}
+	                                    </label>
+	                                </li>
+	                            </ul>
+	
+	                            <div class="clear"></div>
+	                        </div>
+	                        <!--End payment-->
+							
+							<table class="shop_table">
+								<tr>
+									<td class="actions">
+										<button type="submit" href="/cart/checkout" class="update-cart">{{ trans('cart.pay') }}</button>
+									</td>
+								</tr>
+							</table>
+							
+	                    </div>
+	                    <!--End order review-->
+	
+	                </div>
+	            </div>
+            </form>
 
         </div>
     </section>
