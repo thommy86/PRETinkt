@@ -66,7 +66,7 @@ class ContactController extends Controller
 				Log::error('Cannot sent mail. Exception:'.$exception);
 			}
 	    
-	        return redirect('contact')->with('message', trans('contact.emailsend'));
+	        return redirect('contact')->with('successmessage', trans('contact.emailsend'));
 		} else {
 			//Validation failed and set client back to form with validation errors and input
 			return redirect('contact')->withErrors($validator)->withInput();

@@ -66,7 +66,7 @@ class QuoatationController extends Controller
 				Log::error('Cannot sent mail. Exception:'.$exception);
 			}
 	    
-	        return redirect('quoatation')->with('message', trans('quoatation.emailsend'));
+	        return redirect('quoatation')->with('successmessage', trans('quoatation.emailsend'));
 		} else {
 			//Validation failed and set client back to form with validation errors and input
 			return redirect('quoatation')->withErrors($validator)->withInput();

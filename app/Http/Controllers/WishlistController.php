@@ -56,7 +56,7 @@ class WishlistController extends Controller
 		}
 		
 		//Update cookie
-		return redirect()->back()->withCookie(cookie()->forever('wishlistproducts', $productIds))->with('message', trans('wishlist.productset'));
+		return redirect()->back()->withCookie(cookie()->forever('wishlistproducts', $productIds))->with('successmessage', trans('wishlist.productset'));
     }
 	
     public function del(Request $request, $id)
@@ -79,6 +79,6 @@ class WishlistController extends Controller
 		}
 		
 		//Update cookie
-		return redirect()->back()->withCookie(cookie()->forever('wishlistproducts', $productIds))->with('message', trans('wishlist.productdel'));
+		return redirect()->back()->withCookie(cookie()->forever('wishlistproducts', $productIds))->with('successmessage', trans('wishlist.productdel'));
     }
 }

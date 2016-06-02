@@ -111,7 +111,7 @@ class CartController extends Controller
 			$request->session()->put('cartproducts', $productIds);
 		}
 		
-		return redirect()->back()->with('message', trans('cart.productdel'));
+		return redirect()->back()->with('successmessage', trans('cart.productdel'));
     }
 	
 	public function update(Request $request)
@@ -147,7 +147,7 @@ class CartController extends Controller
 				$request->session()->put('cartproducts', $productIds);
 			}
 						
-			return redirect('cart')->with('message', trans('cart.updated'));
+			return redirect('cart')->with('successmessage', trans('cart.updated'));
 		} else {
 			//Validation failed and set client back to form with validation errors and input
 			return redirect('cart')->withErrors($validator)->withInput();

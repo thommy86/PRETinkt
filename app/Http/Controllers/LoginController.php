@@ -24,9 +24,9 @@ class LoginController extends Controller
 			//Check if login data are known
 			if(config('webshop.Username') == $request->input('username') && config('webshop.Password') == $request->input('password')){
 				$request->session()->push('isAuthenticated', true);
-				return redirect('admin')->with('message', trans('login.success'));
+				return redirect('admin')->with('successmessage', trans('login.success'));
 			} else {
-				return redirect()->back()->with('message', trans('login.failed'));
+				return redirect()->back()->with('successmessage', trans('login.failed'));
 			}
 		} else {
 			//Validation failed and set client back to form with validation errors and input
@@ -39,6 +39,6 @@ class LoginController extends Controller
 	    //Remove auth session
 		$request->session()->forget('isAuthenticated');
 		
-		return redirect()->back()->with('message', trans('login.logoff'));
+		return redirect()->back()->with('successmessage', trans('login.logoff'));
 	}
 }

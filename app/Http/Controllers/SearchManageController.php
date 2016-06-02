@@ -44,6 +44,6 @@ class SearchManageController extends Controller
 			Log::error('Cannot delete search from database. Exception:'.$exception);
 		}
 		
-		return redirect('admin/search')->with('message', trans('searchmanage.searchdel'));
+		return redirect('admin/search')->with('successmessage', trans('searchmanage.searchdel'));
 	}
 }
