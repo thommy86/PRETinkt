@@ -27,8 +27,6 @@ class SearchManageController extends Controller
 	
 	public function del($id)
 	{
-		$search = new Zoekterm();
-		
 		try{
 			//Find search by id
 			$search = Zoekterm::find($id);
