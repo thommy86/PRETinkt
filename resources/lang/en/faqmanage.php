@@ -16,6 +16,7 @@ return [
     'indextitle' => 'Faq manage',
     'faqmanage' => 'Faq manage',
     'vraag' => 'Question',
+	'antwoord' => 'Answer',
     'backtoadmin' => 'Back to admin',
     'add' => 'Add',
     'addtitle' => 'Add new question',

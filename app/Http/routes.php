@@ -45,6 +45,8 @@ Route::get('shipping', 'ShippingController@index');
 
 Route::get('admin/faq', 'FaqManageController@index');
 
+Route::get('admin/faq/add', 'FaqManageController@add');
+
 Route::get('admin/faq/del/{id}', 'FaqManageController@del')->where(['id' => '[0-9]+']);
 
 Route::get('admin/products', 'ProductManageController@index');
@@ -69,6 +71,10 @@ Route::post('login', 'LoginController@index');
 
 Route::post('cart/update', 'CartController@update');
 
+<<<<<<< Updated upstream
 Route::post('cart/selectregion/{id}', 'CartController@selectRegionPost')->where(['id' => '[0-9]+']);
 
 Route::post('cart/checkout', 'CheckoutController@post');
+=======
+Route::post('admin/faq/add', 'FaqManageController@submit');
+>>>>>>> Stashed changes
