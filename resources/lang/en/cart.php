@@ -30,5 +30,10 @@ return [
     'pay' => 'Pay',
     'updated' => 'Cart updated',
     'noproductitems' => 'Your cart does not contain any product',
+    'selectregion' => 'Select region',
+    'europe' => 'Europe',
+    'world' => 'World',
+    'selectregiontext' => 'Select which region you are',
+    'submit' => 'Continue',
 
 ];

@@ -60,6 +60,12 @@ class CartController extends Controller
 	
     public function set(Request $request, $id)
     {
+	    //Check if region session exist
+	    if ($request->session()->has('region') == false) {
+		    //Redirect to select region to set region for shipping
+		    return redirect('cart/selectregion/'.$id);
+		}
+	    
 		//Check if cart session exist
 		if ($request->session()->has('cartproducts')) {
 			//Get products from cart session
@@ -87,9 +93,6 @@ class CartController extends Controller
 		
 		//Update session
 		$request->session()->put('cartproducts', $productIds);
-		
-		//TODO: Has to be choosen by user
-		$request->session()->put('region', 1);
 		
 		return redirect()->back()->with('successmessage', trans('cart.productset'));
     }
@@ -151,6 +154,41 @@ class CartController extends Controller
 		} else {
 			//Validation failed and set client back to form with validation errors and input
 			return redirect('cart')->withErrors($validator)->withInput();
+		}
+	}
+	
+	public function selectRegion(Request $request, $id)
+	{
+		//Check if region session exist
+	    if ($request->session()->has('region')) {
+		    //Redirect to cart if region is already set
+		    return redirect('cart');
+		}
+		
+		return view('cart.selectregion', [
+			'title' => trans('cart.selectregiontitle') . ' - ' . config('webshop.Webshopname')]
+		);
+	}
+	
+	public function selectRegionPost(Request $request, $id)
+	{
+		//Validate rules for form
+		$rules = [
+			'region' => 'required',
+		];
+
+		//Validator
+		$validator = Validator::make($request->all(), $rules);
+
+		//Check if form is valid
+		if ($validator->passes()) {
+			//Set region session
+			$request->session()->put('region', $request->input('region'));
+						
+			return redirect('cart/set/'.$id);
+		} else {
+			//Validation failed and set client back to form with validation errors and input
+			return redirect('cart/selectregion')->withErrors($validator)->withInput();
 		}
 	}
 }

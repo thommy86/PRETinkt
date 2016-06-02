@@ -23,6 +23,8 @@ Route::get('cart/set/{id}', 'CartController@set')->where(['id' => '[0-9]+']);
 
 Route::get('cart/del/{id}', 'CartController@del')->where(['id' => '[0-9]+']);
 
+Route::get('cart/selectregion/{id}', 'CartController@selectRegion')->where(['id' => '[0-9]+']);
+
 Route::get('quoatation', 'QuoatationController@index');
 
 Route::get('contact', 'ContactController@index');
@@ -66,3 +68,5 @@ Route::post('search', 'SearchController@index');
 Route::post('login', 'LoginController@index');
 
 Route::post('cart/update', 'CartController@update');
+
+Route::post('cart/selectregion/{id}', 'CartController@selectRegionPost')->where(['id' => '[0-9]+']);

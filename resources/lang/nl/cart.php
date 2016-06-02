@@ -30,5 +30,10 @@ return [
     'pay' => 'Betalen',
     'updated' => 'Cart bijgewerkt',
     'noproductitems' => 'Uw winkelwagen bevat geen producten',
+    'selectregion' => 'Selecteer regio',
+    'europe' => 'Europa',
+    'world' => 'Wereld',
+    'selectregiontext' => 'Selecteer in welke regio u zich bevindt',
+    
 
 ];
