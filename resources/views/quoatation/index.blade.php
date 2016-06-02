@@ -30,7 +30,7 @@
                                     <span>{{ trans('quoatation.phone') }}:</span> {{ config('webshop.Phone') }}
                                 </li>
                                 <li>
-                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('webshop.Emailaddress') }}
+                                    <span>{{ trans('quoatation.email') }}:</span> {{ config('webshop.Email') }}
                                 </li>
                             </ul>
                         </aside>

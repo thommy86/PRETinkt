@@ -50,6 +50,11 @@
                         <li>
                             <a href="/cart">{{ trans("master.cart") }}</a>
                         </li>
+                        @if (Session::get('isAuthenticated') == true)
+	                        <li>
+	                            <a href="/admin">{{ trans("master.admin") }}</a>
+	                        </li>
+                        @endif
                         <li class="tz-header-login">
 							@if (Session::get('isAuthenticated') == true)
 								<a href="/login/off">{{ trans("master.logoff") }}</a>

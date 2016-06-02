@@ -35,5 +35,6 @@ return [
     'email' => 'E-mail',
     'checkout' => 'Afrekenen',
     'searchforproduct' => 'Zoek een product',
+    'admin' => 'Admin',
 
 ];
