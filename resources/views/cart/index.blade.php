@@ -62,7 +62,7 @@
 									<a href="/product/{{ $product->id }}">{{ $product->naam }} </a>
 								</td>
 								<td class="product-price">
-									<span class="amount">&euro;{{ round($product->prijs + ($product->prijs * $product->BTW), 2) }}</span>
+									<span class="amount">&euro;{{ number_format(round($product->prijs + ($product->prijs * $product->BTW), 2), 2) }}</span>
 								</td>
 
 								<td class="product-quantity">
@@ -70,7 +70,7 @@
 								</td>
 
 								<td class="product-subtotal">
-									<span class="amount">&euro;{{ round(($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity, 2) }}</span>
+									<span class="amount">&euro;{{ number_format(round(($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity, 2), 2) }}</span>
 								</td>
 							</tr>
 						@endforeach
@@ -104,15 +104,15 @@
                                 <tbody>
                                     <tr class="cart-subtotal">
                                         <th>{{ trans('cart.subtotal') }}</th>
-                                        <td><span class="amount">&euro;{{ round($subtotal, 2) }}</span></td>
+                                        <td><span class="amount">&euro;{{ number_format(round($subtotal, 2), 2) }}</span></td>
                                     </tr>
                                     <tr class="cart-subtotal">
                                         <th>{{ trans('cart.shipping') }}</th>
-                                        <td><span class="amount">&euro;{{ $shipping }}</span></td>
+                                        <td><span class="amount">&euro;{{ number_format(round($shipping, 2), 2) }}</span></td>
                                     </tr>
                                     <tr class="order-total">
                                         <th>{{ trans('cart.total') }}</th>
-                                        <td><span class="amount">&euro;{{ round($subtotal + $shipping, 2) }}</span></td>
+                                        <td><span class="amount">&euro;{{ number_format(round($subtotal + $shipping, 2), 2) }}</span></td>
                                     </tr>
 									@if (count($products) > 0)
 										<tr>

@@ -268,7 +268,7 @@
 										</div>
 										<div class="product-infomation">
 											<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
-											<span class="product-price">{{ $product->prijs }}</span>
+											<span class="product-price">{{ number_format(round($product->prijs, 2), 2) }}</span>
 										</div>
 									</div>
 									<!--End product item-->

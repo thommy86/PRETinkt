@@ -40,7 +40,7 @@
 											<div class="product-info">
 												<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
 												<span class="p-meta">
-													<span class="p-price">{{ $product->prijs }}</span>
+													<span class="p-price">{{ number_format(round($product->prijs, 2), 2) }}</span>
 													<span class="p-vote">
 														<i class="fa fa-star"></i>
 														<i class="fa fa-star"></i>

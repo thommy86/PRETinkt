@@ -54,7 +54,7 @@
 									<a href="/product/{{ $product->id }}">{{ $product->naam }} </a>
 								</td>
 								<td class="product-price">
-									<span class="amount">{{ $product->prijs }}</span>
+									<span class="amount">{{ number_format(round($product->prijs, 2), 2) }}</span>
 								</td>
 							</tr>
 						@endforeach

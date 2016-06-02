@@ -43,7 +43,7 @@
 							<i class="fa fa-star-half-o"></i>
 						</span>
 						<p class="product-price">
-							<span class="price">{{ $product->price }}</span>
+							<span class="price">{{ number_format(round($product->price, 2), 2) }}</span>
 							<span class="stock">{{ trans('product.stock') }}:  <span>{{ $product->voorraad }}</span></span>
 						</p>
 						<div class="description">
