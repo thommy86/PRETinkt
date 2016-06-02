@@ -22,5 +22,6 @@ return [
     'quantity' => 'Aantal',
     'price' => 'Prijs',
     'backtoshop' => 'Terug naar winkel',
+    'nowishlistitems' => 'Boodschappenlijst is leeg',
 
 ];

@@ -22,5 +22,6 @@ return [
     'addtowishlist' => 'Voeg toe aan boodschapenlijst',
     'quantity' => 'Aantal',
     'stock' => 'Voorraad',
+    'noproducts' => 'Er zijn geen producten',
 
 ];

@@ -34,7 +34,13 @@
 
                     <!--Table body-->
                     <tbody>
-
+						@if (count($products) == 0)
+							<tr>
+								<td colspan="4">
+									{{ trans('wishlist.nowishlistitems') }}
+								</td>
+							</tr>
+						@endif
 						@foreach ($products as $product)
 							<tr class="cart_item">
 								<td class="product-remove">

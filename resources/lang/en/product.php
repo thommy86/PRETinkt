@@ -22,5 +22,6 @@ return [
     'addtowishlist' => 'Add to wishlist',
     'quantity' => 'Quantity',
     'stock' => 'Stock',
+    'noproducts' => 'There are no products found',
 
 ];

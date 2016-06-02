@@ -20,6 +20,12 @@
                         </ul>
 						
 						@include('layouts.message')
+						
+						@if (count($products) == 0)
+							<div class="alert alert-info" role="alert">
+								<strong>{{ trans('message.infotitle') }}</strong> {{ trans('product.noproducts') }}
+							</div>
+						@endif
 
                         <div class="tz-product row list-view">
 

@@ -90,6 +90,7 @@
             <!--End form table-->
 
             <!--Cart attr-->
+            @if (count($products) > 0)
             <div class="row">
                 <div class="col-md-6 col-sm-6">
 				
@@ -129,6 +130,7 @@
 
                 </div>
             </div>
+            @endif
             <!--End cart attr-->
         </div>
     </section>
