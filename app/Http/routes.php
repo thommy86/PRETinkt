@@ -19,11 +19,11 @@ Route::get('product/{id}', 'ProductController@product')->where(['id' => '[0-9]+'
 
 Route::get('cart', 'CartController@index');
 
-Route::get('cart/set/{id}', 'CartController@set')->where(['id' => '[0-9]+']);
+Route::get('cart/set/{id}/{quantity}', 'CartController@set')->where(['id' => '[0-9]+','quantity' => '[0-9]+']);
 
 Route::get('cart/del/{id}', 'CartController@del')->where(['id' => '[0-9]+']);
 
-Route::get('cart/selectregion/{id}', 'CartController@selectRegion')->where(['id' => '[0-9]+']);
+Route::get('cart/selectregion/{id}/{quantity}', 'CartController@selectRegion')->where(['id' => '[0-9]+','quantity' => '[0-9]+']);
 
 Route::get('quoatation', 'QuoatationController@index');
 
@@ -71,9 +71,10 @@ Route::post('login', 'LoginController@index');
 
 Route::post('cart/update', 'CartController@update');
 
-Route::post('cart/selectregion/{id}', 'CartController@selectRegionPost')->where(['id' => '[0-9]+']);
+Route::post('cart/selectregion/{id}/{quantity}', 'CartController@selectRegionPost')->where(['id' => '[0-9]+','quantity' => '[0-9]+']);
 
 Route::post('cart/checkout', 'CheckoutController@post');
 
 Route::post('admin/faq/add', 'FaqManageController@submit');
 
+Route::post('cart/add', 'CartController@add');

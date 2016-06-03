@@ -34,6 +34,7 @@ return [
     'europe' => 'Europa',
     'world' => 'Wereld',
     'selectregiontext' => 'Selecteer in welke regio u zich bevindt',
+    'selectregiontitle' => 'Selecteer regio',
     
 
 ];

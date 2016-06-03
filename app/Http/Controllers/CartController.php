@@ -58,12 +58,12 @@ class CartController extends Controller
 		);
     }
 	
-    public function set(Request $request, $id)
+    public function set(Request $request, $id, $quantity)
     {
 	    //Check if region session exist
 	    if ($request->session()->has('region') == false) {
 		    //Redirect to select region to set region for shipping
-		    return redirect('cart/selectregion/'.$id);
+		    return redirect('cart/selectregion/' . $id . '/' . $quantity);
 		}
 	    
 		//Check if cart session exist
@@ -71,24 +71,24 @@ class CartController extends Controller
 			//Get products from cart session
 			$productIds = $request->session()->get('cartproducts');
 			
-			//If product already exist set quantity + 1
+			//If product already exist set quantity + quantity
 			if (array_key_exists($id, $productIds)) {
 				//Get product from cart array by id
-				$quantity = $productIds[$id];
-				//Add quantity + 1
-				$quantity = $quantity + 1;
+				$currentQuantity = $productIds[$id];
+				//Add quantity + quantity
+				$currentQuantity = $currentQuantity + $quantity;
 				//Adjust quantity in cart array
-				$productIds[$id] = $quantity;
+				$productIds[$id] = $currentQuantity;
 				Log::info('Added existing product to cart id:' . $id);
 			} else {
 				//If product doesn't exist add to cart array
-				$productIds[$id] = 1;
+				$productIds[$id] = $quantity;
 				Log::info('Added new product to cart id:' . $id);
 			}
 		} else {
 			//If session not exist add new session with new cart array
 			$productIds = array();
-			$productIds[$id] = 1;
+			$productIds[$id] = $quantity;
 		}
 		
 		//Update session
@@ -157,7 +157,7 @@ class CartController extends Controller
 		}
 	}
 	
-	public function selectRegion(Request $request, $id)
+	public function selectRegion(Request $request, $id, $quantity)
 	{
 		//Check if region session exist
 	    if ($request->session()->has('region')) {
@@ -170,7 +170,7 @@ class CartController extends Controller
 		);
 	}
 	
-	public function selectRegionPost(Request $request, $id)
+	public function selectRegionPost(Request $request, $id, $quantity)
 	{
 		//Validate rules for form
 		$rules = [
@@ -185,10 +185,64 @@ class CartController extends Controller
 			//Set region session
 			$request->session()->put('region', $request->input('region'));
 						
-			return redirect('cart/set/'.$id);
+			return redirect('cart/set/'.$id.'/'.$quantity);
 		} else {
 			//Validation failed and set client back to form with validation errors and input
 			return redirect('cart/selectregion')->withErrors($validator)->withInput();
 		}
 	}
+	
+    public function add(Request $request)
+    {
+	    //Validate rules for form
+	    $rules = [
+			'id' => 'required',
+			'quantity' => 'required|min:1',
+		];
+
+		//Validator
+		$validator = Validator::make($request->all(), $rules);
+
+		//Check if form is valid
+		if ($validator->passes()) {
+		    //Check if region session exist
+		    if ($request->session()->has('region') == false) {
+			    //Redirect to select region to set region for shipping
+			    return redirect('cart/selectregion/' . $request->input('id') .  '/' . $request->input('quantity'));
+			}
+		    
+			//Check if cart session exist
+			if ($request->session()->has('cartproducts')) {
+				//Get products from cart session
+				$productIds = $request->session()->get('cartproducts');
+				
+				//If product already exist set quantity + quantity
+				if (array_key_exists($request->input('id'), $productIds)) {
+					//Get product from cart array by id
+					$quantity = $productIds[$request->input('id')];
+					//Add quantity + quentity
+					$quantity = $quantity + $request->input('quantity');
+					//Adjust quantity in cart array
+					$productIds[$request->input('id')] = $quantity;
+					Log::info('Added existing product to cart id:' . $request->input('id'));
+				} else {
+					//If product doesn't exist add to cart array
+					$productIds[$request->input('id')] = $request->input('quantity');
+					Log::info('Added new product to cart id:' . $request->input('id'));
+				}
+			} else {
+				//If session not exist add new session with new cart array
+				$productIds = array();
+				$productIds[$request->input('id')] = $request->input('quantity');
+			}
+			
+			//Update session
+			$request->session()->put('cartproducts', $productIds);
+			
+			return redirect()->back()->with('successmessage', trans('cart.productset'));
+		} else {
+			//Validation failed and set client back to form with validation errors and input
+			return redirect()->back()->withErrors($validator)->withInput();
+		}
+    }
 }

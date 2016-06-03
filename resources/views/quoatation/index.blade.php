@@ -44,19 +44,19 @@
 						<form action="/quoatation" method="post" id="commentform" class="contact-form-7">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <p class="comment-for-author">
-                                <input type="text" class="author" name="name" placeholder="{{ trans('contact.name') }}" value={{ old('name') }}>
+                                <input type="text" class="author" name="name" placeholder="{{ trans('contact.name') }}" value={{ old('name') }} required>
                                 <i class="fa fa-user"></i>
                             </p>
                             <p class="comment-for-email">
-                                <input type="email" class="email" name="email" placeholder="{{ trans('contact.email') }}" value={{ old('email') }}>
+                                <input type="email" class="email" name="email" placeholder="{{ trans('contact.email') }}" value={{ old('email') }} required>
                                 <i class="fa fa-envelope"></i>
                             </p>
                             <p class="comment-for-url">
-                                <input type="tel" class="url" name="phone" placeholder="{{ trans('quoatation.phone') }}" value={{ old('phone') }}>
+                                <input type="tel" class="url" name="phone" placeholder="{{ trans('quoatation.phone') }}" value={{ old('phone') }} required>
                                 <i class="fa fa-phone"></i>
                             </p>
                             <p class="comment-for-content">
-                                <textarea class="comment" name="message" placeholder="{{ trans('contact.message') }}">{{ old('message') }}</textarea>
+                                <textarea class="comment" name="message" placeholder="{{ trans('contact.message') }}" required>{{ old('message') }}</textarea>
                                 <i class="fa fa-comment"></i>
                             </p>
                             <p class="comment-for-submit">

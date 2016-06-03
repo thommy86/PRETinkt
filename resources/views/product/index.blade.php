@@ -40,20 +40,30 @@
 											<div class="product-info">
 												<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
 												<span class="p-meta">
-													<span class="p-price">{{ number_format(round($product->prijs, 2), 2) }}</span>
+													<span class="p-price">&euro;{{ number_format(round($product->prijs + ($product->prijs * $product->BTW), 2), 2) }}</span>
+													@if ($product->rating > 0)
 													<span class="p-vote">
 														<i class="fa fa-star"></i>
+														@if ($product->rating > 1)
 														<i class="fa fa-star"></i>
+														@endif
+														@if ($product->rating > 2)
 														<i class="fa fa-star"></i>
+														@endif
+														@if ($product->rating > 3)
 														<i class="fa fa-star"></i>
-														<i class="fa fa-star-half-o"></i>
+														@endif
+														@if ($product->rating > 4)
+														<i class="fa fa-star"></i>
+														@endif
 													</span>
+													@endif
 												</span>
 												<p>
 													{{ $product->omschrijving }}
 												</p>
 												<span class="p-mask">
-													<a href="/cart/set/{{ $product->id }}" class="add-to-cart">{{ trans('product.addtocart') }}</a>
+													<a href="/cart/set/{{ $product->id }}/1" class="add-to-cart">{{ trans('product.addtocart') }}</a>
 													<a href="/wishlist/set/{{ $product->id }}" class="add-to-wishlist"><i class="fa fa-heart"></i> {{ trans('product.addtowishlist') }}</a>
 												</span>
 											</div>

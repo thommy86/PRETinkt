@@ -35,5 +35,6 @@ return [
     'world' => 'World',
     'selectregiontext' => 'Select which region you are',
     'submit' => 'Continue',
+    'selectregiontitle' => 'Select region',
 
 ];

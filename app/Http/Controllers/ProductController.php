@@ -19,6 +19,30 @@ class ProductController extends Controller
 	    } catch (\Exception $exception) {
 			Log::error('Cannot receive products from database. Exception:'.$exception);
 		}
+		
+		try {
+			foreach($products as $product){
+				//Get rating of products from cart
+				$ratings = Beoordeling::where('productId', $product->id)->select('beoordeling')->get();
+				
+				if(count($ratings) > 0) {
+					$ratingCounts = array();
+					
+					foreach($ratings as $rating)
+					{
+						array_push($ratingCounts, $rating->beoordeling);
+					}
+					
+					$average = array_sum($ratingCounts) / count($ratingCounts);
+					
+					$product->rating = round($average, 1);
+				} else {
+					$product->rating = 0;
+				}
+			}
+		} catch (\Exception $exception) {
+			Log::error('Cannot set rating for product id: ' . $product->id . '. Exception:'.$exception);
+		}
 	    
         return view('product.index', [
 			'title' => trans('product.indextitle') . ' - ' . config('webshop.Webshopname'), 
@@ -35,6 +59,28 @@ class ProductController extends Controller
 	    } catch (\Exception $exception) {
 	    	//Get specific product
 			Log::error('Cannot receive product from database. Exception:'.$exception);
+		}
+		
+		try {
+			//Get rating of product
+			$ratings = Beoordeling::where('productId', $product->id)->select('beoordeling')->get();
+				
+			if(count($ratings) > 0) {
+				$ratingCounts = array();
+				
+				foreach($ratings as $rating)
+				{
+					array_push($ratingCounts, $rating->beoordeling);
+				}
+				
+				$average = array_sum($ratingCounts) / count($ratingCounts);
+				
+				$product->rating = round($average, 1);
+			} else {
+				$product->rating = 0;
+			}
+		} catch (\Exception $exception) {
+			Log::error('Cannot set rating for product id: ' . $product->id . '. Exception:'.$exception);
 		}
 	    
         return view('product.product', [
