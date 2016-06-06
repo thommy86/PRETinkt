@@ -33,5 +33,7 @@ return [
 	'submit' => 'Submit',
 	'productadded' => 'Product added',
 	'productupdated' => 'Product updated',
+	'upload' => 'Upload',
+	'file' => 'File',
 
 ];

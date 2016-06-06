@@ -34,7 +34,7 @@ class ProductManageController extends Controller
 		);
     }
 	
-	public function addpost(Request $request)
+	public function addPost(Request $request)
     {
 		//Validate rules for form
 	    $rules = [
@@ -97,7 +97,7 @@ class ProductManageController extends Controller
 		);
     }
 	
-	public function editpost(Request $request)
+	public function editPost(Request $request)
     {
 		//Validate rules for form
 	    $rules = [
@@ -143,4 +143,40 @@ class ProductManageController extends Controller
 			return redirect('admin/product/'.$request->input('id'))->withErrors($validator)->withInput();
 		}
     }
+	
+	public function upload()
+    {
+        return view('productmanage.upload', [
+			'title' => trans('productmanage.indextitle') . ' - ' . config('webshop.Webshopname')]
+		);
+	}
+	
+	public function uploadPost(Request $request)
+    {		
+		//Validate rules for form
+	    $rules = [
+			'file' => 'required',
+		];
+
+		//Validator
+		$validator = Validator::make($request->all(), $rules);
+
+		//Check if form is valid
+		if ($validator->passes())
+		{
+			$file = $request->file('file');
+		
+			$destinationPath = "productImport/";
+		
+			if($file->move($destinationPath))
+			{
+				return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
+			} else {
+				return redirect('admin/product/upload')->with('errormessage', trans('productmanage.error'))->withInput();
+			}
+		} else {
+			//Validation failed and set client back to form with validation errors and input
+			return redirect('admin/product/upload')->withErrors($validator)->withInput();
+		}
+	}
 }

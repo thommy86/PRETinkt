@@ -55,6 +55,8 @@ Route::get('admin/faq/del/{id}', 'FaqManageController@del')->where(['id' => '[0-
 
 Route::get('admin/products', 'ProductManageController@index');
 
+Route::get('admin/product/upload', 'ProductManageController@upload');
+
 Route::get('admin/product/add', 'ProductManageController@add');
 
 Route::get('admin/product/{id}', 'ProductManageController@edit')->where(['id' => '[0-9]+']);
@@ -85,10 +87,12 @@ Route::post('cart/checkout', 'CheckoutController@post');
 
 Route::post('admin/faq/add', 'FaqManageController@submit');
 
-Route::post('admin/product/add', 'ProductManageController@addpost');
+Route::post('admin/product/add', 'ProductManageController@addPost');
 
-Route::post('admin/product', 'ProductManageController@editpost');
+Route::post('admin/product', 'ProductManageController@editPost');
+
+Route::post('admin/product/upload', 'ProductManageController@uploadPost');
 
 Route::post('cart/add', 'CartController@add');
 
-Route::post('cart/checkout/pay', 'CheckoutController@paypost');
+Route::post('cart/checkout/pay', 'CheckoutController@payPost');

@@ -192,7 +192,7 @@ class CheckoutController extends Controller
 		);
 	}
 	
-	public function paypost(Request $request)
+	public function payPost(Request $request)
     {
 		//Validate rules for form
 	    $rules = [

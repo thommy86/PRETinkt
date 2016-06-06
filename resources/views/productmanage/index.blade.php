@@ -18,7 +18,7 @@
 			@include('layouts.message')
 			
             <h1 class="page-title pull-left">{{ trans('productmanage.productmanage') }}</h1>
-            <a href="/admin/product/add"><h3 class="pull-right">{{ trans('productmanage.add') }}</h3></a>
+            <h3 class="pull-right"><a href="/admin/product/add">{{ trans('productmanage.add') }}</a> / <a href="/admin/product/upload">{{ trans('productmanage.upload') }}</a></h3>
 
             <!--Start form table-->
             <form>
