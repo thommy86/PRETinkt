@@ -30,7 +30,7 @@ class ProductManageController extends Controller
 	public function add()
     {
         return view('productmanage.add', [
-			'title' => trans('productmanage.indextitle') . ' - ' . config('webshop.Webshopname')]
+			'title' => trans('productmanage.addtitle') . ' - ' . config('webshop.Webshopname')]
 		);
     }
 	
@@ -72,7 +72,7 @@ class ProductManageController extends Controller
 					return redirect('admin/product/add')->with('errormessage', trans('productmanage.error'))->withInput();
 				}
 			} catch (\Exception $exception) {
-				Log::error('Cannot add order. Exception:'.$exception);
+				Log::error('Cannot add product. Exception:'.$exception);
 			}
 		} else {
 			//Validation failed and set client back to form with validation errors and input
@@ -91,16 +91,17 @@ class ProductManageController extends Controller
 			Log::error('Cannot receive product from database. Exception:'.$exception);
 		}
 	    
-        return view('productmanage.product', [
-			'title' => trans('productmanage.producttitle') . ' - ' . config('webshop.Webshopname'), 
+        return view('productmanage.edit', [
+			'title' => trans('productmanage.edittitle') . ' - ' . config('webshop.Webshopname'), 
 			'product' => $product]
 		);
     }
 	
-	public function editpost(Request $request, $id)
+	public function editpost(Request $request)
     {
 		//Validate rules for form
 	    $rules = [
+			'id' => 'required',
 			'name' => 'required',
 			'brand' => 'required',
 			'description' => 'required',
@@ -108,7 +109,7 @@ class ProductManageController extends Controller
 			'type' => 'required',
 			'capacity' => 'required',
 			'btw' => 'required',
-			'price' => 'required|email',
+			'price' => 'required',
 			'stock' => 'required',
 		];
 
@@ -118,7 +119,7 @@ class ProductManageController extends Controller
 		//Check if form is valid
 		if ($validator->passes()) {
 			try {
-				$product = Product::find($id);
+				$product = Product::find($request->input('id'));
 				$product->naam = $request->input('name');
 				$product->merk = $request->input('brand');
 				$product->omschrijving = $request->input('description');
@@ -129,17 +130,17 @@ class ProductManageController extends Controller
 				$product->prijs = $request->input('price');
 				$product->voorraad = $request->input('stock');
 				
-				if($bestelling->save()){
-					return redirect('/admin/product')->with('successmessage', trans('productmanage.productupdated'));
+				if($product->save()){
+					return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
 				} else {
 					return redirect('admin/product/add')->with('errormessage', trans('productmanage.error'))->withInput();
 				}
 			} catch (\Exception $exception) {
-				Log::error('Cannot add order. Exception:'.$exception);
+				Log::error('Cannot update product. Exception:'.$exception);
 			}
 		} else {
 			//Validation failed and set client back to form with validation errors and input
-			return redirect('admin/product/add')->withErrors($validator)->withInput();
+			return redirect('admin/product/'.$request->input('id'))->withErrors($validator)->withInput();
 		}
     }
 }

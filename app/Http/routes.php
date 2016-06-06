@@ -87,7 +87,7 @@ Route::post('admin/faq/add', 'FaqManageController@submit');
 
 Route::post('admin/product/add', 'ProductManageController@addpost');
 
-Route::post('admin/product/{id}', 'ProductManageController@editpost')->where(['id' => '[0-9]+']);
+Route::post('admin/product', 'ProductManageController@editpost');
 
 Route::post('cart/add', 'CartController@add');
 

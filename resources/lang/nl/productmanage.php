@@ -14,6 +14,8 @@ return [
     */
 
     'indextitle' => 'Productbeheer',
+    'edittitle' => 'Bewerk product',
+    'newtitle' => 'Nieuw product',
 	'admin' => 'Admin',
     'productmanage' => 'Productbeheer',
     'name' => 'Naam',
@@ -27,7 +29,9 @@ return [
 	'stock' => 'Voorraad',
     'backtoadmin' => 'Terug naar admin',
     'add' => 'Nieuw',
+    'edit' => 'Bewerk',
 	'submit' => 'Verzenden',
 	'productadded' => 'Product toegevoegd',
+	'productupdated' => 'Product bewerkt',
 
 ];

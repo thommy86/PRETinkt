@@ -9,7 +9,7 @@
                     <a href="/admin">{{ trans('productmanage.admin') }}</a>
                 </li>
                 <li>
-                    <a href="/admin">{{ trans('productmanage.productmanage') }}</a>
+                    <a href="/admin/products">{{ trans('productmanage.productmanage') }}</a>
                 </li>
                 <li class="current">
                     {{ trans('productmanage.add') }}

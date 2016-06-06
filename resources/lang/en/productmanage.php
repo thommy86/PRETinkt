@@ -14,6 +14,8 @@ return [
     */
 
     'indextitle' => 'Product manage',
+    'edittitle' => 'Edit product',
+    'addtitle' => 'New product',
 	'admin' => 'Admin',
     'productmanage' => 'Product manage',
     'name' => 'Name',
@@ -27,7 +29,9 @@ return [
 	'stock' => 'Stock',
     'backtoadmin' => 'Back to admin',
     'add' => 'Add',
+    'edit' => 'Edit',
 	'submit' => 'Submit',
 	'productadded' => 'Product added',
+	'productupdated' => 'Product updated',
 
 ];
