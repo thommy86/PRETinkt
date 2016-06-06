@@ -23,5 +23,6 @@ return [
     'price' => 'Prijs',
     'backtoshop' => 'Terug naar winkel',
     'nowishlistitems' => 'Boodschappenlijst is leeg',
+    'addtocart' => 'Toevoegen aan winkelwagen',
 
 ];

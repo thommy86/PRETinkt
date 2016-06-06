@@ -77,6 +77,10 @@
                                 <label for="phone">{{ trans('checkout.phone') }} <span class="required">*</span></label>
                                 <input type="tel" class="input-text " name="phone" id="phone" placeholder="{{ trans('checkout.phone') }}" value="{{ old('phone') }}" required>
                             </p>
+                            <p class="form-row form-row-first">
+                                <label for="birthday">{{ trans('checkout.phone') }} <span class="required">*</span></label>
+                                <input type="date" class="input-text " name="birthday" id="birthday" placeholder="{{ trans('checkout.birthday') }}" value="{{ old('birthday') }}" required>
+                            </p>
                         </div>
 	                    <!--End form checkout-->
 	
@@ -155,7 +159,7 @@
 							<table class="shop_table">
 								<tr>
 									<td class="actions">
-										<button type="submit" href="/cart/checkout" class="update-cart">{{ trans('cart.pay') }}</button>
+										<button type="submit" class="update-cart">{{ trans('cart.pay') }}</button>
 									</td>
 								</tr>
 							</table>

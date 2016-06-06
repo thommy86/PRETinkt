@@ -37,6 +37,8 @@ Route::get('wishlist/del/{id}', 'WishlistController@del')->where(['id' => '[0-9]
 
 Route::get('cart/checkout', 'CheckoutController@index');
 
+Route::get('cart/checkout/pay/{id}', 'CheckoutController@pay');
+
 Route::get('faq', 'FaqController@index');
 
 Route::get('privacypolicy', 'PrivacyPolicyController@index');
@@ -78,3 +80,5 @@ Route::post('cart/checkout', 'CheckoutController@post');
 Route::post('admin/faq/add', 'FaqManageController@submit');
 
 Route::post('cart/add', 'CartController@add');
+
+Route::post('cart/checkout/pay', 'CheckoutController@paypost');

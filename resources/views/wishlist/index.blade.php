@@ -28,6 +28,7 @@
                             <th class="product-thumbnail">{{ trans('wishlist.product') }}</th>
                             <th class="product-name">&nbsp;</th>
                             <th class="product-price">{{ trans('wishlist.price') }}</th>
+                            <th class="product-name">&nbsp;</th>
                         </tr>
                     </thead>
                     <!--End table header-->
@@ -55,6 +56,9 @@
 								</td>
 								<td class="product-price">
 									<span class="amount">{{ number_format(round($product->prijs, 2), 2) }}</span>
+								</td>
+								<td class="product-price">
+									<a href="/cart/set/{{ $product->id }}/1" class="add-to-cart">{{ trans('wishlist.addtocart') }}</a>
 								</td>
 							</tr>
 						@endforeach

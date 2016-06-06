@@ -25,6 +25,7 @@ return [
     'total' => 'Total',
     'ideal' => 'iDEAL',
     'paypal' => 'Paypal',
+    'name' => 'Name',
     'firstname' => 'Firstname',
     'prefix' => 'Prefix',
     'lastname' => 'Lastname',
@@ -36,7 +37,15 @@ return [
     'country' => 'Country',
     'email' => 'Email',
     'phone' => 'Phone',
+    'birthday' => 'Birthday',
     'yourorder' => 'Your order',
     'billingdetails' => 'Billing details',
+    'pay' => 'Pay',
+    'complete' => 'Order complete',
+    'order' => 'Order',
+    'ordermeailcontent' => 'Thank you for your order.',
+    'alreadycomplete' => 'Order already completed',
+    'success' => 'Bestelling added',
+    'paytext' => 'Betaal uw order',
 
 ];

@@ -23,5 +23,6 @@ return [
     'price' => 'Price',
     'backtoshop' => 'Back to shop',
     'nowishlistitems' => 'Wishlist is empty',
+    'addtocart' => 'Add to cart',
 
 ];
