@@ -53,7 +53,7 @@
 						</span>
 						@endif
 						<p class="product-price">
-							<span class="price">&euro;{{ number_format(round($product->prijs + ($product->prijs * $product->BTW), 2), 2) }}/span>
+							<span class="price">&euro;{{ number_format(round($product->prijs + ($product->prijs * $product->BTW), 2), 2) }}</span>
 							<span class="stock">{{ trans('product.stock') }}:  <span>{{ $product->voorraad }}</span></span>
 						</p>
 						<div class="description">
