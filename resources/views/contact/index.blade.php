@@ -45,15 +45,15 @@
 						<form action="/contact" method="post" id="commentform" class="contact-form-7">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <p class="comment-for-author">
-                                <input type="text" class="author" name="name" placeholder="{{ trans('contact.name') }}" value={{ old('name') }} required>
+                                <input type="text" class="author" name="name" placeholder="{{ trans('contact.name') }}" value="{{ old('name') }}" required>
                                 <i class="fa fa-user"></i>
                             </p>
                             <p class="comment-for-email">
-                                <input type="email" class="email" name="email" placeholder="{{ trans('contact.email') }}" value={{ old('email') }} required>
+                                <input type="email" class="email" name="email" placeholder="{{ trans('contact.email') }}" value="{{ old('email') }}" required>
                                 <i class="fa fa-envelope"></i>
                             </p>
                             <p class="comment-for-url">
-                                <input type="text" class="url" name="subject" placeholder="{{ trans('contact.subject') }}" {{ old('subject') }} required>
+                                <input type="text" class="url" name="subject" placeholder="{{ trans('contact.subject') }}" value="{{ old('subject') }}" required>
                                 <i class="fa fa-link"></i>
                             </p>
                             <p class="comment-for-content">

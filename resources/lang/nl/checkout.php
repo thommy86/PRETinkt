@@ -46,6 +46,6 @@ return [
     'ordermeailcontent' => 'Bedankt voor uw bestelling.',
     'alreadycomplete' => 'Bestelling al afgerond',
     'success' => 'Bestelling toegevoegd',
-    'paytext' => 'Pay your order',
+    'paytext' => 'Betaal uw bestelling',
 
 ];
