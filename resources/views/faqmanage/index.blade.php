@@ -6,7 +6,7 @@
             <!--Start Breadcrumbs-->
             <ul class="tz-breadcrumbs">
                 <li>
-                    <a href="/">{{ trans('faqmanage.home') }}</a>
+                    <a href="/admin">{{ trans('faqmanage.admin') }}</a>
                 </li>
                 <li class="current">
                     {{ trans('faqmanage.faqmanage') }}

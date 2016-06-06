@@ -14,11 +14,14 @@ return [
     */
 
     'indextitle' => 'Faq beheer',
-		'faqmanage' => 'Faq beheer',
-		'vraag' => 'Vraag',
-		'antwoord' => 'antwoord',
-		'backtoadmin' => 'Terug naar admin',
-		'add' => 'Nieuw',
-		'addtitle' => 'Nieuwe vraag',
-		'faqdel' => 'Vraag verwijderd',
+	'admin' => 'Admin',
+	'faqmanage' => 'Faq beheer',
+	'vraag' => 'Vraag',
+	'antwoord' => 'antwoord',
+	'backtoadmin' => 'Terug naar admin',
+	'add' => 'Nieuw',
+	'addtitle' => 'Nieuwe vraag',
+	'faqdel' => 'Vraag verwijderd',
+	'submit' => 'Verwerk',
+	
 ];
