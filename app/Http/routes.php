@@ -17,6 +17,8 @@ Route::get('products', 'ProductController@index');
 
 Route::get('product/{id}', 'ProductController@product')->where(['id' => '[0-9]+']);
 
+Route::get('product/{id}/rate/{rate}', 'ProductController@rate')->where(['id' => '[0-9]+','rate' => '[1-5]']);
+
 Route::get('cart', 'CartController@index');
 
 Route::get('cart/set/{id}/{quantity}', 'CartController@set')->where(['id' => '[0-9]+','quantity' => '[0-9]+']);
@@ -37,7 +39,7 @@ Route::get('wishlist/del/{id}', 'WishlistController@del')->where(['id' => '[0-9]
 
 Route::get('cart/checkout', 'CheckoutController@index');
 
-Route::get('cart/checkout/pay/{id}', 'CheckoutController@pay');
+Route::get('cart/checkout/pay/{id}', 'CheckoutController@pay')->where(['id' => '[0-9]+']);
 
 Route::get('faq', 'FaqController@index');
 

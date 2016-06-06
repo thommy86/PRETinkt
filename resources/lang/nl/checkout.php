@@ -47,5 +47,7 @@ return [
     'alreadycomplete' => 'Bestelling al afgerond',
     'success' => 'Bestelling toegevoegd',
     'paytext' => 'Betaal uw bestelling',
+    'stars' => 'Sterren',
+    'star' => 'Ster',
 
 ];

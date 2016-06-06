@@ -88,4 +88,42 @@ class ProductController extends Controller
 			'product' => $product]
 		);
     }
+	
+	public function rate($id, $rate)
+	{
+		try {
+			$ip = $this->getIp();
+			
+			$count = Beoordeling::where('productId', $id)->where('ipadres', $ip)->count();
+			if($count == 0)
+			{
+				$rating = new Beoordeling();
+				$rating->productId = $id;
+				$rating->beoordeling = $rate;
+				$rating->ipadres = $ip;
+				
+				if($rating->save())
+				{
+					return redirect('/')->with('successmessage', trans('product.productrated'));
+				}
+			} else {
+				return redirect('/')->with('infomessage', trans('product.alreadyrated'));
+			}
+	    } catch (\Exception $exception) {
+			Log::error('Cannot submit product from database. Exception:'.$exception);
+		}
+	}
+	
+	public function getIp()
+	{
+		//Get ip from client
+		if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+			$ip = $_SERVER['HTTP_CLIENT_IP'];
+		} elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+			$ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+		} else {
+			$ip = $_SERVER['REMOTE_ADDR'];
+		}
+		return $ip;
+	}
 }

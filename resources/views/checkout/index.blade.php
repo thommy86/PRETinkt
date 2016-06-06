@@ -29,16 +29,16 @@
                             <h3>{{ trans('checkout.billingdetails') }}</h3>
                             <p class="form-row form-row-first">
                                 <label for="first_name">{{ trans('checkout.firstname') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="firstname" id="firstname" placeholder="{{ trans('checkout.firstname') }}" value="{{ old('country') }}" required>
+                                <input type="text" class="input-text " name="firstname" id="firstname" placeholder="{{ trans('checkout.firstname') }}" value="{{ old('firstname') }}" required>
                             </p>
                             <p class="form-row form-row-last">
                                 <label for="prefix">{{ trans('checkout.prefix') }} </label>
-                                <input type="text" class="input-text " name="prefix" id="prefix" placeholder="{{ trans('checkout.prefix') }}" value="{{ old('country') }}">
+                                <input type="text" class="input-text " name="prefix" id="prefix" placeholder="{{ trans('checkout.prefix') }}" value="{{ old('prefix') }}">
                             </p>
                             <div class="clear"></div>
                             <p class="form-row form-row-first">
                                 <label for="last_name">{{ trans('checkout.lastname') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="lastname" id="lastname" placeholder="{{ trans('checkout.lastname') }}" value="{{ old('country') }}" required>
+                                <input type="text" class="input-text " name="lastname" id="lastname" placeholder="{{ trans('checkout.lastname') }}" value="{{ old('lastname') }}" required>
                             </p>
                             <div class="clear"></div>
                             <p class="form-row">
@@ -78,7 +78,7 @@
                                 <input type="tel" class="input-text " name="phone" id="phone" placeholder="{{ trans('checkout.phone') }}" value="{{ old('phone') }}" required>
                             </p>
                             <p class="form-row form-row-first">
-                                <label for="birthday">{{ trans('checkout.phone') }} <span class="required">*</span></label>
+                                <label for="birthday">{{ trans('checkout.birthday') }} <span class="required">*</span></label>
                                 <input type="date" class="input-text " name="birthday" id="birthday" placeholder="{{ trans('checkout.birthday') }}" value="{{ old('birthday') }}" required>
                             </p>
                         </div>

@@ -81,7 +81,6 @@ class CheckoutController extends Controller
 	    //Validate rules for form
 	    $rules = [
 			'firstname' => 'required',
-			'prefix' => 'required',
 			'lastname' => 'required',
 			'street' => 'required',
 			'number' => 'required',
@@ -152,6 +151,8 @@ class CheckoutController extends Controller
 						$data = ['name' => $request->input('firstname') . " " . $request->input('prefix') . " " . $request->input('lastname'),
 						'email' => $request->input('email'),
 						'subject' => trans('checkout.order'),
+						'baseUrl' => 'http://localhost',
+						'products' => $products,
 						'paylink' => '/cart/checkout/pay/' . $bestelling->id];	
 						
 						Mail::send('emails.order', $data, function ($message) use ($data) {

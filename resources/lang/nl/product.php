@@ -23,5 +23,7 @@ return [
     'quantity' => 'Aantal',
     'stock' => 'Voorraad',
     'noproducts' => 'Er zijn geen producten',
+    'productrated' => 'Product beoordeeld',
+    'productalreadyrated' => 'Product al beoordeeld',
 
 ];

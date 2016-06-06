@@ -23,5 +23,7 @@ return [
     'quantity' => 'Quantity',
     'stock' => 'Stock',
     'noproducts' => 'There are no products found',
+    'productrated' => 'Product rated',
+    'productalreadyrated' => 'Product already rated',
 
 ];
