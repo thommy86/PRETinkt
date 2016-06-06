@@ -21,7 +21,7 @@
 			
 						@include('layouts.message')
 
-                        <div class="tz-product row list-view">
+                        <div class="tz-product row grid-eff">
 
 							@if (count($products) == 0)
 								<!--Product item-->
