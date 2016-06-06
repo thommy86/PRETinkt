@@ -163,6 +163,8 @@ class CheckoutController extends Controller
 							$message->to($data['email'], $data['name'])->subject(trans('checkout.order'));
 							Log::info('Sent order mail to customer email:' . $data['email']);
 						});
+					} else {
+						return redirect('/cart/checkout')->with('errormessage', trans('checkout.error'))->withInput();
 					}
 				}
 				$request->session()->forget('cartproducts');
@@ -209,6 +211,9 @@ class CheckoutController extends Controller
 			$bestelling->save();
 			
 			return redirect('/')->with('successmessage', trans('checkout.complete'));
+		} else {
+			//Validation failed and set client back to form with validation errors and input
+			return redirect('/')->withErrors($validator)->withInput();
 		}
 	}
 }

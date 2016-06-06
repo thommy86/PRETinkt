@@ -14,5 +14,20 @@ return [
     */
 
     'indextitle' => 'Product manage',
+	'admin' => 'Admin',
+    'productmanage' => 'Product manage',
+    'name' => 'Name',
+    'brand' => 'Brand',
+    'description' => 'Description',
+    'colour' => 'Colour',
+    'type' => 'Type',
+    'capacity' => 'Capacity',
+    'btw' => 'BTW',
+	'price' => 'Price',
+	'stock' => 'Stock',
+    'backtoadmin' => 'Back to admin',
+    'add' => 'Add',
+	'submit' => 'Submit',
+	'productadded' => 'Product added',
 
 ];

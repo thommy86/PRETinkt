@@ -37,7 +37,7 @@
 						@foreach ($searches as $search)
 							<tr class="cart_item">
 								<td class="product-remove">
-									<a href="/admin/search/del/{{ $search->id }}" class="remove" title="Remove this item"></a>
+									<a href="/admin/search/del/{{ $search->id }}" class="remove"></a>
 								</td>
 
 								<td class="product-name">

@@ -55,6 +55,10 @@ Route::get('admin/faq/del/{id}', 'FaqManageController@del')->where(['id' => '[0-
 
 Route::get('admin/products', 'ProductManageController@index');
 
+Route::get('admin/product/add', 'ProductManageController@add');
+
+Route::get('admin/product/{id}', 'ProductManageController@edit')->where(['id' => '[0-9]+']);
+
 Route::get('admin/search', 'SearchManageController@index');
 
 Route::get('admin/search/del/{id}', 'SearchManageController@del')->where(['id' => '[0-9]+']);
@@ -80,6 +84,10 @@ Route::post('cart/selectregion/{id}/{quantity}', 'CartController@selectRegionPos
 Route::post('cart/checkout', 'CheckoutController@post');
 
 Route::post('admin/faq/add', 'FaqManageController@submit');
+
+Route::post('admin/product/add', 'ProductManageController@addpost');
+
+Route::post('admin/product/{id}', 'ProductManageController@editpost')->where(['id' => '[0-9]+']);
 
 Route::post('cart/add', 'CartController@add');
 

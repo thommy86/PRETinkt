@@ -45,7 +45,7 @@
 						@foreach ($products as $product)
 							<tr class="cart_item">
 								<td class="product-remove">
-									<a href="/wishlist/del/{{ $product->id }}" class="remove" title="Remove this item"></a>
+									<a href="/wishlist/del/{{ $product->id }}" class="remove"></a>
 								</td>
 								<td class="product-thumbnail">
 									<a href="/product/{{ $product->id }}"><img src="/public/images/product/{{ $product->afbeelding }}" /></a>

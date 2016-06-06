@@ -16,7 +16,8 @@
 			
 			@include('layouts.message')
 			
-            <h1 class="page-title">{{ trans('faqmanage.faqmanage') }}</h1>
+            <h1 class="page-title pull-left">{{ trans('faqmanage.faqmanage') }}</h1>
+            <a href="/admin/faq/add"><h3 class="pull-right">{{ trans('productmanage.add') }}</h3></a>
 
             <!--Start form table-->
             <form>
@@ -26,24 +27,20 @@
                         <tr>
                             <th class="product-remove">&nbsp;</th>
                             <th class="product-name">{{ trans('faqmanage.vraag') }}</th>
-							<th class="comment-for-submit"><a href="/admin/faq/add" class="update-cart">{{ trans('faqmanage.add') }}</a></th>
-											</tr>
+						</tr>
                     </thead>
                     <!--End table header-->
 
                     <!--Table body-->
                     <tbody>
 
-						@foreach ($faqs as $faqs)
+						@foreach ($faqs as $faq)
 							<tr class="cart_item">
 								<td class="product-remove">
-									<a href="/admin/faq/del/{{ $faqs->id }}" class="remove" title="Remove this item"></a>
+									<a href="/admin/faq/del/{{ $faq->id }}" class="remove"></a>
 								</td>
 								<td class="product-name">
-									<a href="/admin/faq/{{ $faqs->id }}">{{ $faqs->vraag }} </a>
-								</td>
-								<td class="product-price">
-									<span class="amount"></span>
+									<a href="/admin/faq/{{ $faq->id }}">{{ $faq->vraag }} </a>
 								</td>
 							</tr>
 						@endforeach

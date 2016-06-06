@@ -14,5 +14,20 @@ return [
     */
 
     'indextitle' => 'Productbeheer',
+	'admin' => 'Admin',
+    'productmanage' => 'Productbeheer',
+    'name' => 'Naam',
+    'brand' => 'Merk',
+    'description' => 'Omschrijving',
+    'colour' => 'Kleur',
+    'type' => 'Type',
+    'capacity' => 'Capaciteit',
+    'btw' => 'BTW',
+	'price' => 'Prijs',
+	'stock' => 'Voorraad',
+    'backtoadmin' => 'Terug naar admin',
+    'add' => 'Nieuw',
+	'submit' => 'Verzenden',
+	'productadded' => 'Product toegevoegd',
 
 ];

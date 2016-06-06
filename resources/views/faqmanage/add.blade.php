@@ -8,8 +8,11 @@
                 <li>
                     <a href="/admin">{{ trans('faqmanage.admin') }}</a>
                 </li>
+                <li>
+                    <a href="/admin/faq">{{ trans('faqmanage.faqmanage') }}</a>
+                </li>
                 <li class="current">
-                    {{ trans('faqmanage.faqmanage') }}
+                    {{ trans('faqmanage.add') }}
                 </li>
             </ul>
             <!--End Breadcrumbs-->
