@@ -27,7 +27,7 @@
 							</div>
 						@endif
 
-                        <div class="tz-product row list-view">
+                        <div class="tz-product row grid-eff">
 
 							@foreach ($products as $product)
 								<!--Product item-->
@@ -35,7 +35,7 @@
 									<div class="item">
 										<div class="product-item-inner">
 											<div class="product-thumb">
-												<img src="/public/images/product/{{ $product->afbeelding }}">
+												<img width="268" height="238" src="/public/images/product/{{ $product->afbeelding }}">
 											</div>
 											<div class="product-info">
 												<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
@@ -63,8 +63,8 @@
 													{{ $product->omschrijving }}
 												</p>
 												<span class="p-mask">
-													<a href="/cart/set/{{ $product->id }}/1" class="add-to-cart">{{ trans('product.addtocart') }}</a>
-													<a href="/wishlist/set/{{ $product->id }}" class="add-to-wishlist"><i class="fa fa-heart"></i> {{ trans('product.addtowishlist') }}</a>
+													<a href="/cart/set/{{ $product->id }}/1" class="add-to-cart">{{ trans('product.addtocart') }}</a><br>
+													<a href="/wishlist/set/{{ $product->id }}" class="add-to-cart"><i class="fa fa-heart"></i> {{ trans('product.addtowishlist') }}</a>
 												</span>
 											</div>
 										</div>
