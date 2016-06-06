@@ -164,15 +164,20 @@ class ProductManageController extends Controller
 		//Check if form is valid
 		if ($validator->passes())
 		{
-			$file = $request->file('file');
-		
-			$destinationPath = "productImport/";
-		
-			if($file->move($destinationPath))
-			{
-				return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
-			} else {
-				return redirect('admin/product/upload')->with('errormessage', trans('productmanage.error'))->withInput();
+			try {
+				$file = $request->file('file');
+				
+				$fileName = "productImport-" . $file->getClientOriginalName();
+				$destinationPath = "productImport/";
+			
+				if($file->move($destinationPath, $fileName))
+				{
+					return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
+				} else {
+					return redirect('admin/product/upload')->with('errormessage', trans('productmanage.error'))->withInput();
+				}
+			} catch (\Exception $exception) {
+				Log::error('Cannot update products. Exception:'.$exception);
 			}
 		} else {
 			//Validation failed and set client back to form with validation errors and input
