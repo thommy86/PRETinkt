@@ -169,12 +169,17 @@ class ProductManageController extends Controller
 				
 				$fileName = "productImport-" . $file->getClientOriginalName();
 				$destinationPath = "productImport/";
-			
-				if($file->move($destinationPath, $fileName))
+				
+				if($file->getClientOriginalExtension() == "csv")
 				{
-					return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
+					if($file->move($destinationPath, $fileName))
+					{
+						return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
+					} else {
+						return redirect('admin/product/upload')->with('errormessage', trans('productmanage.error'))->withInput();
+					}
 				} else {
-					return redirect('admin/product/upload')->with('errormessage', trans('productmanage.error'))->withInput();
+					return redirect('admin/product/upload')->with('errormessage', trans('productmanage.filenotsupported'));
 				}
 			} catch (\Exception $exception) {
 				Log::error('Cannot update products. Exception:'.$exception);

@@ -35,5 +35,6 @@ return [
 	'productupdated' => 'Product updated',
 	'upload' => 'Upload',
 	'file' => 'File',
+	'filenotsupported' => 'File not supported',
 
 ];

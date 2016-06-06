@@ -35,5 +35,7 @@ return [
 	'productupdated' => 'Product bewerkt',
 	'upload' => 'Upload',
 	'file' => 'Bestand',
+	'filenotsupported' => 'Bestand niet ondersteund',
+	'filenotsupported' => 'Bestand niet ondersteund',
 
 ];

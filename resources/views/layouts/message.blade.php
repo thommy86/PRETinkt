@@ -16,9 +16,9 @@
 	</div>
 @endif
 
-@if(Session::get('dangermessage') != null)
+@if(Session::get('errormessage') != null)
 	<div class="alert alert-danger" role="alert">
-		<strong>{{ trans('message.dangertitle') }}</strong> {{ Session::get('dangermessage') }}
+		<strong>{{ trans('message.dangertitle') }}</strong> {{ Session::get('errormessage') }}
 	</div>
 @endif
 

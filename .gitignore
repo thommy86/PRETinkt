@@ -6,3 +6,5 @@ Homestead.json
 .htaccess
 .env
 /public/.htaccess
+/public/productImport
+/public/imageUpload
