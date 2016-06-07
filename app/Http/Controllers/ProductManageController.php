@@ -7,6 +7,7 @@ use Validator;
 use Webshop\Product;
 use Illuminate\Http\Request;
 use Webshop\Http\Controllers\Controller;
+use Excel;
 
 class ProductManageController extends Controller
 {
@@ -305,8 +306,42 @@ class ProductManageController extends Controller
 					//Move file from temp to website public folder
 					if($file->move($destinationPath, $fileName))
 					{
-						//TODO csv data to database
-						return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
+						//Load excel from upload
+						Excel::load($destinationPath . $fileName, function($reader) {
+							foreach($reader->get() as $value) {
+								if($value->id != null){
+									//Update existing products
+									$product = Product::find($value->id);
+									$product->naam = $value->naam;
+									$product->merk = $value->merk;
+									$product->omschrijving = $value->omschrijving;
+									$product->kleur = $value->kleur;
+									$product->type = $value->type;
+									$product->capaciteit = $value->capaciteit;
+									$product->BTW = $value->btw;
+									$product->prijs = $value->prijs;
+									$product->voorraad = $value->voorraad;
+									$product->save();
+									Log::info('Updated product from csv import');
+								} else {
+									//Add new products
+									$product = new Product();
+									$product->naam = $value->naam;
+									$product->merk = $value->merk;
+									$product->omschrijving = $value->omschrijving;
+									$product->kleur = $value->kleur;
+									$product->type = $value->type;
+									$product->capaciteit = $value->capaciteit;
+									$product->BTW = $value->btw;
+									$product->prijs = $value->prijs;
+									$product->voorraad = $value->voorraad;
+									$product->afbeelding = config('webshop.DefaultImage');
+									$product->save();
+									Log::info('Created new product from csv import');
+								}
+							}
+						});
+						return redirect('/admin/products')->with('successmessage', trans('productmanage.productsupdated'));
 					} else {
 						return redirect('admin/product/upload')->with('errormessage', trans('productmanage.error'))->withInput();
 					}

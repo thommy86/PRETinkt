@@ -33,6 +33,7 @@ return [
 	'submit' => 'Verzenden',
 	'productadded' => 'Product toegevoegd',
 	'productupdated' => 'Product bewerkt',
+	'productsupdated' => 'Producten bewerkt',
 	'upload' => 'Upload',
 	'file' => 'Bestand',
 	'image' => 'Afbeelding',
