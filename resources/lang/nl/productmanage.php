@@ -35,7 +35,9 @@ return [
 	'productupdated' => 'Product bewerkt',
 	'upload' => 'Upload',
 	'file' => 'Bestand',
+	'image' => 'Afbeelding',
 	'filenotsupported' => 'Bestand niet ondersteund',
 	'onlycsv' => 'Alleen .CSV bestanden zijn toegestaan',
+	'onlyjpgpng' => 'Alleen .JPG en .PNG afbeeldingen zijn toegestaan',
 
 ];

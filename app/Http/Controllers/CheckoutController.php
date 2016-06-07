@@ -70,6 +70,7 @@ class CheckoutController extends Controller
     
     public function post(Request $request)
     {
+		//Check if customer has a cart and region selected
 		if ($request->session()->has('cartproducts') == false) {
 			return redirect('/');
 		}
@@ -98,6 +99,7 @@ class CheckoutController extends Controller
 		//Check if form is valid
 		if ($validator->passes()) {
 			try {
+				//Create new customer object
 				$klant = new Klant();
 				$klant->voornaam = $request->input('firstname');
 				$klant->tussenvoegsel = $request->input('prefix');
@@ -112,7 +114,9 @@ class CheckoutController extends Controller
 				$klant->telefoon = $request->input('phone');
 				$klant->geboortedatum = $request->input('birthday');
 				
+				//Save new customer
 				if($klant->save()){
+					//Create new order object
 					$bestelling = new Bestelling();
 					$bestelling->klantId = $klant->id;
 					$bestelling->datumtijd = date('Y-m-d H:i:s');
@@ -129,7 +133,9 @@ class CheckoutController extends Controller
 						break;
 					}
 					$bestelling->verzendwijze = "PostNL";
+					//Set status to ordered
 					$bestelling->status = 1;
+					//Save order to database
 					if($bestelling->save()){
 						//Get product ids from cart session
 						$productIds = array_keys($request->session()->get('cartproducts'));
@@ -137,6 +143,7 @@ class CheckoutController extends Controller
 						//Get products from database by product ids from the cart
 						$products = Product::findMany($productIds);
 						
+						//Add productorders to order
 						foreach($products as $product){
 							$bestellingProduct = new BestellingProduct();
 							$bestellingProduct->bestellingId = $bestelling->id;
@@ -147,7 +154,8 @@ class CheckoutController extends Controller
 							$bestellingProduct->prijs = $product->prijs;
 							$bestellingProduct->save();
 						}
-								
+							
+						//Set order mail data
 						$data = ['name' => $request->input('firstname') . " " . $request->input('prefix') . " " . $request->input('lastname'),
 						'email' => $request->input('email'),
 						'subject' => trans('checkout.order'),
@@ -155,6 +163,7 @@ class CheckoutController extends Controller
 						'products' => $products,
 						'paylink' => '/cart/checkout/pay/' . $bestelling->id];	
 						
+						//Sent order mail to customer
 						Mail::send('emails.order', $data, function ($message) use ($data) {
 							//Set from data
 							$message->from(config('webshop.Email'), config('webshop.Webshopname'));
@@ -167,7 +176,10 @@ class CheckoutController extends Controller
 						return redirect('/cart/checkout')->with('errormessage', trans('checkout.error'))->withInput();
 					}
 				}
+				
+				//Empty cart
 				$request->session()->forget('cartproducts');
+				
 				return redirect('/cart/checkout/pay/' . $bestelling->id)->with('successmessage', trans('checkout.success'));			
 	        } catch (\Exception $exception) {
 				Log::error('Cannot add order. Exception:'.$exception);
@@ -180,8 +192,10 @@ class CheckoutController extends Controller
 	
 	public function pay(Request $request, $id)
     {
+		//Get order
 		$bestelling = Bestelling::find($id);
 		
+		//Check if order already has been payed
 		if($bestelling->status == 2){
 			return redirect('/')->with('infomessage', trans('checkout.alreadycomplete'));
 		}
@@ -204,10 +218,13 @@ class CheckoutController extends Controller
 
 		//Check if form is valid
 		if ($validator->passes()) {
+			//Get order from database
 			$bestelling = Bestelling::find($request->input('id'));
 			
+			//Set status to payed
 			$bestelling->status = 2;
 			
+			//Save changes
 			$bestelling->save();
 			
 			return redirect('/')->with('successmessage', trans('checkout.complete'));

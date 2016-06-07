@@ -31,7 +31,7 @@ class SearchManageController extends Controller
 			//Find search by id
 			$search = Zoekterm::find($id);
 			
-			//Delete search
+			//Delete search record
 			$search->delete();
 			Log::info('Delete search id:' . $id);
 		} catch (\Exception $exception) {

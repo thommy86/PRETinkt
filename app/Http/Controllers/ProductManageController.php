@@ -47,6 +47,7 @@ class ProductManageController extends Controller
 			'btw' => 'required|numeric',
 			'price' => 'required|numeric',
 			'stock' => 'required|numeric',
+			'image' => 'required|image|mimes:jpeg,png',
 		];
 
 		//Validator
@@ -55,6 +56,7 @@ class ProductManageController extends Controller
 		//Check if form is valid
 		if ($validator->passes()) {
 			try {
+				//Create new product object to add to the database
 				$product = new Product();
 				$product->naam = $request->input('name');
 				$product->merk = $request->input('brand');
@@ -66,8 +68,23 @@ class ProductManageController extends Controller
 				$product->prijs = $request->input('price');
 				$product->voorraad = $request->input('stock');
 				
-				if($product->save()){
-					return redirect('/admin/products')->with('successmessage', trans('productmanage.productadded'));
+				//Get image from form
+				$image = $request->file('image');
+				
+				$fileName = date('YmdHis') . "-imageUpload-" . $image->getClientOriginalName();
+				$destinationPath = "imageUpload/";
+				
+				$product->afbeelding = $fileName;
+				
+				//Move image from temp to website public folder
+				if($image->move($destinationPath, $fileName))
+				{
+					//Add new product to database
+					if($product->save()){
+						return redirect('/admin/products')->with('successmessage', trans('productmanage.productadded'));
+					} else {
+						return redirect('admin/product/add')->with('errormessage', trans('productmanage.error'))->withInput();
+					}
 				} else {
 					return redirect('admin/product/add')->with('errormessage', trans('productmanage.error'))->withInput();
 				}
@@ -111,6 +128,7 @@ class ProductManageController extends Controller
 			'btw' => 'required',
 			'price' => 'required',
 			'stock' => 'required',
+			'image' => 'image|mimes:jpeg,png',
 		];
 
 		//Validator
@@ -119,6 +137,7 @@ class ProductManageController extends Controller
 		//Check if form is valid
 		if ($validator->passes()) {
 			try {
+				//Get existing product object from database to edit
 				$product = Product::find($request->input('id'));
 				$product->naam = $request->input('name');
 				$product->merk = $request->input('brand');
@@ -130,11 +149,36 @@ class ProductManageController extends Controller
 				$product->prijs = $request->input('price');
 				$product->voorraad = $request->input('stock');
 				
-				if($product->save()){
-					return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
+				//Check is an image has uploaded
+				if($request->file('image') != null) {
+					//Get image from form
+					$image = $request->file('image');
+					
+					$fileName = date('YmdHis') . "-imageUpload-" . $image->getClientOriginalName();
+					$destinationPath = "imageUpload/";
+					
+					$product->afbeelding = $fileName;
+					
+					//Move image from temp to website public folder
+					if($image->move($destinationPath, $fileName))
+					{
+						//Save changes to database
+						if($product->save()){
+							return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
+						} else {
+							return redirect('admin/product/'.$request->input('id'))->with('errormessage', trans('productmanage.error'))->withInput();
+						}
+					} else {
+						return redirect('admin/product/'.$request->input('id'))->with('errormessage', trans('productmanage.error'))->withInput();
+					}	
 				} else {
-					return redirect('admin/product/add')->with('errormessage', trans('productmanage.error'))->withInput();
-				}
+					//Save changes to database
+					if($product->save()){
+						return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
+					} else {
+						return redirect('admin/product/'.$request->input('id'))->with('errormessage', trans('productmanage.error'))->withInput();
+					}
+				}		
 			} catch (\Exception $exception) {
 				Log::error('Cannot update product. Exception:'.$exception);
 			}
@@ -165,15 +209,19 @@ class ProductManageController extends Controller
 		if ($validator->passes())
 		{
 			try {
+				//Get file from form
 				$file = $request->file('file');
 				
 				$fileName = date('YmdHis') . "-productImport-" . $file->getClientOriginalName();
 				$destinationPath = "productImport/";
 				
+				//Check file extension
 				if($file->getClientOriginalExtension() == "csv")
 				{
+					//Move file from temp to website public folder
 					if($file->move($destinationPath, $fileName))
 					{
+						//TODO csv data to database
 						return redirect('/admin/products')->with('successmessage', trans('productmanage.productupdated'));
 					} else {
 						return redirect('admin/product/upload')->with('errormessage', trans('productmanage.error'))->withInput();

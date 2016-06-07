@@ -35,7 +35,9 @@ return [
 	'productupdated' => 'Product updated',
 	'upload' => 'Upload',
 	'file' => 'File',
+	'image' => 'Image',
 	'filenotsupported' => 'File not supported',
 	'onlycsv' => 'Only .CSV files are allowed',
+	'onlyjpgpng' => 'Only .JPG and .PNG images are allowed',
 
 ];

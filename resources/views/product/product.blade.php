@@ -25,7 +25,7 @@
 					<div class="shop-images">
 						<ul class="single-gallery">
 							<li>
-								<img width="570" height="373" src="/public/images/product/{{ $product->afbeelding }}">
+								<img width="570" height="373" src="/public/imageUpload/{{ $product->afbeelding }}">
 							</li>
 						</ul>
 					</div>

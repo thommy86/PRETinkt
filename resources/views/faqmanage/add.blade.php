@@ -24,11 +24,11 @@
 				<form action="/admin/faq/add" method="post" id="commentform" class="contact-form-7">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<p class="comment-for-author">
-						<input type="text" class="author" name="vraag" placeholder="{{ trans('faqmanage.vraag') }}" value={{ old('vraag') }}>
+						<input type="text" class="author" name="vraag" placeholder="{{ trans('faqmanage.vraag') }}" value="{{ old('vraag') }}" required>
 						<i class="fa fa-user"></i>
 					</p>
 					<p class="comment-for-content">
-						<textarea class="comment" name="antwoord" placeholder="{{ trans('faqmanage.antwoord') }}">{{ old('antwoord') }}</textarea>
+						<textarea class="comment" name="antwoord" placeholder="{{ trans('faqmanage.antwoord') }}" required>{{ old('antwoord') }}</textarea>
 						<i class="fa fa-comment"></i>
 					</p>
 					<p class="comment-for-content">
