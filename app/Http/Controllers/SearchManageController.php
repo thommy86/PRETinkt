@@ -4,12 +4,25 @@ namespace Webshop\Http\Controllers;
 
 use Log;
 use Webshop\Zoekterm;
+use Illuminate\Http\Request;
 use Webshop\Http\Controllers\Controller;
 
 class SearchManageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
 	    $search = array();
 	    
 	    try{
@@ -25,8 +38,20 @@ class SearchManageController extends Controller
 		);
     }
 	
-	public function del($id)
+	public function del(Request $request, $id)
 	{
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
 		try{
 			//Find search by id
 			$search = Zoekterm::find($id);

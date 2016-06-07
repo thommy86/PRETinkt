@@ -10,8 +10,20 @@ use Webshop\Http\Controllers\Controller;
 
 class ProductManageController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
 	    $products = array();
 	    
 	    try {
@@ -27,8 +39,20 @@ class ProductManageController extends Controller
 		);
     }
 	
-	public function add()
+	public function add(Request $request)
     {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
         return view('productmanage.add', [
 			'title' => trans('productmanage.addtitle') . ' - ' . config('webshop.Webshopname')]
 		);
@@ -36,6 +60,18 @@ class ProductManageController extends Controller
 	
 	public function addPost(Request $request)
     {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
 		//Validate rules for form
 	    $rules = [
 			'name' => 'required',
@@ -97,8 +133,20 @@ class ProductManageController extends Controller
 		}
     }
 	
-	public function edit($id)
+	public function edit(Request $request, $id)
     {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
 	    $product = new Product();
 	    
 	    try {
@@ -116,6 +164,18 @@ class ProductManageController extends Controller
 	
 	public function editPost(Request $request)
     {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
 		//Validate rules for form
 	    $rules = [
 			'id' => 'required',
@@ -188,8 +248,20 @@ class ProductManageController extends Controller
 		}
     }
 	
-	public function upload()
+	public function upload(Request $request)
     {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
         return view('productmanage.upload', [
 			'title' => trans('productmanage.indextitle') . ' - ' . config('webshop.Webshopname')]
 		);
@@ -197,6 +269,18 @@ class ProductManageController extends Controller
 	
 	public function uploadPost(Request $request)
     {		
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
 		//Validate rules for form
 	    $rules = [
 			'file' => 'required',
