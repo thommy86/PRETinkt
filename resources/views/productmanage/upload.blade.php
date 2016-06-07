@@ -20,11 +20,12 @@
 			@include('layouts.message')
 			
             <h1 class="page-title">{{ trans('productmanage.productmanage') }}</h1>
+			<p>{{ trans('productmanage.onlycsv') }}</p>
 			<div id="contact-form" class="contact-respond">
 				<form action="/admin/product/upload" method="post" id="commentform" class="contact-form-7" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<p class="comment-for-author">
-						<input type="file" class="author" name="file" placeholder="{{ trans('productmanage.file') }}" value={{ old('file') }}>
+						<input type="file" accept=".csv" class="author" name="file" placeholder="{{ trans('productmanage.file') }}" value={{ old('file') }}>
 					</p>
 					<p class="comment-for-submit">
 						<input name="submit" type="submit" id="submit" class="submit" value="{{ trans('productmanage.submit') }}">

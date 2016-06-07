@@ -167,7 +167,7 @@ class ProductManageController extends Controller
 			try {
 				$file = $request->file('file');
 				
-				$fileName = "productImport-" . $file->getClientOriginalName();
+				$fileName = date('YmdHis') . "-productImport-" . $file->getClientOriginalName();
 				$destinationPath = "productImport/";
 				
 				if($file->getClientOriginalExtension() == "csv")

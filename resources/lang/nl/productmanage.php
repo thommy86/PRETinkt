@@ -36,6 +36,6 @@ return [
 	'upload' => 'Upload',
 	'file' => 'Bestand',
 	'filenotsupported' => 'Bestand niet ondersteund',
-	'filenotsupported' => 'Bestand niet ondersteund',
+	'onlycsv' => 'Alleen .CSV bestanden zijn toegestaan',
 
 ];
