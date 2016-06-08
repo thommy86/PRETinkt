@@ -20,26 +20,30 @@
 			@include('layouts.message')
 			
             <h1 class="page-title">{{ trans('faqmanage.faqmanage') }}</h1>
-			<div id="contact-form" class="contact-respond">
-				<form action="/admin/faq/add" method="post" id="commentform" class="contact-form-7">
-					<input type="hidden" name="_token" value="{{ csrf_token() }}">
-					<p class="comment-for-author">
-						<input type="text" class="author" name="vraag" placeholder="{{ trans('faqmanage.vraag') }}" value="{{ (old('vraag')) ? old('vraag') : $faq->vraag }}" required>
-						<i class="fa fa-user"></i>
-					</p>
-					<p class="comment-for-content">
-						<textarea class="comment" name="antwoord" placeholder="{{ trans('faqmanage.antwoord') }}" required>{{ (old('antwoord')) ? old('antwoord') : $faq->antwoord }}</textarea>
-						<i class="fa fa-comment"></i>
-					</p>
-					<p class="comment-for-content">
-						<select class="comment" name="taal"><option value="NL">{{ trans('faqmanage.nederlands') }}</option><option value="EN">{{ trans('faqmanage.engels') }}</option></select>
-					</p>
-					<p class="comment-for-submit">
-						<input name="submit" type="submit" id="submit" class="submit" value="{{ trans('faqmanage.submit') }}">
-					</p>
-				</form>
-			</div>
+				<div id="contact-form" class="contact-respond">
+					<form action="/admin/faq/add" method="post" id="commentform" class="contact-form-7">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<p class="comment-for-author">
+							<input type="text" class="author" name="vraag" placeholder="{{ trans('faqmanage.vraag') }}" value="{{ old('vraag') ? old('vraag') : $faq->vraag }}" required>
+							<i class="fa fa-user"></i>
+						</p>
+						<p class="comment-for-content">
+							<textarea class="comment" name="antwoord" placeholder="{{ trans('faqmanage.antwoord') }}" required>{{ old('antwoord') ? old('antwoord') : $faq->antwoord }}</textarea>
+							<i class="fa fa-comment"></i>
+						</p>
+						<p class="comment-for-content">
+						<select class="comment" name="taal">
+							<option value="NL" {{ (old('taal') == null) ? $faq->taal == "NL" ? "selected" : "" : old('taal') == "NL" ? "selected" : "" }}>{{ trans('faqmanage.nederlands') }}</option>
+							<option value="EN" {{ (old('taal') == null) ? $faq->taal == "EN" ? "selected" : "" : old('taal') == "EN" ? "selected" : "" }}>{{ trans('faqmanage.engels') }}</option>
+						</select>
+						</p>
+						<p class="comment-for-submit">
+							<input name="submit" type="submit" id="submit" class="submit" value="{{ trans('faqmanage.submit') }}">
+						</p>
+					</form>
+				</div>
 			
         </div>
     </section>
 @endsection
+

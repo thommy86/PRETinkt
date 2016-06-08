@@ -3,6 +3,7 @@
 namespace Webshop\Http\Controllers;
 
 use Log;
+use App;
 use Validator;
 use Webshop\VraagAntwoord;
 use Illuminate\Http\Request;
@@ -39,6 +40,10 @@ class FaqManageController extends Controller
 	
 	public function add(Request $request)
 	{
+
+		//Get application language
+		$lang = App::getLocale();
+		
 		//Check if is logged in
 		if ($request->session()->has('isAuthenticated')) {
 			$isAuthenticated = $request->session()->get('isAuthenticated');
@@ -57,6 +62,10 @@ class FaqManageController extends Controller
 	
 	public function edit(Request $request, $id)
     {
+		
+		//Get application language
+		$lang = App::getLocale();
+		
 	    //Check if is logged in
 		if ($request->session()->has('isAuthenticated')) {
 			$isAuthenticated = $request->session()->get('isAuthenticated');

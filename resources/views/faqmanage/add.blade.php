@@ -32,7 +32,7 @@
 						<i class="fa fa-comment"></i>
 					</p>
 					<p class="comment-for-content">
-						<select class="comment" name="taal"><option value="NL">NL</option><option value="EN">EN</option></select>
+						<select class="comment" name="taal"><option value="NL">{{ trans('faqmanage.nederlands') }}</option><option value="EN">{{ trans('faqmanage.engels') }}</option></select>
 					</p>
 					<p class="comment-for-submit">
 						<input name="submit" type="submit" id="submit" class="submit" value="{{ trans('faqmanage.submit') }}">
