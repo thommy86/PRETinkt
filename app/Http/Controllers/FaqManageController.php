@@ -57,8 +57,10 @@ class FaqManageController extends Controller
 		}
 
 		return view('faqmanage.add', [
-		'title' => trans('faqmanage.addtitle') . ' - ' . config('webshop.Webshopname')]);
-	}
+			'title' => trans('faqmanage.addtitle') . ' - ' . config('webshop.Webshopname'),
+			'lang' => $lang]	
+		);
+    }
 	
 	public function edit(Request $request, $id)
     {
