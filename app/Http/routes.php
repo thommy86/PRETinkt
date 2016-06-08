@@ -51,6 +51,8 @@ Route::get('admin/faq', 'FaqManageController@index');
 
 Route::get('admin/faq/add', 'FaqManageController@add');
 
+Route::get('admin/faq/{id}', 'FaqManageController@edit')->where(['id' => '[0-9]+']);
+
 Route::get('admin/faq/del/{id}', 'FaqManageController@del')->where(['id' => '[0-9]+']);
 
 Route::get('admin/products', 'ProductManageController@index');

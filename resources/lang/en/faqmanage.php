@@ -20,8 +20,11 @@ return [
 	'antwoord' => 'Answer',
     'backtoadmin' => 'Back to admin',
     'add' => 'Add',
-    'addtitle' => 'Add new question',
+    'edit' => 'Edit',
+	'addtitle' => 'Add new question',
     'faqdel' => 'Removed question',
 	'submit' => 'Submit',
+	'nederlands' => 'Dutch',
+	'engels' => 'English',
 
 ];

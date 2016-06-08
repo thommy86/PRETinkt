@@ -17,7 +17,7 @@
 			@include('layouts.message')
 			
             <h1 class="page-title pull-left">{{ trans('faqmanage.faqmanage') }}</h1>
-            <a href="/admin/faq/add"><h3 class="pull-right">{{ trans('productmanage.add') }}</h3></a>
+            <a href="/admin/faq/add"><h3 class="pull-right">{{ trans('faqmanage.add') }}</h3></a>
 
             <!--Start form table-->
             <form>

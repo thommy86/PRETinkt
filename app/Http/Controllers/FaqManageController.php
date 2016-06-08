@@ -54,6 +54,77 @@ class FaqManageController extends Controller
 		return view('faqmanage.add', [
 		'title' => trans('faqmanage.addtitle') . ' - ' . config('webshop.Webshopname')]);
 	}
+	
+	public function edit(Request $request, $id)
+    {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
+	    $faqs = new VraagAntwoord();
+	    
+	    try {
+	    	$faqs = VraagAntwoord::find($id);
+	    } catch (\Exception $exception) {
+	    	//Get specific product
+			Log::error('Cannot receive product from database. Exception:'.$exception);
+		}
+	    
+        return view('faqmanage.edit', [
+			'title' => trans('faqmanage.edittitle') . ' - ' . config('webshop.Webshopname'), 
+			'faq' => $faqs]
+		);
+    }	
+	
+	public function editPost(Request $request)
+    {
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
+		//Validate rules for form
+		$rules = [
+			'vraag' => 'Required',
+			'antwoord' => 'Required',
+			'taal' => 'Required'
+		];
+
+		//Validator
+		$validator = Validator::make($request->all(), $rules);
+
+		//Check if form is valid
+		if ($validator->passes()) {
+			try {
+				//Get existing product object from database to edit
+				$faq = VraagAntwoord::find($request->input('id'));
+				$faq->vraag = $request->input('vraag');
+				$faq->antwoord = $request->input('antwoord');			
+				$faq->taal = $request->input('taal');	
+	
+			} catch (\Exception $exception) {
+				Log::error('Cannot update product. Exception:'.$exception);
+			}
+		} else {
+			//Validation failed and set client back to form with validation errors and input
+			return redirect('admin/faq/'.$request->input('id'))->withErrors($validator)->withInput();
+		}
+    }	
 
 	public function submit(Request $request)
 	{
