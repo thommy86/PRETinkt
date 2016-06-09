@@ -29,57 +29,57 @@
                             <h3>{{ trans('checkout.billingdetails') }}</h3>
                             <p class="form-row form-row-first">
                                 <label for="first_name">{{ trans('checkout.firstname') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="firstname" id="firstname" placeholder="{{ trans('checkout.firstname') }}" value="{{ old('firstname') }}" required>
+                                <input type="text" class="input-text" name="firstname" id="firstname" placeholder="{{ trans('checkout.firstname') }}" value="{{ old('firstname') }}" required>
                             </p>
                             <p class="form-row form-row-last">
                                 <label for="prefix">{{ trans('checkout.prefix') }} </label>
-                                <input type="text" class="input-text " name="prefix" id="prefix" placeholder="{{ trans('checkout.prefix') }}" value="{{ old('prefix') }}">
+                                <input type="text" class="input-text" name="prefix" id="prefix" placeholder="{{ trans('checkout.prefix') }}" value="{{ old('prefix') }}">
                             </p>
                             <div class="clear"></div>
                             <p class="form-row form-row-first">
                                 <label for="last_name">{{ trans('checkout.lastname') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="lastname" id="lastname" placeholder="{{ trans('checkout.lastname') }}" value="{{ old('lastname') }}" required>
+                                <input type="text" class="input-text" name="lastname" id="lastname" placeholder="{{ trans('checkout.lastname') }}" value="{{ old('lastname') }}" required>
                             </p>
                             <div class="clear"></div>
                             <p class="form-row">
                                 <label for="address">{{ trans('checkout.street') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="street" id="street" placeholder="{{ trans('checkout.street') }}" value="{{ old('street') }}" required>
+                                <input type="text" class="input-text" name="street" id="street" placeholder="{{ trans('checkout.street') }}" value="{{ old('street') }}" required>
                             </p>
                             <div class="clear"></div>
 							<p class="form-row form-row-first">
                                 <label for="number">{{ trans('checkout.number') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="number" id="number" placeholder="{{ trans('checkout.number') }}" value="{{ old('number') }}" required>
+                                <input type="text" class="input-text" name="number" id="number" placeholder="{{ trans('checkout.number') }}" value="{{ old('number') }}" required>
                             </p>
 							<p class="form-row form-row-last">
                                 <label for="number">{{ trans('checkout.addition') }} </label>
-                                <input type="text" class="input-text " name="addition" id="addition" placeholder="{{ trans('checkout.addition') }}" value="{{ old('addition') }}">
+                                <input type="text" class="input-text" name="addition" id="addition" placeholder="{{ trans('checkout.addition') }}" value="{{ old('addition') }}">
                             </p>
                             <div class="clear"></div>
                             <p class="form-row form-row-first">
                                 <label for="city">{{ trans('checkout.city') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="city" id="city" placeholder="{{ trans('checkout.city') }}" value="{{ old('city') }}" required>
+                                <input type="text" class="input-text" name="city" id="city" placeholder="{{ trans('checkout.city') }}" value="{{ old('city') }}" required>
                             </p>
                             <p class="form-row form-row-last">
                                 <label for="zip">{{ trans('checkout.zip') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="zip" id="zip" placeholder="{{ trans('checkout.zip') }}" value="{{ old('zip') }}" required>
+                                <input type="text" class="input-text" name="zip" id="zip" placeholder="{{ trans('checkout.zip') }}" value="{{ old('zip') }}" required>
                             </p>
                             <div class="clear"></div>
                             <p class="form-row">
                                 <label for="country">{{ trans('checkout.country') }} <span class="required">*</span></label>
-                                <input type="text" class="input-text " name="country" id="country" placeholder="{{ trans('checkout.country') }}" value="{{ old('country') }}" required>
+                                <input type="text" class="input-text" name="country" id="country" placeholder="{{ trans('checkout.country') }}" value="{{ old('country') }}" required>
                             </p>
                             <div class="clear"></div>
                             <p class="form-row form-row-first">
                                 <label for="email">{{ trans('checkout.email') }} <span class="required">*</span></label>
-                                <input type="email" class="input-text " name="email" id="email" placeholder="{{ trans('checkout.email') }}" value="{{ old('email') }}" required>
+                                <input type="email" class="input-text" name="email" id="email" placeholder="{{ trans('checkout.email') }}" value="{{ old('email') }}" required>
                             </p>
                             <p class="form-row form-row-last">
                                 <label for="phone">{{ trans('checkout.phone') }} <span class="required">*</span></label>
-                                <input type="tel" class="input-text " name="phone" id="phone" placeholder="{{ trans('checkout.phone') }}" value="{{ old('phone') }}" required>
+                                <input type="tel" class="input-text" name="phone" id="phone" placeholder="{{ trans('checkout.phone') }}" value="{{ old('phone') }}" required>
                             </p>
                             <p class="form-row form-row-first">
                                 <label for="birthday">{{ trans('checkout.birthday') }} <span class="required">*</span></label>
-                                <input type="date" class="input-text " name="birthday" id="birthday" placeholder="{{ trans('checkout.birthday') }}" value="{{ old('birthday') }}" required>
+                                <input type="date" class="input-text" name="birthday" id="birthday" placeholder="{{ trans('checkout.birthday') }}" value="{{ old('birthday') }}" required>
                             </p>
                         </div>
 	                    <!--End form checkout-->

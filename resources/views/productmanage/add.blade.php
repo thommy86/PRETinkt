@@ -24,34 +24,44 @@
 				<form action="/admin/product/add" method="post" id="commentform" class="contact-form-7" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<p class="comment-for-author">
-						<input type="text" class="author" name="name" placeholder="{{ trans('productmanage.name') }}" value="{{ old('name') }}" required>
+                        <label for="name">{{ trans('productmanage.name') }} <span class="required">*</span></label>
+						<input type="text" class="fullborder" name="name" placeholder="{{ trans('productmanage.name') }}" value="{{ old('name') }}" required>
 					</p>
 					<p class="comment-for-author">
-						<input type="text" class="author" name="brand" placeholder="{{ trans('productmanage.brand') }}" value="{{ old('brand') }}" required>
+                        <label for="brand">{{ trans('productmanage.brand') }} <span class="required">*</span></label>
+						<input type="text" class="fullborder" name="brand" placeholder="{{ trans('productmanage.brand') }}" value="{{ old('brand') }}" required>
 					</p>
 					<p class="comment-for-content">
-						<textarea class="comment" name="description" placeholder="{{ trans('productmanage.description') }}" required>{{ old('description') }}</textarea>
+                        <label for="description">{{ trans('productmanage.description') }} <span class="required">*</span></label>
+						<textarea class="fullborder" name="description" placeholder="{{ trans('productmanage.description') }}" required>{{ old('description') }}</textarea>
 					</p>
 					<p class="comment-for-author">
-						<input type="text" class="author" name="colour" placeholder="{{ trans('productmanage.colour') }}" value="{{ old('colour') }}" required>
+                        <label for="colour">{{ trans('productmanage.colour') }} <span class="required">*</span></label>
+						<input type="text" class="fullborder" name="colour" placeholder="{{ trans('productmanage.colour') }}" value="{{ old('colour') }}" required>
 					</p>
 					<p class="comment-for-author">
-						<input type="text" class="author" name="type" placeholder="{{ trans('productmanage.type') }}" value="{{ old('type') }}" required>
+                        <label for="type">{{ trans('productmanage.type') }} <span class="required">*</span></label>
+						<input type="text" class="fullborder" name="type" placeholder="{{ trans('productmanage.type') }}" value="{{ old('type') }}" required>
 					</p>
 					<p class="comment-for-author">
-						<input type="text" class="author" name="capacity" placeholder="{{ trans('productmanage.capacity') }}" value="{{ old('capacity') }}" required>
+                        <label for="capacity">{{ trans('productmanage.capacity') }} <span class="required">*</span></label>
+						<input type="text" class="fullborder" name="capacity" placeholder="{{ trans('productmanage.capacity') }}" value="{{ old('capacity') }}" required>
 					</p>
 					<p class="comment-for-author">
-						<input type="text" class="author" name="btw" placeholder="{{ trans('productmanage.btw') }}" value="{{ old('btw') }}" required>
+                        <label for="btw">{{ trans('productmanage.btw') }} <span class="required">*</span></label>
+						<input type="text" class="fullborder" name="btw" placeholder="{{ trans('productmanage.btw') }}" value="{{ old('btw') }}" required>
 					</p>
 					<p class="comment-for-author">
-						<input type="text" class="author" name="price" placeholder="{{ trans('productmanage.price') }}" value="{{ old('price') }}" required>
+                        <label for="price">{{ trans('productmanage.price') }} <span class="required">*</span></label>
+						<input type="text" class="fullborder" name="price" placeholder="{{ trans('productmanage.price') }}" value="{{ old('price') }}" required>
 					</p>
 					<p class="comment-for-author">
-						<input type="text" class="author" name="stock" placeholder="{{ trans('productmanage.stock') }}" value="{{ old('stock') }}" required>
+                        <label for="stock">{{ trans('productmanage.stock') }} <span class="required">*</span></label>
+						<input type="text" class="fullborder" name="stock" placeholder="{{ trans('productmanage.stock') }}" value="{{ old('stock') }}" required>
 					</p>
 					<p class="comment-for-author">
-						<input type="file" accept=".jpg, .png" class="author" name="image" required>
+                        <label for="image">{{ trans('productmanage.image') }} <span class="required">*</span></label>
+						<input type="file" accept=".jpg, .png" class="fullborder" name="image" required>
 						{{ trans('productmanage.onlyjpgpng') }}
 					</p>
 					<p class="comment-for-submit">
