@@ -59,9 +59,6 @@
 													</span>
 													@endif
 												</span>
-												<p>
-													{{ $product->omschrijving }}
-												</p>
 												<span class="p-mask">
 													<a href="/cart/set/{{ $product->id }}/1" class="add-to-cart">{{ trans('product.addtocart') }}</a><br>
 													<a href="/wishlist/set/{{ $product->id }}" class="add-to-cart"><i class="fa fa-heart"></i> {{ trans('product.addtowishlist') }}</a>

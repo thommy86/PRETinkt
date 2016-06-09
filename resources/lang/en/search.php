@@ -19,6 +19,6 @@ return [
     'addtocart' => 'Add to cart',
     'addtowishlist' => 'Add to wishlist',
     'noresult' => 'No results found',
-    'quoatation' => 'Request a quoatation',
+    'quoatation' => 'Click here to request a quoatation for a missing product.',
 
 ];

@@ -10,8 +10,11 @@
                 <li>
                     <a href="/">{{ trans('product.home') }}</a>
                 </li>
+                <li>
+                    <a href="/products">{{ trans('product.products') }}</a>
+                </li>
                 <li class="current">
-                    {{ trans('product.product') }}
+                    {{ $product->naam }}
                 </li>
             </ul>
             <!--End Breadcrumbs-->
@@ -54,18 +57,34 @@
 						@endif
 						<p class="product-price">
 							<span class="price">&euro;{{ number_format(round($product->prijs + ($product->prijs * $product->BTW), 2), 2) }}</span>
-							<span class="stock">{{ trans('product.stock') }}:  <span>{{ $product->voorraad }}</span></span>
+							<span class="stock">{{ trans('product.stock') }}:
+							@if(count($product->voorraad) > 0)
+								<span>{{ trans('product.instock') }}</span>
+							@else
+								<span>{{ trans('product.notavailable') }}</span>
+							@endif
+							</span>
 						</p>
+						<div class="widget-size-filter">
+							<h3>{{ trans('product.details') }}</h3>
+							<ul>
+								<li>{{ trans('product.brand') }}:  <span>{{ $product->merk }}</span></li>
+								<li>{{ trans('product.colour') }}:  <span>{{ $product->kleur }}</span></li>
+								<li>{{ trans('product.brand') }}:  <span>{{ $product->merk }}</span></li>
+								<li>{{ trans('product.capacity') }}:  <span>{{ $product->capaciteit }}</span></li>
+							</ul>
+						</div>
 						<div class="description">
+							<h3>{{ trans('product.description') }}</h3>
 							<p>
-								{{ $product->description }}
+								{{ $product->omschrijving }}
 							</p>
 						</div>
 						<form class="tz_variations_form" action="/cart/add" method="post">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
 							<input type="hidden" name="id" value="{{ $product->id }}">
 							<p class="form-attr">
-								<span class="tzqty">
+								<span class="color">
 									<label>{{ trans('product.quantity') }}:</label>
 									<input type="number" step="1" min="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" required>
 								</span>

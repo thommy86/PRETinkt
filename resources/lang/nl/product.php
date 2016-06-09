@@ -25,5 +25,12 @@ return [
     'noproducts' => 'Er zijn geen producten',
     'productrated' => 'Product beoordeeld',
     'productalreadyrated' => 'Product al beoordeeld',
+    'instock' => 'Op voorraad',
+    'notavailable' => 'Niet op voorraad',
+    'brand' => 'Merk',
+    'colour' => 'Colour',
+    'capacity' => 'Capacity',
+    'details' => 'Details',
+    'description' => 'Omschrijving',
 
 ];

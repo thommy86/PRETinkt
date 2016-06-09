@@ -24,20 +24,12 @@
                         <div class="tz-product row grid-eff">
 
 							@if (count($products) == 0)
-								<!--Product item-->
-								<div class="product-item col-md-4 col-sm-6">
-									<div class="item">
-										<div class="product-item-inner">
-											<div class="product-info">
-												<h4><a href="#}">{{ trans('search.noresult') }}</a></h4>
-												<p>
-													<a href="/quoatation">{{ trans('search.quoatation') }}</a>
-												</p>
-											</div>
-										</div>
-									</div>
+								<div class="alert alert-info" role="alert">
+									<strong>{{ trans('message.infotitle') }}</strong> {{ trans('search.noresult') }}
+									<p>
+										<a href="/quoatation">{{ trans('search.quoatation') }}</a>
+									</p>
 								</div>
-								<!--End product item-->
 							@endif
 						
 							@foreach ($products as $product)

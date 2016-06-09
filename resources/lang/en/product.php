@@ -25,5 +25,12 @@ return [
     'noproducts' => 'There are no products found',
     'productrated' => 'Product rated',
     'productalreadyrated' => 'Product already rated',
+    'instock' => 'In stock',
+    'notavailable' => 'Not available',
+    'brand' => 'Brand',
+    'colour' => 'Kleur',
+    'capacity' => 'Capaciteit',
+    'details' => 'Details',
+    'description' => 'Description',
 
 ];

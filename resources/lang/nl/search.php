@@ -19,6 +19,6 @@ return [
     'addtocart' => 'Voeg toe aan winkelwagen',
     'addtowishlist' => 'Voeg toe aan boodschapenlijst',
     'noresult' => 'Geen resultaten gevonden',
-    'quoatation' => 'Vraag een offerte aan',
+    'quoatation' => 'Klik hier om een offerte aan te vragen als u het product niet kan vinden.',
 
 ];
