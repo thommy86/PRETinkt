@@ -176,7 +176,7 @@ class FaqManageController extends Controller
 					Log::error('Cannot add question into database. Exception:'.$exception);
 				}
 
-			return redirect('admin/faq');
+			return redirect('admin/faq')->with('successmessage', trans('faqmanage.faqadded'));
 		}
 		else {
 			//Validation failed and set client back to form with validation errors and input

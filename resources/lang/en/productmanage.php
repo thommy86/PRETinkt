@@ -34,7 +34,6 @@ return [
 	'productadded' => 'Product added',
 	'productupdated' => 'Product updated',
 	'productsupdated' => 'Products updated',
-	'productsupdated' => 'Products updated',
 	'upload' => 'Upload',
 	'file' => 'File',
 	'image' => 'Image',

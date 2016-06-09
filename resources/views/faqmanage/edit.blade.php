@@ -33,8 +33,8 @@
 						</p>
 						<p class="comment-for-content">
 						<select class="comment" name="taal">
-							<option value="NL" {{ (old('taal') == null) ? $faq->taal == "NL" ? "selected" : "" : old('taal') == "NL" ? "selected" : "" }}>{{ trans('faqmanage.nederlands') }}</option>
-							<option value="EN" {{ (old('taal') == null) ? $faq->taal == "EN" ? "selected" : "" : old('taal') == "EN" ? "selected" : "" }}>{{ trans('faqmanage.engels') }}</option>
+							<option value="NL" {{ old('taal') ? $faq->taal == "NL" ? "selected" : "" : old('taal') == "NL" ? "selected" : "" }}>{{ trans('faqmanage.nederlands') }}</option>
+							<option value="EN" {{ old('taal') ? $faq->taal == "EN" ? "selected" : "" : old('taal') == "EN" ? "selected" : "" }}>{{ trans('faqmanage.engels') }}</option>
 						</select>
 						</p>
 						<p class="comment-for-submit">

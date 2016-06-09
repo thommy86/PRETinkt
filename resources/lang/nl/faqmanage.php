@@ -13,9 +13,9 @@ return [
     |
     */
 
-    'indextitle' => 'Faq beheer',
+    'indextitle' => 'FAQ beheer',
 	'admin' => 'Admin',
-	'faqmanage' => 'Faq beheer',
+	'faqmanage' => 'FAQ beheer',
 	'vraag' => 'Vraag',
 	'antwoord' => 'antwoord',
 	'backtoadmin' => 'Terug naar admin',
@@ -26,6 +26,9 @@ return [
 	'submit' => 'Verwerk',
 	'nederlands' => 'Nederlands',
 	'engels' => 'Engels',
+	'faqadded' => 'FAQ toegevoegd',
+	'faqupdated' => 'FAQ bewerkt',
+	'faqsupdated' => 'FAQ bewerkt',
 	
 	
 ];
