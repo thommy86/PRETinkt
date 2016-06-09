@@ -69,7 +69,17 @@
 							<h3>{{ trans('product.details') }}</h3>
 							<ul>
 								<li>{{ trans('product.brand') }}:  <span>{{ $product->merk }}</span></li>
-								<li>{{ trans('product.colour') }}:  <span>{{ $product->kleur }}</span></li>
+								@if ($product->kleur == "BLACK")
+								<li>{{ trans('product.colour') }}:  <span>{{ trans('product.black') }}</span></li>
+								@elseif ($product->kleur == "COLOUR")
+								<li>{{ trans('product.colour') }}:  <span>{{ trans('product.colour') }}</span></li>
+								@elseif ($product->kleur == "CYAN")
+								<li>{{ trans('product.colour') }}:  <span>{{ trans('product.cyan') }}</span></li>
+								@elseif ($product->kleur == "MAGENTA")
+								<li>{{ trans('product.colour') }}:  <span>{{ trans('product.magenta') }}</span></li>
+								@elseif ($product->kleur == "YELLOW")
+								<li>{{ trans('product.colour') }}:  <span>{{ trans('product.yellow') }}</span></li>
+								@endif 
 								<li>{{ trans('product.brand') }}:  <span>{{ $product->merk }}</span></li>
 								<li>{{ trans('product.capacity') }}:  <span>{{ $product->capaciteit }}</span></li>
 							</ul>
