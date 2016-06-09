@@ -78,6 +78,7 @@ class ProductManageController extends Controller
 	    $rules = [
 			'name' => 'required',
 			'brand' => 'required',
+			'omschrijving' => 'required',
 			'description' => 'required',
 			'colour' => 'required',
 			'type' => 'required',
@@ -98,7 +99,8 @@ class ProductManageController extends Controller
 				$product = new Product();
 				$product->naam = $request->input('name');
 				$product->merk = $request->input('brand');
-				$product->omschrijving = $request->input('description');
+				$product->omschrijving = $request->input('omschrijving');
+				$product->description = $request->input('description');
 				$product->kleur = $request->input('colour');
 				$product->type = $request->input('type');
 				$product->capaciteit = $request->input('capacity');
@@ -183,6 +185,7 @@ class ProductManageController extends Controller
 			'id' => 'required',
 			'name' => 'required',
 			'brand' => 'required',
+			'omschrijving' => 'required',
 			'description' => 'required',
 			'colour' => 'required',
 			'type' => 'required',
@@ -203,7 +206,8 @@ class ProductManageController extends Controller
 				$product = Product::find($request->input('id'));
 				$product->naam = $request->input('name');
 				$product->merk = $request->input('brand');
-				$product->omschrijving = $request->input('description');
+				$product->omschrijving = $request->input('omschrijving');
+				$product->description = $request->input('description');
 				$product->kleur = $request->input('colour');
 				$product->type = $request->input('type');
 				$product->capaciteit = $request->input('capacity');
@@ -316,6 +320,7 @@ class ProductManageController extends Controller
 									$product->naam = $value->naam;
 									$product->merk = $value->merk;
 									$product->omschrijving = $value->omschrijving;
+									$product->description = $value->description;
 									$product->kleur = $value->kleur;
 									$product->type = $value->type;
 									$product->capaciteit = $value->capaciteit;
@@ -330,6 +335,7 @@ class ProductManageController extends Controller
 									$product->naam = $value->naam;
 									$product->merk = $value->merk;
 									$product->omschrijving = $value->omschrijving;
+									$product->description = $value->description;
 									$product->kleur = $value->kleur;
 									$product->type = $value->type;
 									$product->capaciteit = $value->capaciteit;

@@ -32,8 +32,12 @@
 						<input type="text" class="fullborder" name="brand" placeholder="{{ trans('productmanage.brand') }}" value="{{ old('brand') }}" required>
 					</p>
 					<p class="comment-for-content">
-                        <label for="description">{{ trans('productmanage.description') }} <span class="required">*</span></label>
-						<textarea class="fullborder" name="description" placeholder="{{ trans('productmanage.description') }}" required>{{ old('description') }}</textarea>
+                        <label for="omschrijving">{{ trans('productmanage.description_nl') }} <span class="required">*</span></label>
+						<textarea class="fullborder" name="omschrijving" placeholder="{{ trans('productmanage.description_nl') }}" required>{{ old('omschrijving') }}</textarea>
+					</p>
+					<p class="comment-for-content">
+                        <label for="description">{{ trans('productmanage.description_en') }} <span class="required">*</span></label>
+						<textarea class="fullborder" name="description" placeholder="{{ trans('productmanage.description_en') }}" required>{{ old('description') }}</textarea>
 					</p>
 					<p class="comment-for-content">
                         <label for="colour">{{ trans('productmanage.colour') }} <span class="required">*</span></label>

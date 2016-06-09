@@ -3,6 +3,7 @@
 namespace Webshop\Http\Controllers;
 
 use Log;
+use App;
 use Webshop\Product;
 use Webshop\Beoordeling;
 use Webshop\Http\Controllers\Controller;
@@ -53,6 +54,10 @@ class ProductController extends Controller
 	public function product($id)
     {
 	    $product = new Product();
+		
+		//Get application language
+		$lang = App::getLocale();
+		
 	    
 	    try {
 	    	$product = Product::find($id);
@@ -85,7 +90,7 @@ class ProductController extends Controller
 	    
         return view('product.product', [
 			'title' => $product->naam . ' - ' . config('webshop.Webshopname'), 
-			'product' => $product]
+			'product' => $product,'lang' => $lang]
 		);
     }
 	
