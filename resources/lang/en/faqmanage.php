@@ -21,6 +21,7 @@ return [
     'backtoadmin' => 'Back to admin',
     'add' => 'Add',
     'edit' => 'Edit',
+    'edittitle' => 'Edit FAQ',
 	'addtitle' => 'Add new question',
     'faqdel' => 'Removed question',
 	'submit' => 'Submit',

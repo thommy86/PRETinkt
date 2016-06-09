@@ -21,6 +21,7 @@ return [
 	'backtoadmin' => 'Terug naar admin',
 	'add' => 'Nieuw',
 	'edit' => 'Bewerken',
+	'edittitle' => 'Bewerk FAQ',
 	'addtitle' => 'Nieuwe vraag',
 	'faqdel' => 'Vraag verwijderd',
 	'submit' => 'Verwerk',

@@ -111,6 +111,7 @@ class FaqManageController extends Controller
 		
 		//Validate rules for form
 		$rules = [
+			'id' => 'Required',
 			'vraag' => 'Required',
 			'antwoord' => 'Required',
 			'taal' => 'Required'
@@ -122,7 +123,7 @@ class FaqManageController extends Controller
 		//Check if form is valid
 		if ($validator->passes()) {
 			try {
-				//Get existing product object from database to edit
+				//Get existing faq object from database to edit
 				$faq = VraagAntwoord::find($request->input('id'));
 				$faq->vraag = $request->input('vraag');
 				$faq->antwoord = $request->input('antwoord');			

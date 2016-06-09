@@ -21,8 +21,9 @@
 			
             <h1 class="page-title">{{ trans('faqmanage.faqmanage') }}</h1>
 				<div id="contact-form" class="contact-respond">
-					<form action="/admin/faq/add" method="post" id="commentform" class="contact-form-7">
+					<form action="/admin/faq/edit" method="post" id="commentform" class="contact-form-7">
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<input type="hidden" name="id" value="{{ $faq->id }}">
 						<p class="comment-for-author">
 							<input type="text" class="author" name="vraag" placeholder="{{ trans('faqmanage.vraag') }}" value="{{ old('vraag') ? old('vraag') : $faq->vraag }}" required>
 							<i class="fa fa-user"></i>
@@ -33,8 +34,8 @@
 						</p>
 						<p class="comment-for-content">
 						<select class="comment" name="taal">
-							<option value="NL" {{ old('taal') ? $faq->taal == "NL" ? "selected" : "" : old('taal') == "NL" ? "selected" : "" }}>{{ trans('faqmanage.nederlands') }}</option>
-							<option value="EN" {{ old('taal') ? $faq->taal == "EN" ? "selected" : "" : old('taal') == "EN" ? "selected" : "" }}>{{ trans('faqmanage.engels') }}</option>
+							<option value="NL" {{ old('taal') ? old('taal') == "NL" ? "selected" : "" : $faq->taal == "NL" ? "selected" : "" }}>{{ trans('faqmanage.nederlands') }}</option>
+							<option value="EN" {{ old('taal') ? old('taal') == "EN" ? "selected" : "" : $faq->taal == "EN" ? "selected" : "" }}>{{ trans('faqmanage.engels') }}</option>
 						</select>
 						</p>
 						<p class="comment-for-submit">
