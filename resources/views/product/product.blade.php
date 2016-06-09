@@ -80,7 +80,6 @@
 								@elseif ($product->kleur == "YELLOW")
 								<li>{{ trans('product.colour') }}:  <span>{{ trans('product.yellow') }}</span></li>
 								@endif 
-								<li>{{ trans('product.brand') }}:  <span>{{ $product->merk }}</span></li>
 								<li>{{ trans('product.capacity') }}:  <span>{{ $product->capaciteit }}</span></li>
 							</ul>
 						</div>
