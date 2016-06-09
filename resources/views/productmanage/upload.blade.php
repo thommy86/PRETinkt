@@ -25,7 +25,8 @@
 				<form action="/admin/product/upload" method="post" id="commentform" class="contact-form-7" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<p class="comment-for-author">
-						<input type="file" accept=".csv" class="author" name="file" required>
+                        <label for="file">{{ trans('productmanage.file') }} <span class="required">*</span></label>
+						<input type="file" accept=".csv" class="fullborder" name="file" required>
 					</p>
 					<p class="comment-for-submit">
 						<input name="submit" type="submit" id="submit" class="submit" value="{{ trans('productmanage.submit') }}">
