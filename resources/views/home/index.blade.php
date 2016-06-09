@@ -254,7 +254,7 @@
 					<!--Tab item-->
 					<div class="tab-pane active">
 						<div class="row">
-						
+							
 							@foreach ($products as $product)
 								<div class="col-md-4 col-sm-6">
 
@@ -268,7 +268,7 @@
 										</div>
 										<div class="product-infomation">
 											<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
-											<span class="product-price">&euro;{{ number_format(round(($product->prijs + ($product->prijs * $product->BTW)), 2), 2) }}</span>
+											<span class="product-price">&euro;{{ ValutaHelper::CalculatePrice($product->prijs, $product->BTW) }}</span>
 										</div>
 									</div>
 									<!--End product item-->

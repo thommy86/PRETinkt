@@ -56,7 +56,7 @@
 						</span>
 						@endif
 						<p class="product-price">
-							<span class="price">&euro;{{ number_format(round($product->prijs + ($product->prijs * $product->BTW), 2), 2) }}</span>
+							<span class="price">&euro;{{ ValutaHelper::CalculatePrice($product->prijs, $product->BTW) }}</span>
 							<span class="stock">{{ trans('product.stock') }}:
 							@if(count($product->voorraad) > 0)
 								<span>{{ trans('product.instock') }}</span>

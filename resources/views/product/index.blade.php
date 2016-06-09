@@ -40,7 +40,7 @@
 											<div class="product-info">
 												<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
 												<span class="p-meta">
-													<span class="p-price">&euro;{{ number_format(round($product->prijs + ($product->prijs * $product->BTW), 2), 2) }}</span>
+													<span class="p-price">&euro;{{ ValutaHelper::CalculatePrice($product->prijs, $product->BTW) }}</span>
 													@if ($product->rating > 0)
 													<span class="p-vote">
 														<i class="fa fa-star"></i>

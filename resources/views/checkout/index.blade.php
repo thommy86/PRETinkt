@@ -111,7 +111,7 @@
 												<strong class="product-quantity">× {{ $product->quantity }}</strong>
 											</td>
 											<td class="product-total">
-												<span class="amount">&euro;{{ number_format(round(($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity, 2), 2) }}</span>
+												<span class="amount">&euro;{{ ValutaHelper::CalculatePriceQuantity($product->prijs, $product->BTW, $product->quantity) }}</span>
 											</td>
 										</tr>
 									@endforeach
@@ -119,17 +119,17 @@
 	                            <tfoot>
 	                            <tr class="cart-subtotal">
 	                                <th>{{ trans('checkout.subtotal') }}</th>
-	                                <td><span class="amount">&euro;{{ number_format(round($subtotal, 2), 2) }}</span></td>
+	                                <td><span class="amount">&euro;{{ ValutaHelper::RoundValue($subtotal) }}</span></td>
 	                            </tr>
 	
 	                            <tr class="cart-subtotal">
 	                                <th>{{ trans('checkout.shipping') }}</th>
-	                                <td><span class="amount">&euro;{{ number_format(round($shipping, 2), 2) }}</span></td>
+	                                <td><span class="amount">&euro;{{ ValutaHelper::RoundValue($shipping) }}</span></td>
 	                            </tr>
 	
 	                            <tr class="order-total">
 	                                <th>{{ trans('checkout.total') }}</th>
-	                                <td><strong><span class="amount">&euro;{{ number_format(round($subtotal + $shipping, 2), 2) }}</span></strong> </td>
+	                                <td><strong><span class="amount">&euro;{{ ValutaHelper::RoundValue($subtotal + $shipping) }}</span></strong> </td>
 	                            </tr>
 	                            </tfoot>
 	                        </table>

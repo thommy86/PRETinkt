@@ -55,7 +55,7 @@
 									<a href="/product/{{ $product->id }}">{{ $product->naam }} </a>
 								</td>
 								<td class="product-price">
-									<span class="amount">{{ number_format(round($product->prijs, 2), 2) }}</span>
+									<span class="amount">{{ ValutaHelper::CalculatePrice($product->prijs, $product->BTW) }}</span>
 								</td>
 								<td class="product-price">
 									<a href="/cart/set/{{ $product->id }}/1" class="add-to-cart">{{ trans('wishlist.addtocart') }}</a>

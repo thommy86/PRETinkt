@@ -17,7 +17,8 @@
     },
     "autoload": {
         "classmap": [
-            "database"
+            "database",
+            "app/Helpers"
         ],
         "psr-4": {
             "Webshop\\": "app/"
