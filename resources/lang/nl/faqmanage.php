@@ -17,7 +17,7 @@ return [
 	'admin' => 'Admin',
 	'faqmanage' => 'FAQ beheer',
 	'vraag' => 'Vraag',
-	'antwoord' => 'antwoord',
+	'antwoord' => 'Antwoord',
 	'backtoadmin' => 'Terug naar admin',
 	'add' => 'Nieuw',
 	'edit' => 'Bewerken',

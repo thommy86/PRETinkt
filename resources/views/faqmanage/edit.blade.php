@@ -29,11 +29,11 @@
 							<i class="fa fa-user"></i>
 						</p>
 						<p class="comment-for-content">
-							<textarea class="comment" name="antwoord" placeholder="{{ trans('faqmanage.antwoord') }}" required>{{ old('antwoord') ? old('antwoord') : $faq->antwoord }}</textarea>
+							<textarea class="fullborder" name="antwoord" placeholder="{{ trans('faqmanage.antwoord') }}" required>{{ old('antwoord') ? old('antwoord') : $faq->antwoord }}</textarea>
 							<i class="fa fa-comment"></i>
 						</p>
-						<p class="comment-for-content">
-						<select class="comment" name="taal">
+						<p class="comment-for-author">
+						<select class="fullborder" name="taal">
 							<option value="NL" {{ old('taal') ? old('taal') == "NL" ? "selected" : "" : $faq->taal == "NL" ? "selected" : "" }}>{{ trans('faqmanage.nederlands') }}</option>
 							<option value="EN" {{ old('taal') ? old('taal') == "EN" ? "selected" : "" : $faq->taal == "EN" ? "selected" : "" }}>{{ trans('faqmanage.engels') }}</option>
 						</select>

@@ -39,9 +39,9 @@
                         <label for="description">{{ trans('productmanage.description_en') }} <span class="required">*</span></label>
 						<textarea class="fullborder" name="description" placeholder="{{ trans('productmanage.description_en') }}" required>{{ old('description') }}</textarea>
 					</p>
-					<p class="comment-for-content">
+					<p class="comment-for-author">
                         <label for="colour">{{ trans('productmanage.colour') }} <span class="required">*</span></label>
-						<select class="comment" name="colour" required>
+						<select class="fullborder" name="colour" required>
 							<option value="BLACK" {{ old('colour') ? old('colour') == "BLACK" ? "selected" : "" : "" }}>{{ trans('productmanage.black') }}</option>
 							<option value="COLOUR" {{ old('colour') ? old('colour') == "COLOUR" ? "selected" : "" : "" }}>{{ trans('productmanage.colour') }}</option>
 							<option value="CYAN" {{ old('colour') ? old('colour') == "CYAN" ? "selected" : "" : "" }}>{{ trans('productmanage.cyan') }}</option>

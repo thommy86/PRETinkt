@@ -3624,6 +3624,7 @@ blockquote {
 #commentform input[type='url'],
 #commentform input[type='tel'],
 #commentform input[type='file'],
+#commentform select,
 #commentform textarea {
   background: transparent;
   padding: 5px 15px;
@@ -3638,6 +3639,7 @@ blockquote {
 #commentform input[type='url']::-moz-placeholder,
 #commentform input[type='tel']::-moz-placeholder,
 #commentform input[type='file']::-moz-placeholder,
+#commentform select::-moz-placeholder,
 #commentform textarea::-moz-placeholder {
   color: #212121;
   opacity: 1;
@@ -3647,6 +3649,7 @@ blockquote {
 #commentform input[type='url']:-ms-input-placeholder,
 #commentform input[type='tel']:-ms-input-placeholder,
 #commentform input[type='file']:-ms-input-placeholder,
+#commentform select:-ms-input-placeholder,
 #commentform textarea:-ms-input-placeholder {
   color: #212121;
 }
@@ -3655,6 +3658,7 @@ blockquote {
 #commentform input[type='url']::-webkit-input-placeholder,
 #commentform input[type='tel']::-webkit-input-placeholder,
 #commentform input[type='file']::-webkit-input-placeholder,
+#commentform select::-webkit-input-placeholder,
 #commentform textarea::-webkit-input-placeholder {
   color: #212121;
 }
@@ -3680,6 +3684,11 @@ blockquote {
   border-color: #e0e0e0;
 }
 #commentform input.fullborder {
+  border-width: 1px 1px 1px 1px;
+  border-style: solid;
+  border-color: #e0e0e0;
+}
+#commentform select.fullborder {
   border-width: 1px 1px 1px 1px;
   border-style: solid;
   border-color: #e0e0e0;
