@@ -29,10 +29,9 @@
 								<!--Content-->
 								<article class="single-blog">
 
-									<h1>{{ trans('privacypolicy.privacypolicy') }}</h1>
 									<div class="single-content">
 										<p>
-											{{ trans('privacypolicy.text') }}
+											{!! trans('privacypolicy.text') !!}
 										</p>
 									</div>
 

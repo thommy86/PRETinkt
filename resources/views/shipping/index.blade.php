@@ -29,10 +29,9 @@
 								<!--Content-->
 								<article class="single-blog">
 
-									<h1>{{ trans('shipping.shipping') }}</h1>
 									<div class="single-content">
 										<p>
-											{{ trans('shipping.text') }}
+											{!! trans('shipping.text') !!}
 										</p>
 									</div>
 
