@@ -55,7 +55,7 @@
 									<a href="/cart/del/{{ $product->id }}" class="remove"></a>
 								</td>
 								<td class="product-thumbnail">
-									<a href="/product/{{ $product->id }}"><img width="78" height="78" src="/public/images/product/{{ $product->afbeelding }}" /></a>
+									<a href="/product/{{ $product->id }}"><img width="78" height="78" src="/public/imageUpload/{{ $product->afbeelding }}" /></a>
 								</td>
 
 								<td class="product-name">

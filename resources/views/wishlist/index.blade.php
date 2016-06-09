@@ -48,7 +48,7 @@
 									<a href="/wishlist/del/{{ $product->id }}" class="remove"></a>
 								</td>
 								<td class="product-thumbnail">
-									<a href="/product/{{ $product->id }}"><img src="/public/images/product/{{ $product->afbeelding }}" /></a>
+									<a href="/product/{{ $product->id }}"><img src="/public/imageUpload/{{ $product->afbeelding }}" /></a>
 								</td>
 
 								<td class="product-name">
