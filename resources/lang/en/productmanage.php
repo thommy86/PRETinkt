@@ -40,5 +40,7 @@ return [
 	'filenotsupported' => 'File not supported',
 	'onlycsv' => 'Only .CSV files are allowed',
 	'onlyjpgpng' => 'Only .JPG and .PNG images are allowed',
+	'productdel' => 'Product deleted',
+	'productused' => 'Product can not been deleted because it is used by an order.',
 
 ];

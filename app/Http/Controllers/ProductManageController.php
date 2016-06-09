@@ -5,6 +5,7 @@ namespace Webshop\Http\Controllers;
 use Log;
 use Validator;
 use Webshop\Product;
+use Webshop\BestellingProduct;
 use Illuminate\Http\Request;
 use Webshop\Http\Controllers\Controller;
 use Excel;
@@ -355,5 +356,41 @@ class ProductManageController extends Controller
 			//Validation failed and set client back to form with validation errors and input
 			return redirect('admin/product/upload')->withErrors($validator)->withInput();
 		}
+	}
+	
+	public function del(Request $request, $id)
+	{
+	    //Check if is logged in
+		if ($request->session()->has('isAuthenticated')) {
+			$isAuthenticated = $request->session()->get('isAuthenticated');
+			if($isAuthenticated === false) {
+				Log::info('Unauthorized admin page request');
+				return redirect('/');
+			}
+		} else {
+			Log::info('Unauthorized admin page request');
+			return redirect('/');
+		}
+		
+		try{
+			//Check if product is used by any order
+			$count = BestellingProduct::where('productId', $id)->count();
+			
+			if($count > 0)
+			{
+				return redirect('admin/products')->with('errormessage', trans('productmanage.productused'));
+			} else {
+				//Find product by id
+				$product = Product::find($id);
+				
+				//Delete product record
+				$product->delete();
+				Log::info('Delete product id:' . $id);
+			}
+		} catch (\Exception $exception) {
+			Log::error('Cannot product search from database. Exception:'.$exception);
+		}
+		
+		return redirect('admin/products')->with('successmessage', trans('productmanage.productdel'));
 	}
 }

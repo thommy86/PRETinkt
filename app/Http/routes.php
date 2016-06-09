@@ -67,6 +67,8 @@ Route::get('admin/search', 'SearchManageController@index');
 
 Route::get('admin/search/del/{id}', 'SearchManageController@del')->where(['id' => '[0-9]+']);
 
+Route::get('admin/product/del/{id}', 'ProductManageController@del')->where(['id' => '[0-9]+']);
+
 Route::get('language/{lang}', 'LanguageController@index')->where('lang', '[A-Za-z_-]+');
 
 Route::get('login/off', 'LoginController@off');

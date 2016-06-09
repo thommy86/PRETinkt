@@ -40,5 +40,7 @@ return [
 	'filenotsupported' => 'Bestand niet ondersteund',
 	'onlycsv' => 'Alleen .CSV bestanden zijn toegestaan',
 	'onlyjpgpng' => 'Alleen .JPG en .PNG afbeeldingen zijn toegestaan',
+	'productdel' => 'Product verwijderd',
+	'productused' => 'Product kan niet verwijdert worden omdat die gebruikt wordt bij een bestelling',
 
 ];
