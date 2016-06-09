@@ -42,5 +42,10 @@ return [
 	'onlyjpgpng' => 'Only .JPG and .PNG images are allowed',
 	'productdel' => 'Product deleted',
 	'productused' => 'Product can not been deleted because it is used by an order.',
+	'black' => 'Black',
+	'colour' => 'Colour',
+	'cyan' => 'Cyan',
+	'magenta' => 'Magenta',
+	'yellow' => 'Yellow',
 
 ];

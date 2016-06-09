@@ -32,5 +32,10 @@ return [
     'capacity' => 'Capacity',
     'details' => 'Details',
     'description' => 'Omschrijving',
+	'black' => 'Zwart',
+	'colour' => 'Kleur',
+	'cyan' => 'Cyaan',
+	'magenta' => 'Magenta',
+	'yellow' => 'Geel',
 
 ];

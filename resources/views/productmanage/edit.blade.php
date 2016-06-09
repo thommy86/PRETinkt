@@ -36,9 +36,15 @@
                         <label for="description">{{ trans('productmanage.description') }} <span class="required">*</span></label>
 						<textarea class="fullborder" name="description" placeholder="{{ trans('productmanage.description') }}">{{ (old('description')) ? old('description') : $product->omschrijving }}</textarea>
 					</p>
-					<p class="comment-for-author">
+					<p class="comment-for-content">
                         <label for="colour">{{ trans('productmanage.colour') }} <span class="required">*</span></label>
-						<input type="text" class="fullborder" name="colour" placeholder="{{ trans('productmanage.colour') }}" value="{{ (old('colour')) ? old('colour') : $product->kleur }}">
+						<select class="comment" name="colour" required>
+							<option value="BLACK" {{ old('colour') ? old('colour') == "BLACK" ? "selected" : "" : $product->kleur == "BLACK" ? "selected" : "" }}>{{ trans('productmanage.black') }}</option>
+							<option value="COLOUR" {{ old('colour') ? old('colour') == "COLOUR" ? "selected" : "" : $product->kleur == "COLOUR" ? "selected" : "" }}>{{ trans('productmanage.colour') }}</option>
+							<option value="CYAN" {{ old('colour') ? old('colour') == "CYAN" ? "selected" : "" : $product->kleur == "CYAN" ? "selected" : "" }}>{{ trans('productmanage.cyan') }}</option>
+							<option value="MAGENTA" {{ old('colour') ? old('colour') == "MAGENTA" ? "selected" : "" : $product->kleur == "MAGENTA" ? "selected" : "" }}>{{ trans('productmanage.magenta') }}</option>
+							<option value="YELLOW" {{ old('colour') ? old('colour') == "YELLOW" ? "selected" : "" : $product->kleur == "YELLOW" ? "selected" : "" }}>{{ trans('productmanage.yellow') }}</option>
+						</select>				
 					</p>
 					<p class="comment-for-author">
                         <label for="type">{{ trans('productmanage.type') }} <span class="required">*</span></label>

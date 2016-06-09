@@ -42,5 +42,10 @@ return [
 	'onlyjpgpng' => 'Alleen .JPG en .PNG afbeeldingen zijn toegestaan',
 	'productdel' => 'Product verwijderd',
 	'productused' => 'Product kan niet verwijdert worden omdat die gebruikt wordt bij een bestelling',
+	'black' => 'Zwart',
+	'colour' => 'Kleur',
+	'cyan' => 'Cyaan',
+	'magenta' => 'Magenta',
+	'yellow' => 'Geel',
 
 ];
