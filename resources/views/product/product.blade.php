@@ -87,7 +87,7 @@
 						<div class="description">
 							<h3>{{ trans('product.description') }}</h3>
 							<p>
-								{{ $product->omschrijving }}
+								{{ $lang == "nl" ? $product->omschrijving : $product->description }}
 							</p>
 						</div>
 						<form class="tz_variations_form" action="/cart/add" method="post">
