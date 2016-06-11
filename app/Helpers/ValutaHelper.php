@@ -3,11 +3,11 @@
 namespace Webshop\Helpers;
 
 class ValutaHelper {
-    public static function CalculatePrice($btw, $price) {
+    public static function CalculatePrice($price, $btw) {
         return ValutaHelper::RoundValue($price + ($price * ($btw / 100)));
     }
     
-    public static function CalculatePriceQuantity($btw, $price, $quantity) {
+    public static function CalculatePriceQuantity($price, $btw, $quantity) {
         return ValutaHelper::RoundValue(($price + ($price * ($btw / 100))) * $quantity);
     }
     
