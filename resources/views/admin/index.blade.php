@@ -17,9 +17,16 @@
 			
 			<h1>{{ trans('admin.admin') }}<h1>
 			
-			<a href="/admin/search">{{ trans('admin.search') }}</a><br>
-			<a href="/admin/faq">{{ trans('admin.faq') }}</a><br>
-			<a href="/admin/products">{{ trans('admin.products') }}</a><br>
+				
+				<div class="product-item col-md-4 col-sm-6">
+					<a href="/admin/search"><img src="/public/images/admin/search.png"><br>{{ trans('admin.search') }}</a><br>
+				</div>
+				<div class="product-item col-md-4 col-sm-6">					
+					<a href="/admin/faq"><img src="/public/images/admin/FAQ.png"><br>{{ trans('admin.faq') }}</a><br>
+				</div>
+				<div class="product-item col-md-4 col-sm-6">
+					<a href="/admin/products"><img src="/public/images/admin/products.png"><br>{{ trans('admin.products') }}</a><br>
+				</div>
 			
 		</div>
 	</div>
