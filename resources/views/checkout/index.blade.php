@@ -104,7 +104,7 @@
 										$subtotal = 0;
 									?>
 									@foreach ($products as $product)
-										<?php $subtotal += ($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity; ?>
+										<?php $subtotal += ValutaHelper::CalculatePriceQuantity($product->prijs, $product->BTW, $product->quantity); ?>
 										<tr class="cart_item">
 											<td class="product-name">
 												{{ $product->naam }}

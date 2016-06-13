@@ -48,7 +48,7 @@
 							</tr>
 						@endif
 						@foreach ($products as $product)
-							<?php $subtotal += ($product->prijs + ($product->prijs * $product->BTW)) * $product->quantity; ?>
+							<?php $subtotal += ValutaHelper::CalculatePriceQuantity($product->prijs, $product->BTW, $product->quantity); ?>
 							<input type="hidden" name="ids[]" value="{{ $product->id }}">
 							<tr class="cart_item">
 								<td class="product-remove">
