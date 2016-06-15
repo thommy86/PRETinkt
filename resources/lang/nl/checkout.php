@@ -52,5 +52,6 @@ return [
     'paymethod' => 'Betaalmethode',
     'sendmethod' => 'Verzendmethode',
     'paytitle' => 'Betalen',
+    'yourpaymethod' => 'Uw betaalmethode',
 
 ];

@@ -36,6 +36,7 @@
 								<article class="single-blog">
 
 									<h1>{{ trans('checkout.paytext') }}</h1>
+									<p>{{ trans('checkout.yourpaymethod') }}: {{ $payMethod }}</p>
 									<div class="single-content">
 										<form action="/cart/checkout/pay" method="post">
 											<input type="hidden" name="_token" value="{{ csrf_token() }}">

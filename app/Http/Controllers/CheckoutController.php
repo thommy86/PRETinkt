@@ -203,7 +203,8 @@ class CheckoutController extends Controller
 		
 		return view('checkout.pay', [
 			'title' => trans('checkout.paytitle') . ' - ' . config('webshop.Webshopname'),
-			'bestelling' => $bestelling]
+			'bestelling' => $bestelling,
+			'payMethod' => $type]
 		);
 	}
 	
