@@ -38,7 +38,7 @@
 									<div class="item">
 										<div class="product-item-inner">
 											<div class="product-thumb">
-												<img src="/public/images/product/{{ $product->afbeelding }}">
+												<img width="268" height="238" src="/public/imageUpload/{{ $product->afbeelding }}">
 											</div>
 											<div class="product-info">
 												<h4><a href="/product/{{ $product->id }}">{{ $product->naam }}</a></h4>
