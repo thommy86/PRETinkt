@@ -39,7 +39,7 @@ Route::get('wishlist/del/{id}', 'WishlistController@del')->where(['id' => '[0-9]
 
 Route::get('cart/checkout', 'CheckoutController@index');
 
-Route::get('cart/checkout/pay/{id}', 'CheckoutController@pay')->where(['id' => '[0-9]+']);
+Route::get('cart/checkout/pay/{id}/{type}', 'CheckoutController@pay')->where(['id' => '[0-9]+','type', '[A-Za-z_-]+']);
 
 Route::get('faq', 'FaqController@index');
 

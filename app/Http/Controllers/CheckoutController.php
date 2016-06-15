@@ -132,7 +132,7 @@ class CheckoutController extends Controller
 							$bestelling->verzendkosten = config('webshop.Shipping2');
 						break;
 					}
-					$bestelling->verzendwijze = "PostNL";
+					$bestelling->verzendwijze = $request->input('sent_method');
 					//Set status to ordered
 					$bestelling->status = 1;
 					//Save order to database
@@ -159,9 +159,10 @@ class CheckoutController extends Controller
 						$data = ['name' => $request->input('firstname') . " " . $request->input('prefix') . " " . $request->input('lastname'),
 						'email' => $request->input('email'),
 						'subject' => trans('checkout.order'),
-						'baseUrl' => 'http://localhost',
+						'baseUrl' => config('app.APP_URL'),
+						'sentMethod' => $request->input('sent_method'),
 						'products' => $products,
-						'paylink' => '/cart/checkout/pay/' . $bestelling->id];	
+						'paylink' => '/cart/checkout/pay/' . $bestelling->id . '/' . $request->input('payment_method')];	
 						
 						//Sent order mail to customer
 						Mail::send('emails.order', $data, function ($message) use ($data) {
@@ -180,7 +181,7 @@ class CheckoutController extends Controller
 				//Empty cart
 				$request->session()->forget('cartproducts');
 				
-				return redirect('/cart/checkout/pay/' . $bestelling->id)->with('successmessage', trans('checkout.success'));			
+				return redirect('/cart/checkout/pay/' . $bestelling->id . '/' . $request->input('payment_method'))->with('successmessage', trans('checkout.success'));			
 	        } catch (\Exception $exception) {
 				Log::error('Cannot add order. Exception:'.$exception);
 			}
@@ -190,7 +191,7 @@ class CheckoutController extends Controller
 		}
     }
 	
-	public function pay(Request $request, $id)
+	public function pay(Request $request, $id, $type)
     {
 		//Get order
 		$bestelling = Bestelling::find($id);

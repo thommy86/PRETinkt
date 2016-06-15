@@ -2925,11 +2925,27 @@ input {
   -o-border-radius: 3px;
   line-height: 40px;
 }
+.sentmethodselect {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  padding: 0 15px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  line-height: 40px;
+}
 .form-row input[type='text']::-moz-placeholder,
 .form-row input[type='email']::-moz-placeholder,
 .form-row input[type='tel']::-moz-placeholder,
 .form-row input[type='date']::-moz-placeholder,
 .form-row select::-moz-placeholder {
+  color: #212121;
+  opacity: 1;
+}
+.sentmethodselect::-moz-placeholder {
   color: #212121;
   opacity: 1;
 }
@@ -2940,11 +2956,17 @@ input {
 .form-row select:-ms-input-placeholder {
   color: #212121;
 }
+.sentmethodselect:-ms-input-placeholder {
+  color: #212121;
+}
 .form-row input[type='text']::-webkit-input-placeholder,
 .form-row input[type='email']::-webkit-input-placeholder,
 .form-row input[type='tel']::-webkit-input-placeholder,
 .form-row input[type='date']::-webkit-input-placeholder,
 .form-row select::-webkit-input-placeholder {
+  color: #212121;
+}
+.sentmethodselect::-webkit-input-placeholder {
   color: #212121;
 }
 .form-row textarea {

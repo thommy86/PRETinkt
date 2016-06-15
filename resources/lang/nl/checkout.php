@@ -49,5 +49,7 @@ return [
     'paytext' => 'Betaal uw bestelling',
     'stars' => 'Sterren',
     'star' => 'Ster',
+    'paymethod' => 'Betaalmethode',
+    'sendmethod' => 'Verzendmethode',
 
 ];

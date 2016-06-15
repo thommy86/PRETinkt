@@ -1,5 +1,6 @@
 {{ trans('checkout.ordermeailcontent') }}<br>
 {{ trans('checkout.name') }}: {{ $name }}<br>
+{{ trans('checkout.sendmethod') }}: {{ $sentMethod }}<br>
 <a href="{{ $baseUrl }}/{{ $paylink }}">{{ trans('checkout.pay') }}</a>
 <table>
 	<thead>

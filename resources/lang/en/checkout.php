@@ -49,5 +49,7 @@ return [
     'paytext' => 'Pay your order',
     'stars' => 'Stars',
     'star' => 'Star',
+    'paymethod' => 'Pay method',
+    'sendmethod' => 'Sent method',
 
 ];

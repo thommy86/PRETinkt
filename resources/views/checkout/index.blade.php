@@ -137,6 +137,24 @@
 	
 	                        <!--Start payment-->
 	                        <div id="payment" class="checkout-payment">
+		                        <p>{{ trans('checkout.sendmethod') }}:</p>
+	                            <ul class="payment_methods methods">
+	                                <li class="payment_method_bacs">
+	                                	<select class="sentmethodselect" name="sent_method">
+		                                	<option value="PostNL">PostNL</option>
+		                                	<option value="DHL">DHL</option>
+		                                	<option value="GLS">GLS</option>
+	                                	</select>
+	                                </li>
+	                            </ul>
+	
+	                            <div class="clear"></div>
+	                        </div>
+	                        <!--End payment-->
+	
+	                        <!--Start payment-->
+	                        <div id="payment" class="checkout-payment">
+		                        <p>{{ trans('checkout.paymethod') }}:</p>
 	                            <ul class="payment_methods methods">
 	                                <li class="payment_method_bacs">
 	                                    <input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="ideal" checked="checked">

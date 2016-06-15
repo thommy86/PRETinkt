@@ -40,7 +40,7 @@
 										<form accept="/cart/selectregion" method="post" id="commentform" class="contact-form-7">
 											<input type="hidden" name="_token" value="{{ csrf_token() }}">
 											<p class="comment-for-content">
-												<select name="region">
+												<select class="fullborder" name="region">
 													<option value="1">{{ trans('cart.europe') }}</option>
 													<option value="2">{{ trans('cart.world') }}</option>
 												</select>
