@@ -51,5 +51,6 @@ return [
     'star' => 'Ster',
     'paymethod' => 'Betaalmethode',
     'sendmethod' => 'Verzendmethode',
+    'paytitle' => 'Betalen',
 
 ];

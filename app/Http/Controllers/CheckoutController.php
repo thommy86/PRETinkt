@@ -159,10 +159,10 @@ class CheckoutController extends Controller
 						$data = ['name' => $request->input('firstname') . " " . $request->input('prefix') . " " . $request->input('lastname'),
 						'email' => $request->input('email'),
 						'subject' => trans('checkout.order'),
-						'baseUrl' => config('app.APP_URL'),
+						'baseUrl' => config('app.url'),
 						'sentMethod' => $request->input('sent_method'),
 						'products' => $products,
-						'paylink' => '/cart/checkout/pay/' . $bestelling->id . '/' . $request->input('payment_method')];	
+						'paylink' => 'cart/checkout/pay/' . $bestelling->id . '/' . $request->input('payment_method')];	
 						
 						//Sent order mail to customer
 						Mail::send('emails.order', $data, function ($message) use ($data) {

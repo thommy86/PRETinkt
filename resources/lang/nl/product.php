@@ -24,7 +24,7 @@ return [
     'stock' => 'Voorraad',
     'noproducts' => 'Er zijn geen producten',
     'productrated' => 'Product beoordeeld',
-    'productalreadyrated' => 'Product al beoordeeld',
+    'alreadyrated' => 'Product al beoordeeld',
     'instock' => 'Op voorraad',
     'notavailable' => 'Niet op voorraad',
     'brand' => 'Merk',

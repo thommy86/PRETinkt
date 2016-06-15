@@ -51,5 +51,6 @@ return [
     'star' => 'Star',
     'paymethod' => 'Pay method',
     'sendmethod' => 'Sent method',
+    'paytitle' => 'Pay',
 
 ];

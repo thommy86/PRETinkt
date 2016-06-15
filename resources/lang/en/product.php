@@ -24,7 +24,7 @@ return [
     'stock' => 'Stock',
     'noproducts' => 'There are no products found',
     'productrated' => 'Product rated',
-    'productalreadyrated' => 'Product already rated',
+    'alreadyrated' => 'Product already rated',
     'instock' => 'In stock',
     'notavailable' => 'Not available',
     'brand' => 'Brand',

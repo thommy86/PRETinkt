@@ -109,10 +109,10 @@ class ProductController extends Controller
 				
 				if($rating->save())
 				{
-					return redirect('/')->with('successmessage', trans('product.productrated'));
+					return redirect('/product/'. $id)->with('successmessage', trans('product.productrated'));
 				}
 			} else {
-				return redirect('/')->with('infomessage', trans('product.alreadyrated'));
+				return redirect('/product/'. $id)->with('infomessage', trans('product.alreadyrated'));
 			}
 	    } catch (\Exception $exception) {
 			Log::error('Cannot submit product from database. Exception:'.$exception);
