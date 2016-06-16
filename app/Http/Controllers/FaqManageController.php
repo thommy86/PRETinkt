@@ -128,7 +128,13 @@ class FaqManageController extends Controller
 				$faq->vraag = $request->input('vraag');
 				$faq->antwoord = $request->input('antwoord');			
 				$faq->taal = $request->input('taal');	
-	
+				
+				//Save changes to database
+				if($faq->save()){
+					return redirect('/admin/faq')->with('successmessage', trans('faqmanage.productupdated'));
+				} else {
+					return redirect('admin/faq/'.$request->input('id'))->with('errormessage', trans('faqmanage.error'))->withInput();
+				}
 			} catch (\Exception $exception) {
 				Log::error('Cannot update product. Exception:'.$exception);
 			}
@@ -138,7 +144,7 @@ class FaqManageController extends Controller
 		}
     }	
 
-	public function submit(Request $request)
+	public function addPost(Request $request)
 	{
 	    //Check if is logged in
 		if ($request->session()->has('isAuthenticated')) {

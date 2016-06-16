@@ -21,7 +21,7 @@
 			
             <h1 class="page-title">{{ trans('productmanage.productmanage') }}</h1>
 			<div id="contact-form" class="contact-respond">
-				<form action="/admin/product" method="post" id="commentform" class="contact-form-7" enctype="multipart/form-data">
+				<form action="/admin/product/edit" method="post" id="commentform" class="contact-form-7" enctype="multipart/form-data">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
 					<input type="hidden" name="id" value="{{ $product->id }}">
 					<p class="comment-for-author">

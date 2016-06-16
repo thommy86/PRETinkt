@@ -27,6 +27,7 @@
                         <tr>
                             <th class="product-remove">&nbsp;</th>
                             <th class="product-name">{{ trans('faqmanage.vraag') }}</th>
+                            <th class="product-name">{{ trans('faqmanage.taal') }}</th>
 						</tr>
                     </thead>
                     <!--End table header-->
@@ -41,6 +42,9 @@
 								</td>
 								<td class="product-name">
 									<a href="/admin/faq/{{ $faq->id }}">{{ $faq->vraag }} </a>
+								</td>
+								<td class="product-price">
+									{{ $faq->taal }}
 								</td>
 							</tr>
 						@endforeach

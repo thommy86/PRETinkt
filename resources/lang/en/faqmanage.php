@@ -18,6 +18,7 @@ return [
     'faqmanage' => 'FAQ manage',
     'vraag' => 'Question',
 	'antwoord' => 'Answer',
+	'taal' => 'Language',
     'backtoadmin' => 'Back to admin',
     'add' => 'Add',
     'edit' => 'Edit',

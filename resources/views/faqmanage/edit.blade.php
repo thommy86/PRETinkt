@@ -25,18 +25,19 @@
 						<input type="hidden" name="_token" value="{{ csrf_token() }}">
 						<input type="hidden" name="id" value="{{ $faq->id }}">
 						<p class="comment-for-author">
-							<input type="text" class="author" name="vraag" placeholder="{{ trans('faqmanage.vraag') }}" value="{{ old('vraag') ? old('vraag') : $faq->vraag }}" required>
-							<i class="fa fa-user"></i>
+                        <label for="name">{{ trans('faqmanage.vraag') }} <span class="required">*</span></label>
+							<input type="text" class="fullborder" name="vraag" placeholder="{{ trans('faqmanage.vraag') }}" value="{{ old('vraag') ? old('vraag') : $faq->vraag }}" required>
 						</p>
 						<p class="comment-for-content">
+                        <label for="name">{{ trans('faqmanage.antwoord') }} <span class="required">*</span></label>
 							<textarea class="fullborder" name="antwoord" placeholder="{{ trans('faqmanage.antwoord') }}" required>{{ old('antwoord') ? old('antwoord') : $faq->antwoord }}</textarea>
-							<i class="fa fa-comment"></i>
 						</p>
 						<p class="comment-for-author">
-						<select class="fullborder" name="taal">
-							<option value="NL" {{ old('taal') ? old('taal') == "NL" ? "selected" : "" : $faq->taal == "NL" ? "selected" : "" }}>{{ trans('faqmanage.nederlands') }}</option>
-							<option value="EN" {{ old('taal') ? old('taal') == "EN" ? "selected" : "" : $faq->taal == "EN" ? "selected" : "" }}>{{ trans('faqmanage.engels') }}</option>
-						</select>
+	                        <label for="name">{{ trans('faqmanage.taal') }} <span class="required">*</span></label>
+							<select class="fullborder" name="taal">
+								<option value="NL" {{ old('taal') ? old('taal') == "NL" ? "selected" : "" : $faq->taal == "NL" ? "selected" : "" }}>{{ trans('faqmanage.nederlands') }}</option>
+								<option value="EN" {{ old('taal') ? old('taal') == "EN" ? "selected" : "" : $faq->taal == "EN" ? "selected" : "" }}>{{ trans('faqmanage.engels') }}</option>
+							</select>
 						</p>
 						<p class="comment-for-submit">
 							<input name="submit" type="submit" id="submit" class="submit" value="{{ trans('faqmanage.submit') }}">
