@@ -84,7 +84,7 @@
 
                 <!--Start header content-->
                 <div class="header-content">
-                    <h3 class="tz-logo pull-left">{{ config('webshop.Webshopname') }}</h3>
+                    <h3 class="tz-logo pull-left"><a href="/">{{ config('webshop.Webshopname') }}</a></h3>
                     <div class="tz-search pull-right">
 
                         <!--Start form search-->
@@ -116,6 +116,22 @@
                         </li>
                         <li>
                             <a href="/contact">{{ trans("master.contact") }}</a>
+                        </li>
+                        <li class="isMobile">
+                            <a href="/wishlist">{{ trans("master.wishlist") }}</a>
+                        </li>
+                        <li class="isMobile">
+                            <a href="/cart">{{ trans("master.cart") }}</a>
+                        </li>
+                        <li class="isMobile">
+                            <a href="/language/en">
+                                {{ trans("master.english") }}
+                            </a>
+                        </li>
+                        <li class="isMobile">
+                            <a href="/language/nl">
+                                {{ trans("master.dutch") }}
+                            </a>
                         </li>
                     </ul>
                     <!--End Main menu-->
