@@ -1122,7 +1122,7 @@ input {
   top: 0;
 }
 .tz_icon_menu i {
-  color: #fff;
+  color: #000;
   font-size: 20px;
 }
 /**
@@ -1785,7 +1785,7 @@ input {
 }
 .tz-product .product-item .item {
   position: relative;
-  min-height: 340px;
+  min-height: 470px;
   border: 1px solid #eeeeee;
 }
 .tz-product .product-item .item .product-item-inner {
@@ -1793,7 +1793,7 @@ input {
   left: 0;
   top: 0;
   width: 100%;
-  min-height: 360px;
+  min-height: 500px;
   background-color: transparent;
   -webkit-transition: all 0.4s ease 0s;
   -o-transition: all 0.4s ease 0s;
