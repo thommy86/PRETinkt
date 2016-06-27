@@ -24,6 +24,6 @@ return [
 	'Password' => 'admin',
 	'Shipping1' => 7.95,
 	'Shipping2' => 12.95,
-	'DefaultImage' => "AEIIDP4_A4__0009_emptyImage.png",
+	'DefaultImage' => "emptyImage.png",
 
 ];
