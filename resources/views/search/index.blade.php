@@ -56,8 +56,8 @@
 													{{ $product->omschrijving }}
 												</p>
 												<span class="p-mask">
-													<a href="/cart/set/{{ $product->id }}" class="add-to-cart">{{ trans('search.addtocart') }}</a>
-													<a href="/wishlist/set/{{ $product->id }}" class="add-to-wishlist"><i class="fa fa-heart"></i> {{ trans('search.addtowishlist') }}</a>
+													<a href="/cart/set/{{ $product->id }}" class="add-to-cart">{{ trans('search.addtocart') }}</a><br>
+													<a href="/wishlist/set/{{ $product->id }}" class="add-to-cart"> {{ trans('search.addtowishlist') }}</a>
 												</span>
 											</div>
 										</div>

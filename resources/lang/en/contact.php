@@ -28,7 +28,7 @@ return [
     'subject' => 'Subject',
     'message' => 'Message',
     'submit' => 'Send',
-    'emailsend' => 'Email sent.',
+    'emailsend' => 'Contact request recieved.',
     'emailcontent' => 'Contact request.',
     'emailconfirmcontent' => 'Thank you for your contact request.',
 

@@ -319,6 +319,9 @@ class ProductManageController extends Controller
 									$product = Product::find($value->id);
 									$product->naam = $value->naam;
 									$product->merk = $value->merk;
+									Log::debug($value);
+									Log::debug($value->omschrijving);
+									Log::debug($value->description);
 									$product->omschrijving = $value->omschrijving;
 									$product->description = $value->description;
 									$product->kleur = $value->kleur;
@@ -327,6 +330,9 @@ class ProductManageController extends Controller
 									$product->BTW = $value->btw;
 									$product->prijs = $value->prijs;
 									$product->voorraad = $value->voorraad;
+									if($value->afbeelding != null){
+										$product->afbeelding = $value->afbeelding;
+									}
 									$product->save();
 									Log::info('Updated product from csv import');
 								} else {
@@ -342,7 +348,11 @@ class ProductManageController extends Controller
 									$product->BTW = $value->btw;
 									$product->prijs = $value->prijs;
 									$product->voorraad = $value->voorraad;
-									$product->afbeelding = config('webshop.DefaultImage');
+									if($value->afbeelding != null){
+										$product->afbeelding = $value->afbeelding;
+									} else {
+										$product->afbeelding = config('webshop.DefaultImage');
+									}
 									$product->save();
 									Log::info('Created new product from csv import');
 								}

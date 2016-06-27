@@ -25,7 +25,7 @@ return [
     'email' => 'E-mail',
     'message' => 'Bericht',
     'submit' => 'Verzend',
-    'emailsend' => 'E-mail verzonden.',
+    'emailsend' => 'Offerte aanvraag verzonden.',
     'emailcontent' => 'Offerte aanvraag.',
     'emailconfirmcontent' => 'Bedankt voor uw offerte aanvraag. U ontvangt zo spoedig mogelijk een reactie.',
 

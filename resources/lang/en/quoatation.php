@@ -25,7 +25,7 @@ return [
     'email' => 'Email',
     'message' => 'Message',
     'submit' => 'Send',
-    'emailsend' => 'Email sent.',
+    'emailsend' => 'Quoatation request recieved.',
     'emailcontent' => 'Quoatation request.',
     'emailconfirmcontent' => 'Thank you for your quoatation request.',
 

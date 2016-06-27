@@ -28,7 +28,7 @@ return [
     'subject' => 'Onderwerp',
     'message' => 'Bericht',
     'submit' => 'Verzend',
-    'emailsend' => 'E-mail verzonden.',
+    'emailsend' => 'Contact verzoek ontvangen.',
     'emailcontent' => 'Contactverzoek.',
     'emailconfirmcontent' => 'Bedankt voor uw contactverzoek. U ontvangt zo spoedig mogelijk een reactie.',
 
